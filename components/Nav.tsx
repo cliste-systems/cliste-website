@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "./Icon";
 
 export function Nav() {
@@ -9,11 +10,15 @@ export function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link
-            href="/"
-            className="text-sm font-medium tracking-widest text-slate-900 uppercase"
-          >
-            Cliste Systems
+          <Link href="/" className="flex items-center" aria-label="Cliste Systems home">
+            <Image
+              src="/logo.png"
+              alt="Cliste Systems"
+              width={140}
+              height={40}
+              className="h-9 w-auto object-contain"
+              priority
+            />
           </Link>
         </div>
 
