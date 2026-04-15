@@ -32,9 +32,9 @@ export function About() {
               automation.
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-6">
-              While Silicon Valley focuses on American accents, we focus on
-              Donegal, Dublin, and Cork. We build technology that sounds like
-              home.
+              While Silicon Valley focuses on American accents, we build for
+              all of Ireland and Northern Ireland. We build technology that
+              sounds like home.
             </p>
           </div>
           <div className="md:w-1/2 space-y-6">

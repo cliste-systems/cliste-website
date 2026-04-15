@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Icon } from "./Icon";
 
 export function Hero() {
@@ -43,8 +42,8 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <Link
-            href="#contact"
+          <a
+            href="#demo"
             className="w-full sm:w-auto px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-slate-200 border border-transparent"
           >
             <Icon
@@ -52,13 +51,13 @@ export function Hero() {
               className="text-xl text-emerald-400 group-hover:scale-110 transition-transform"
             />
             Hear the Tech
-          </Link>
-          <Link
+          </a>
+          <a
             href="#solutions"
             className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all text-center"
           >
             View Solutions
-          </Link>
+          </a>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-400 uppercase tracking-wide">

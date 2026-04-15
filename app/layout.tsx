@@ -3,6 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Cliste Systems",
   },
   description:
-    "Replace the busy signal with revenue. Irish AI engineering firm building Digital Employees—24/7 voice agents that answer calls, book appointments, and collect payments. LiveKit & ElevenLabs. EU-hosted, GDPR compliant. Donegal.",
+    "Ireland's AI voice engineers. We build hyper-realistic Irish voice agents, natural, local, Donegal-based.",
   keywords: [
     "AI voice",
     "voice AI",
@@ -43,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Cliste Systems",
     title: "Cliste Systems | AI Voice Engineers",
     description:
-      "Replace the busy signal with revenue. Digital Employees for Irish service businesses—24/7 voice, bookings, payments. EU-hosted.",
+      "Ireland's AI voice engineers. Hyper-realistic Irish voice agents for 24/7 phone automation. Donegal-based.",
     images: [
       {
         url: "/og-image.png",
@@ -57,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cliste Systems | AI Voice Engineers",
     description:
-      "Replace the busy signal with revenue. Digital Employees—24/7 voice agents for Irish businesses.",
+      "Ireland's AI voice engineers. Hyper-realistic Irish voice agents, 24/7. Donegal-based.",
   },
   robots: {
     index: true,
@@ -84,7 +88,7 @@ function JsonLd() {
     name: "Cliste Systems",
     url: siteUrl,
     description:
-      "Irish AI engineering firm specializing in intelligent voice infrastructure for service-based businesses. Digital Employees that answer calls, book appointments, and collect payments 24/7.",
+      "Ireland's AI voice engineers. We build hyper-realistic Irish voice agents for 24/7 phone automation. Donegal-based.",
     email: "brendan@clistesystems.ie",
     address: {
       "@type": "PostalAddress",
@@ -104,7 +108,7 @@ function JsonLd() {
     "@type": "WebSite",
     name: "Cliste Systems",
     url: siteUrl,
-    description: "Replace the busy signal with revenue. AI voice engineers for Irish businesses.",
+    description: "Ireland's AI voice engineers. Hyper-realistic Irish voice agents for 24/7 phone automation. Donegal-based.",
     publisher: { "@id": `${siteUrl}#organization` },
   };
 
@@ -127,13 +131,23 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(!window.location.hash){history.scrollRestoration='manual';window.scrollTo(0,0);}})();`,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} bg-white text-slate-600 antialiased selection:bg-indigo-100 selection:text-indigo-900 font-sans`}
       >
         <JsonLd />
+        <ScrollToTop />
         <Nav />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Footer />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

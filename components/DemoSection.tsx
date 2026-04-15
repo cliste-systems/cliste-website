@@ -1,9 +1,82 @@
+"use client";
+
+import { useRef, useState, useEffect } from "react";
 import { Icon } from "./Icon";
 
+const AUDIO_FILE = "ElevenLabs_2026-01-30T18_04_38_Michelle - Direct and Natural_pvc_sp100_s50_sb100_v3.mp3";
+const AUDIO_SRC = `/${encodeURIComponent(AUDIO_FILE)}`;
+
+function formatTime(seconds: number) {
+  if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
 export function DemoSection() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [audioError, setAudioError] = useState<string | null>(null);
+
+  const togglePlay = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      return;
+    }
+
+    try {
+      setAudioError(null);
+      await audio.play();
+    } catch {
+      setIsPlaying(false);
+      setAudioError("Audio couldn't play. Please try again.");
+    }
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const onTimeUpdate = () => {
+      setCurrentTime(audio.currentTime);
+      setProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0);
+    };
+    const onLoadedMetadata = () => {
+      setDuration(audio.duration);
+    };
+    const onEnded = () => {
+      setIsPlaying(false);
+      setProgress(0);
+      setCurrentTime(0);
+    };
+    audio.addEventListener("timeupdate", onTimeUpdate);
+    audio.addEventListener("loadedmetadata", onLoadedMetadata);
+    audio.addEventListener("ended", onEnded);
+    return () => {
+      audio.removeEventListener("timeupdate", onTimeUpdate);
+      audio.removeEventListener("loadedmetadata", onLoadedMetadata);
+      audio.removeEventListener("ended", onEnded);
+    };
+  }, []);
+
   return (
+    <>
+      <audio
+        ref={audioRef}
+        src={AUDIO_SRC}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onError={() => setAudioError("Audio file failed to load.")}
+        preload="metadata"
+      />
     <section
-      className="overflow-hidden bg-white pt-24 pb-24 relative"
+      id="demo"
+      className="overflow-hidden bg-white pt-24 pb-24 relative scroll-mt-20"
       aria-labelledby="demo-heading"
     >
       <div
@@ -49,12 +122,13 @@ export function DemoSection() {
               <div className="absolute inset-0 bg-emerald-500 rounded-full blur-xl opacity-20 animate-pulse" />
               <button
                 type="button"
+                onClick={togglePlay}
                 className="relative w-16 h-16 md:w-20 md:h-20 lg:w-16 lg:h-16 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-105 transition-all duration-300 cursor-pointer shadow-xl shadow-black/20 group/btn border-2 lg:border border-slate-900/10"
-                aria-label="Play agent introduction"
+                aria-label={isPlaying ? "Pause agent introduction" : "Play agent introduction"}
               >
                 <Icon
-                  icon="solar:play-bold"
-                  className="text-2xl md:text-3xl lg:text-2xl ml-0.5 text-slate-900 group-hover/btn:text-emerald-600 transition-colors"
+                  icon={isPlaying ? "solar:pause-bold" : "solar:play-bold"}
+                  className={`text-2xl md:text-3xl lg:text-2xl text-slate-900 group-hover/btn:text-emerald-600 transition-colors ${isPlaying ? "" : "ml-0.5"}`}
                   width={28}
                 />
               </button>
@@ -71,11 +145,11 @@ export function DemoSection() {
                       icon="solar:user-circle-linear"
                       className="text-lg text-emerald-400"
                     />
-                    <span>Voice: Ciara (Donegal)</span>
+                    <span>Voice: Michelle (Donegal)</span>
                   </div>
                 </div>
                 <span className="font-mono text-xs font-semibold text-emerald-400 bg-emerald-950/30 px-3 py-1.5 rounded-lg border border-emerald-500/20 shadow-inner">
-                  00:14
+                  {formatTime(currentTime)} / {formatTime(duration)}
                 </span>
               </div>
 
@@ -117,14 +191,21 @@ export function DemoSection() {
                   style={{ animationDuration: "1.5s", animationDelay: "0.1s" }}
                 />
               </div>
+              {audioError ? (
+                <p className="mt-3 text-xs text-rose-300">{audioError}</p>
+              ) : null}
             </div>
           </div>
 
           <div className="absolute bottom-0 left-0 w-full h-1 bg-slate-800/50">
-            <div className="h-full w-1/3 bg-gradient-to-r from-emerald-600 via-emerald-400 to-white shadow-[0_0_15px_rgba(16,185,129,0.6)] rounded-r-full" />
+            <div
+              className="h-full bg-gradient-to-r from-emerald-600 via-emerald-400 to-white shadow-[0_0_15px_rgba(16,185,129,0.6)] rounded-r-full transition-[width] duration-75"
+              style={{ width: `${progress}%` }}
+            />
           </div>
         </div>
       </div>
     </section>
+    </>
   );
 }

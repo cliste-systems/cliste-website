@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Icon } from "./Icon";
 
 const integrations = [
@@ -34,16 +33,12 @@ export function Integrations() {
           >
             Connects To Your Ecosystem.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-8">
+          <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-4">
             Our agents integrate seamlessly with the tools you already use.
           </p>
-          <Link
-            href="#integrations"
-            className="text-sm font-medium text-emerald-600 hover:text-emerald-700 flex items-center gap-1 transition-colors"
-          >
-            View all integrations{" "}
-            <Icon icon="solar:arrow-right-linear" width={16} />
-          </Link>
+          <p className="text-sm text-slate-400 italic">
+            We can connect to just about anything.
+          </p>
         </div>
         <div className="md:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-4">
           {integrations.map((item) => (

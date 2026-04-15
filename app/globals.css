@@ -23,6 +23,20 @@
   animation: sound 1s ease-in-out infinite;
 }
 
+/* Page transition on route change */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-page-in {
+  animation: page-in 0.35s ease-out forwards;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
