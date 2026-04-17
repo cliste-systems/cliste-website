@@ -56,6 +56,12 @@ export function Nav() {
           >
             Sign In
           </a>
+          <a
+            href="https://app.clistesystems.ie/signup"
+            className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium text-slate-700 transition-all bg-white border border-slate-200 rounded-xl hover:bg-slate-50"
+          >
+            Sign Up
+          </a>
           <Link
             href="/book"
             className="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-white transition-all bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 rounded-xl hover:opacity-90 shadow-lg shadow-slate-200/50 border border-white/10 focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
