@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { ClisteLogo } from "@/components/ClisteLogo";
 import { LegalPathProvider } from "@/components/legal/legal-path-context";
 import { PublicLegalTabs } from "@/components/legal/PublicLegalTabs";
-import { APP_AUTHENTICATE_URL } from "@/lib/site-auth";
+import { LoginLink } from "@/components/LoginLink";
 import { companyRegistrationLine } from "@/lib/company-details";
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
 
@@ -26,12 +26,9 @@ export function PublicLegalShell({ children }: PublicLegalShellProps) {
               Cliste Systems
             </span>
           </Link>
-          <a
-            href={APP_AUTHENTICATE_URL}
-            className="inline-flex h-10 shrink-0 items-center rounded-full bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800"
-          >
+          <LoginLink className="inline-flex h-10 shrink-0 items-center rounded-full bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800">
             Log in
-          </a>
+          </LoginLink>
         </header>
 
         <div className="py-5 sm:py-6">

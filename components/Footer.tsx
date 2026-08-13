@@ -6,7 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import { ClisteLogo } from "@/components/ClisteLogo";
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
 import { CLISTE_TAGLINE } from "@/lib/site-copy";
-import { APP_AUTHENTICATE_URL } from "@/lib/site-auth";
 
 const currentYear = new Date().getFullYear();
 const CONTACT_EMAIL = "brendan@clistesystems.ie";
@@ -19,7 +18,7 @@ const FOOTER_LINKS = {
   ],
   company: [
     { label: "Contact", href: "/book" },
-    { label: "Log in", href: APP_AUTHENTICATE_URL, external: true },
+    { label: "Log in", href: "https://app.clistesystems.ie/authenticate", external: true },
   ],
   legal: [
     { label: "Privacy", href: "/legal/privacy" },

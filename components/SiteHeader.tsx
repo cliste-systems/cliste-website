@@ -6,7 +6,7 @@ import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { NICHE_NAV_LINKS } from "@/lib/industries";
 import { scrollToSectionAfterMenuClose } from "@/lib/scroll-to-section";
-import { APP_AUTHENTICATE_URL } from "@/lib/site-auth";
+import { LoginLink } from "./LoginLink";
 import { ClisteLogo } from "./ClisteLogo";
 
 type SiteHeaderProps = {
@@ -202,9 +202,7 @@ export function SiteHeader({
           className={`${fadeClass(animated, "hero-fade-d2")} z-10 hidden items-center gap-3 lg:flex`}
         >
           <ServicesNav surface={surface} />
-          <a href={APP_AUTHENTICATE_URL} className={loginClassName}>
-            Log in
-          </a>
+          <LoginLink className={loginClassName}>Log in</LoginLink>
         </nav>
 
         <button
@@ -294,13 +292,12 @@ export function SiteHeader({
                     delay: 0.1,
                   }}
                 >
-                  <a
-                    href={APP_AUTHENTICATE_URL}
+                  <LoginLink
                     className="cursor-pointer transition-colors hover:text-neutral-600"
                     onClick={() => setMenuOpen(false)}
                   >
                     Log in
-                  </a>
+                  </LoginLink>
                 </motion.div>
               </nav>
 
