@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { ClisteLogo } from "@/components/ClisteLogo";
 import { LegalPathProvider } from "@/components/legal/legal-path-context";
 import { PublicLegalTabs } from "@/components/legal/PublicLegalTabs";
+import { LegalContentTransition } from "@/components/legal/LegalContentTransition";
 import { LoginLink } from "@/components/LoginLink";
 import { companyRegistrationLine } from "@/lib/company-details";
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
@@ -38,7 +39,7 @@ export function PublicLegalShell({ children }: PublicLegalShellProps) {
         <LegalPathProvider>
           <main className="pb-4">
             <div className="rounded-[1.5rem] border border-slate-200/90 bg-white px-6 py-8 shadow-[0_1px_0_rgba(15,23,42,0.04)] sm:rounded-[2rem] sm:px-10 sm:py-10 lg:px-12 lg:py-12">
-              {children}
+              <LegalContentTransition>{children}</LegalContentTransition>
             </div>
           </main>
         </LegalPathProvider>
