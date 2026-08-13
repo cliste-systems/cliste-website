@@ -10,7 +10,7 @@ Requires a Cloudflare API token with:
 Env:
   CLOUDFLARE_API_TOKEN
   CF_ZONE_ID (zone id for the target domain)
-  SITE_DOMAIN (defaults to hellocara.ie)
+  SITE_DOMAIN (defaults to clistesystems.ie)
 
 Optional overrides:
   VERCEL_WWW_CNAME   default: 9d50a7f5d9de6e3d.vercel-dns-017.com
@@ -31,7 +31,7 @@ import urllib.error
 import urllib.request
 
 TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "")
-SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "hellocara.ie").strip().lower()
+SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "clistesystems.ie").strip().lower()
 ZONE = os.environ.get("CF_ZONE_ID", "").strip()
 WWW_CNAME = os.environ.get(
     "VERCEL_WWW_CNAME", "9d50a7f5d9de6e3d.vercel-dns-017.com"

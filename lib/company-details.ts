@@ -8,9 +8,9 @@ export const CLISTE_COMPANY = {
   jurisdiction: "Ireland",
   croNumber: process.env.CLISTE_CRO_NUMBER?.trim() || null,
   registeredOffice: process.env.CLISTE_REGISTERED_OFFICE?.trim() || null,
-  privacyEmail: "privacy@hellocara.ie",
-  supportEmail: "support@hellocara.ie",
-  helloEmail: "hello@hellocara.ie",
+  privacyEmail: "privacy@clistesystems.ie",
+  supportEmail: "support@clistesystems.ie",
+  helloEmail: "hello@clistesystems.ie",
 } as const;
 
 export function companyRegistrationLine(): string {
