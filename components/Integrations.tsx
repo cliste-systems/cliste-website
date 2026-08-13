@@ -1,12 +1,12 @@
 import { Icon } from "./Icon";
 
 const integrations = [
-  { icon: "solar:calendar-linear", name: "Google Calendar" },
-  { icon: "solar:letter-linear", name: "Outlook" },
-  { icon: "solar:card-linear", name: "Stripe" },
-  { icon: "solar:wallet-money-linear", name: "Revolut Business" },
   { icon: "solar:phone-linear", name: "Twilio" },
+  { icon: "solar:server-linear", name: "LiveKit" },
+  { icon: "solar:database-linear", name: "Supabase" },
+  { icon: "solar:cloud-linear", name: "Vercel" },
   { icon: "solar:chat-round-linear", name: "WhatsApp" },
+  { icon: "solar:letter-linear", name: "Email" },
 ];
 
 export function Integrations() {
@@ -29,11 +29,11 @@ export function Integrations() {
           </div>
           <h2
             id="integrations-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             Connects To Your Ecosystem.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-4">
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-4">
             Our agents integrate seamlessly with the tools you already use.
           </p>
           <p className="text-sm text-slate-400 italic">

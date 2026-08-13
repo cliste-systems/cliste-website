@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-white pt-24 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
+    <main className="min-h-screen bg-white pb-24">
+      <Nav />
+      <div className="max-w-3xl mx-auto px-6 pt-12">
         <Link
           href="/"
           className="text-sm font-medium text-indigo-600 hover:text-indigo-700 mb-8 inline-block"

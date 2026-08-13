@@ -16,25 +16,25 @@ export function TechStack() {
             Powered by Enterprise Infrastructure
           </span>
         </div>
-        <h2 className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6">
+        <h2 className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6">
           Built on the Best.
         </h2>
-        <p className="text-lg md:text-xl leading-relaxed text-slate-500 max-w-2xl mx-auto mb-12">
-          Stripe, AWS, Twilio, Python. Enterprise-grade infrastructure powering every Cliste agent.
+        <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-12">
+          Supabase, Vercel, Twilio, LiveKit. Enterprise-grade infrastructure powering every Cliste voice agent.
         </p>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
           <div className="flex items-center gap-2 text-xl font-semibold text-slate-700">
-            <Icon icon="logos:stripe" width={60} className="grayscale" />
+            <Icon icon="simple-icons:supabase" width={32} className="grayscale" />
           </div>
           <div className="flex items-center gap-2 text-xl font-semibold text-slate-700">
-            <Icon icon="logos:aws" width={45} className="grayscale" />
+            <Icon icon="logos:vercel-icon" width={28} className="grayscale" />
           </div>
           <div className="flex items-center gap-2 text-xl font-semibold text-slate-700">
             <Icon icon="logos:twilio" width={80} className="grayscale" />
           </div>
           <div className="flex items-center gap-2 text-xl font-semibold text-slate-700">
-            <Icon icon="logos:python" width={30} className="grayscale" />
-            <span className="text-sm font-medium tracking-tight">Python</span>
+            <Icon icon="simple-icons:livekit" width={32} className="grayscale" />
+            <span className="text-sm font-medium tracking-tight">LiveKit</span>
           </div>
         </div>
       </div>

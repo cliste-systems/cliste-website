@@ -6,18 +6,18 @@ const solutions = [
     icon: "solar:scissors-square-linear",
     title: "Cliste Salon",
     description:
-      "For Hairdressers & Beauty. Handles color formulas, timing rules, and patch tests. Includes Booking Dashboard.",
+      "Irish voice agents for salon phones. Enquiries, hours, callbacks, and clear follow-ups.",
     cta: "Explore Salon",
-    href: "#solutions",
+    href: "/retail/salon",
     variant: "default" as const,
   },
   {
     icon: "solar:user-id-linear",
     title: "Cliste Barber",
     description:
-      "For Barbershops. Handles queue systems and quick slot filling. Designed for high volume speed.",
+      "Voice agents for high-volume barbershop lines. Built for speed and busy days.",
     cta: "Explore Barber",
-    href: "#solutions",
+    href: "/retail/barber",
     variant: "default" as const,
   },
   {
@@ -26,7 +26,7 @@ const solutions = [
     description:
       "For MedSpas & Physios. Engineered for triage protocols with strict privacy and data controls.",
     cta: "Explore Clinic",
-    href: "#solutions",
+    href: "/retail",
     variant: "default" as const,
   },
   {
@@ -35,7 +35,7 @@ const solutions = [
     description:
       "Retail, Trades, Hospitality. We are an engineering firm. If you can describe it, we can build it.",
     cta: "Contact Engineering",
-    href: "#contact",
+    href: "/book",
     variant: "custom" as const,
   },
 ];
@@ -60,13 +60,13 @@ export function Solutions() {
           </div>
           <h2
             id="solutions-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             Custom-Built for Your Workflow.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500">
-            Every Cliste Agent is custom-configured to your specific rules. We
-            have Specialized Dashboards ready for these sectors.
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+            Every Cliste agent is configured to your rules, your tone, and your
+            call flows.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export function Solutions() {
               >
                 <Icon icon={s.icon} className="text-4xl" />
               </div>
-              <h3 className="text-base font-medium text-slate-900 mb-2">
+              <h3 className="font-display text-base font-semibold tracking-tight text-slate-900 mb-2">
                 {s.title}
               </h3>
               <p className="text-xs text-slate-500 mb-6 flex-grow">

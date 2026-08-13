@@ -3,8 +3,8 @@
 import { useRef, useState, useEffect } from "react";
 import { Icon } from "./Icon";
 
-const AUDIO_FILE = "ElevenLabs_2026-01-30T18_04_38_Michelle - Direct and Natural_pvc_sp100_s50_sb100_v3.mp3";
-const AUDIO_SRC = `/${encodeURIComponent(AUDIO_FILE)}`;
+const AUDIO_FILE = "isla-wilde-cara-demo.mp3";
+const AUDIO_SRC = `/${AUDIO_FILE}`;
 
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -101,12 +101,12 @@ export function DemoSection() {
 
           <h2
             id="demo-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             Engineering You Can Hear.
           </h2>
 
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500 font-normal">
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground font-normal">
             Most AI sounds robotic. Ours sounds like a local. Click below to
             experience the natural tone, breath pauses, and genuine Donegal
             cadence.
@@ -145,7 +145,7 @@ export function DemoSection() {
                       icon="solar:user-circle-linear"
                       className="text-lg text-emerald-400"
                     />
-                    <span>Voice: Michelle (Donegal)</span>
+                    <span>Voice: Isla Wilde</span>
                   </div>
                 </div>
                 <span className="font-mono text-xs font-semibold text-emerald-400 bg-emerald-950/30 px-3 py-1.5 rounded-lg border border-emerald-500/20 shadow-inner">

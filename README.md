@@ -1,6 +1,6 @@
 # Cliste Systems Website
 
-Next.js 16 marketing site for **Cliste Systems** — AI Voice Engineers (Ireland). Converted from aura.build HTML to a modern stack with best-in-class SEO.
+Next.js 16 marketing site for **Cliste Systems**, AI Voice Engineers (Ireland). Converted from aura.build HTML to a modern stack with best-in-class SEO.
 
 ## Stack
 
@@ -34,8 +34,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
-- `app/` — Routes, layout, globals, sitemap, robots
-- `components/` — Nav, Footer, Hero, sections (TechStack, Demo, Capability, Solutions, Integrations, Dashboard, Security, Technology, Process, About, FAQ)
+- `app/`: routes, layout, globals, sitemap, robots
+- `components/`: nav, footer, hero, sections (TechStack, Demo, Capability, Solutions, Integrations, Dashboard, Security, Technology, Process, About, FAQ)
 
 ## Build
 
@@ -46,4 +46,4 @@ npm start
 
 ## License
 
-Private — Cliste Systems.
+Private: Cliste Systems.

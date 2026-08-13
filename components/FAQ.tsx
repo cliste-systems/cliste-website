@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Is it safe for my data?",
     answer:
-      "Absolutely. We use End-to-End encryption and host data in AWS Dublin. We are fully GDPR compliant and never sell your customer data.",
+      "Absolutely. Data is encrypted at rest in Supabase (EEA). The dashboard runs on Vercel in Dublin and we are fully GDPR compliant. We never sell your customer data.",
   },
 ];
 
@@ -46,7 +46,7 @@ export function FAQ() {
           </div>
           <h2
             id="faq-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             Common Questions.
           </h2>

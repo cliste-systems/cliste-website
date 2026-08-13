@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Book a Free Demo",
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function BookPage() {
   return (
-    <main className="min-h-screen bg-white pt-28 pb-24">
-      <div className="max-w-4xl mx-auto px-6">
+    <main className="min-h-screen bg-white pb-24">
+      <Nav />
+      <div className="max-w-4xl mx-auto px-6 pt-12">
         <div className="text-center mb-8 mt-4">
           <div className="inline-flex items-center gap-2.5 px-3 py-1 mb-8 text-xs font-medium text-white bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 border border-white/10 rounded-full shadow-lg shadow-slate-200/50">
             <span className="relative flex h-2 w-2" aria-hidden>
@@ -21,10 +23,10 @@ export default function BookPage() {
               Get in Touch
             </span>
           </div>
-          <h1 className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6">
+          <h1 className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6">
             Book a Free Demo
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-2xl mx-auto">
             Choose a time that works for you. We&apos;ll walk you through how
             Cliste can automate your phone line in a 30-minute call.
           </p>

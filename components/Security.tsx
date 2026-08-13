@@ -18,11 +18,11 @@ export function Security() {
         </div>
         <h2
           id="security-heading"
-          className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+          className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
         >
           Enterprise-Grade Security.
         </h2>
-        <p className="text-lg md:text-xl leading-relaxed text-slate-500 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-2xl mx-auto">
           We take data protection seriously. Our infrastructure is built on the
           same encrypted standards used by major financial and medical
           institutions.
@@ -34,7 +34,7 @@ export function Security() {
           <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-4">
             <Icon icon="solar:lock-password-linear" className="text-2xl" />
           </div>
-          <h3 className="text-lg font-medium text-slate-900 mb-2">
+          <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-2">
             End-to-End Encryption
           </h3>
           <p className="text-sm text-slate-500">
@@ -46,7 +46,7 @@ export function Security() {
           <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-4">
             <Icon icon="solar:shield-warning-linear" className="text-2xl" />
           </div>
-          <h3 className="text-lg font-medium text-slate-900 mb-2">
+          <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-2">
             SOC2 Compliance
           </h3>
           <p className="text-sm text-slate-500">
@@ -58,12 +58,12 @@ export function Security() {
           <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-4">
             <Icon icon="solar:server-square-linear" className="text-2xl" />
           </div>
-          <h3 className="text-lg font-medium text-slate-900 mb-2">
-            AWS Dublin Hosting
+          <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-2">
+            EEA hosting
           </h3>
           <p className="text-sm text-slate-500">
-            Cliste Systems hosts your customer data locally in AWS eu-west-1
-            (Dublin), ensuring EU Data Sovereignty.
+            Primary data in Supabase (Ireland). Dashboard on Vercel Dublin.
+            Voice worker on Railway EU West.
           </p>
         </article>
       </div>

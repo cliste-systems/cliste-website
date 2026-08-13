@@ -21,17 +21,17 @@ export function About() {
             </div>
             <h2
               id="about-heading"
-              className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+              className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
             >
               Ireland&apos;s Dedicated AI Voice Engineers.
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-6">
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
               Based in Donegal, Cliste Systems was founded on one core belief:
               Local businesses deserve local technology. We are Ireland&apos;s
               premier agency specializing in hyper-realistic Irish voice
               automation.
             </p>
-            <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-6">
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
               While Silicon Valley focuses on American accents, we build for
               all of Ireland and Northern Ireland. We build technology that
               sounds like home.
@@ -83,7 +83,7 @@ export function About() {
                   Custom Engineering
                 </h4>
                 <p className="text-sm text-slate-500 mt-1">
-                  From local barbers to national retail chains. If you can
+                  From solo operators to national teams. If you can
                   describe it, we can build it.
                 </p>
               </div>

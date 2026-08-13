@@ -17,11 +17,11 @@ export function Process() {
           </div>
           <h2
             id="process-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             From Audit to Live in 14 Days.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500">
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
             We build, configure, and test the system for you.
           </p>
         </div>
@@ -37,7 +37,7 @@ export function Process() {
               <div className="w-10 h-10 mx-auto bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 text-white rounded-full flex items-center justify-center font-semibold mb-4 shadow-lg shadow-slate-200/50 border border-white/10">
                 1
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-2">
                 The Audit
               </h3>
               <p className="uppercase text-xs font-semibold text-emerald-600 mb-3">
@@ -53,7 +53,7 @@ export function Process() {
               <div className="w-10 h-10 mx-auto bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 text-white rounded-full flex items-center justify-center font-semibold mb-4 shadow-lg shadow-slate-200/50 border border-white/10">
                 2
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-2">
                 The Build
               </h3>
               <p className="uppercase text-xs font-semibold text-emerald-600 mb-3">
@@ -69,7 +69,7 @@ export function Process() {
               <div className="w-10 h-10 mx-auto bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 text-white rounded-full flex items-center justify-center font-semibold mb-4 shadow-lg shadow-slate-200/50 border border-white/10">
                 3
               </div>
-              <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-2">
                 The Handoff
               </h3>
               <p className="uppercase text-xs font-semibold text-emerald-600 mb-3">

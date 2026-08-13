@@ -20,11 +20,11 @@ export function Technology() {
           </div>
           <h2
             id="technology-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             Built on &quot;Cliste Core.&quot;
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-6">
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
             We don&apos;t just wrap generic APIs. We engineered a proprietary
             real-time voice stack designed specifically for the Irish market.
           </p>
@@ -53,7 +53,7 @@ export function Technology() {
                 className="text-emerald-600 text-xl shrink-0"
               />
               <span className="text-sm font-medium text-slate-700">
-                EU Data Sovereignty: Hosted in AWS Dublin
+                EU data: Supabase Ireland + Vercel Dublin
               </span>
             </li>
           </ul>

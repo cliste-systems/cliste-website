@@ -1,82 +1,284 @@
-import { Icon } from "./Icon";
+"use client";
+
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { HERO_CARD_GRADIENT } from "@/lib/site-layout";
+import { scrollToSection } from "@/lib/scroll-to-section";
+import { ColorBends } from "./ColorBends";
+import { SiteHeader } from "./SiteHeader";
+import { BlurredInfiniteSlider } from "./ui/infinite-slider";
+
+function PartnerLogos() {
+  const iconCls = "h-5 w-5 shrink-0 text-neutral-900 lg:h-6 lg:w-6";
+  const labelCls =
+    "whitespace-nowrap text-[15px] font-semibold tracking-tight text-neutral-900 lg:text-lg";
+
+  const items: { label: string; icon: ReactNode }[] = [
+    {
+      label: "Encrypted",
+      icon: (
+        <svg className={iconCls} viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M9 12l2 2 4-4"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+    },
+    {
+      label: "Irish lines",
+      icon: (
+        <svg className={iconCls} viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M7 3.5h3.2l1.2 3.2-1.8 1.3a11 11 0 0 0 5.4 5.4l1.3-1.8 3.2 1.2V16a2.5 2.5 0 0 1-2.5 2.5A13.5 13.5 0 0 1 4.5 6 2.5 2.5 0 0 1 7 3.5Z"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+    },
+    {
+      label: "Live voice",
+      icon: (
+        <svg className={iconCls} viewBox="0 0 24 24" fill="none" aria-hidden>
+          <circle cx="19" cy="5" r="2" fill="currentColor" />
+          <path
+            d="M4 11v2M7 8v8M10 6v12M13 9v6M16 7v10"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+          />
+        </svg>
+      ),
+    },
+    {
+      label: "GDPR",
+      icon: (
+        <svg className={iconCls} viewBox="0 0 24 24" fill="none" aria-hidden>
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
+          <path
+            d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+        </svg>
+      ),
+    },
+    {
+      label: "EU hosted",
+      icon: (
+        <svg className={iconCls} viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="11"
+            rx="2"
+            stroke="currentColor"
+            strokeWidth="1.7"
+          />
+          <path
+            d="M8 20h8M12 16v4"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+          />
+        </svg>
+      ),
+    },
+    {
+      label: "99.95% uptime",
+      icon: (
+        <svg className={iconCls} viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M3 13l4-4 4 4 5-7 5 9"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <div className="hero-fade hero-fade-d6 flex w-full min-w-0 flex-col items-center overflow-hidden md:flex-row">
+      <div className="hidden flex-shrink-0 md:block md:max-w-52 md:border-r md:border-neutral-200 md:pr-6 md:text-left">
+        <p className="text-sm font-medium text-neutral-600">
+          Trusted infrastructure, built for businesses.
+        </p>
+      </div>
+      <div className="w-full min-w-0 overflow-hidden py-4 md:py-6 md:flex-1">
+        <BlurredInfiniteSlider
+          speedOnHover={20}
+          speed={40}
+          gap={72}
+          fadeWidth={80}
+        >
+          {items.map(({ label, icon }) => (
+            <div
+              key={label}
+              className="flex shrink-0 items-center gap-3 text-neutral-900"
+            >
+              {icon}
+              <span className={labelCls}>{label}</span>
+            </div>
+          ))}
+        </BlurredInfiniteSlider>
+      </div>
+    </div>
+  );
+}
 
 export function Hero() {
   return (
-    <section
-      className="relative pt-32 pb-20 md:pt-48 md:pb-32"
-      aria-labelledby="hero-heading"
-    >
-      <div className="text-center max-w-4xl mx-auto px-6">
-        <div className="inline-flex items-center gap-2.5 px-3 py-1 mb-8 text-xs font-medium text-white bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 border border-white/10 rounded-full shadow-lg shadow-slate-200/50">
-          <span className="relative flex h-2 w-2" aria-hidden>
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-          </span>
-          <span className="tracking-wide uppercase text-[10px] font-bold">
-            Irish Start Up
-          </span>
-        </div>
-
-        <h1
-          id="hero-heading"
-          className="md:text-6xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
-        >
-          The New Standard for <br className="hidden md:block" /> AI Voice in
-          Ireland.
-        </h1>
-
-        <p className="md:text-xl leading-relaxed text-lg font-normal text-slate-500 max-w-2xl mx-auto mb-8">
-          Automate the ringing phone. We build hyper-realistic Irish voice
-          agents to handle admin 24/7 so your team can focus on their work.
-        </p>
-
+    <div className="min-h-0 bg-white text-neutral-900 antialiased selection:bg-indigo-200 selection:text-neutral-900">
+      <div className="mx-auto w-full max-w-[1920px] p-4 sm:p-6 lg:p-8">
+        {/* Rounded card: animated Grainient gradient + cross grid overlay */}
         <div
-          className="flex items-center justify-center gap-1 mb-10 opacity-30 h-8 [&>*]:animate-sound"
-          aria-hidden
+          className="hero-bg-reveal relative w-full overflow-hidden rounded-[2.5rem] shadow-sm ring-1 ring-black/[0.06] lg:rounded-[3.5rem]"
+          style={{ background: HERO_CARD_GRADIENT }}
         >
-          <div className="w-1 h-3 bg-slate-900 rounded-full" style={{ animationDelay: "0s" }} />
-          <div className="w-1 h-5 bg-slate-900 rounded-full" style={{ animationDelay: "0.1s" }} />
-          <div className="w-1 h-8 bg-slate-900 rounded-full" style={{ animationDelay: "0.2s" }} />
-          <div className="w-1 h-5 bg-slate-900 rounded-full" style={{ animationDelay: "0.3s" }} />
-          <div className="w-1 h-3 bg-slate-900 rounded-full" style={{ animationDelay: "0.4s" }} />
+            {/* Animated ColorBends: confined to the right pink area.
+                Linear mask so left side stays original cream/white. */}
+            <div
+              aria-hidden
+              className="hero-bg-wipe pointer-events-none absolute inset-0"
+            >
+              <ColorBends
+                colors={["#e8eaee", "#cfd3da", "#8a8f99", "#3f4451", "#1c1f26"]}
+                rotation={110}
+                speed={0.18}
+                scale={1.15}
+                frequency={1.05}
+                warpStrength={1.2}
+                bandWidth={5}
+                intensity={1.35}
+                noise={0.06}
+                iterations={2}
+                mouseInfluence={0.25}
+                parallax={0.2}
+                transparent
+                className="opacity-[0.68] mix-blend-soft-light sm:opacity-80 lg:opacity-90"
+              />
+            </div>
+
+            {/* Desktop-only mask override: let the animation breathe wider on lg+ */}
+            <style jsx>{`
+              @media (min-width: 1024px) {
+                .hero-bg-wipe {
+                  -webkit-mask-image: linear-gradient(
+                    100deg,
+                    transparent 30%,
+                    rgba(0, 0, 0, 0.55) 55%,
+                    #000 80%
+                  ) !important;
+                  mask-image: linear-gradient(
+                    100deg,
+                    transparent 30%,
+                    rgba(0, 0, 0, 0.55) 55%,
+                    #000 80%
+                  ) !important;
+                }
+              }
+            `}</style>
+
+            {/* One-shot diagonal sweep, desktop only (linear mask caused a harsh band on narrow viewports) */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(100deg, transparent 35%, rgba(0,0,0,0.6) 60%, #000 85%)",
+                maskImage:
+                  "linear-gradient(100deg, transparent 35%, rgba(0,0,0,0.6) 60%, #000 85%)",
+              }}
+            >
+              <div
+                className="hero-sweep absolute inset-y-0 left-0 w-1/3"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)",
+                  filter: "blur(20px)",
+                }}
+              />
+            </div>
+
+            <svg
+              className="pointer-events-none absolute inset-0 z-[1] hidden h-full w-full md:block"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden
+            >
+              <defs>
+                <pattern
+                  id="grid-pattern"
+                  x="50%"
+                  y="0"
+                  width="256"
+                  height="256"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 128 124 L 128 132 M 124 128 L 132 128"
+                    fill="none"
+                    stroke="black"
+                    strokeOpacity="0.1"
+                    strokeWidth="1.5"
+                  />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+            </svg>
+
+            <div className="relative z-[2] flex min-h-[560px] flex-col px-6 py-8 sm:min-h-[580px] sm:px-10 sm:py-12 lg:px-20 lg:py-14 lg:min-h-[calc(100svh-12rem)] lg:max-h-[820px]">
+              <SiteHeader animated homeScroll surface="hero" />
+
+              <div className="z-10 mt-24 flex max-w-5xl flex-col sm:mt-28 lg:mb-auto lg:mt-auto">
+                <h1
+                  id="hero-heading"
+                  className="hero-fade hero-fade-d3 font-display text-6xl font-semibold leading-[1.05] tracking-tight text-balance bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 sm:text-7xl lg:text-[7.5rem] pb-1.5"
+                >
+                  Phone? Sorted.
+                </h1>
+                <p className="hero-fade hero-fade-d4 mt-6 max-w-3xl text-2xl font-normal leading-snug tracking-tight text-neutral-800 sm:mt-8 lg:text-3xl">
+                  AI that sounds like it&apos;s from down the road. Answers the
+                  phone, handles the conversation, gets the next step done.
+                </p>
+                <div className="hero-fade hero-fade-d5 mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:w-auto sm:flex-row">
+                  <Link
+                    href="/book"
+                    className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-3 text-base font-normal text-white transition-colors hover:bg-slate-500 sm:w-auto"
+                  >
+                    Contact us
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection("cara")}
+                    className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-500/10 px-7 py-3 text-base font-normal text-slate-900 transition-colors hover:bg-slate-500/15 sm:w-auto"
+                  >
+                    Hear it work
+                  </button>
+                </div>
+              </div>
+            </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a
-            href="#demo"
-            className="w-full sm:w-auto px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-slate-200 border border-transparent"
-          >
-            <Icon
-              icon="solar:play-circle-bold"
-              className="text-xl text-emerald-400 group-hover:scale-110 transition-transform"
-            />
-            Hear the Tech
-          </a>
-          <a
-            href="#solutions"
-            className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all text-center"
-          >
-            View Solutions
-          </a>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-400 uppercase tracking-wide">
-          <span className="flex items-center gap-1.5">
-            <Icon icon="solar:check-circle-bold" className="text-emerald-600" />{" "}
-            Proprietary Latency Engine
-          </span>
-          <span className="hidden sm:inline text-slate-300">|</span>
-          <span className="flex items-center gap-1.5">
-            <Icon icon="solar:shield-check-bold" className="text-emerald-600" />{" "}
-            GDPR Compliant
-          </span>
-          <span className="hidden sm:inline text-slate-300">|</span>
-          <span className="flex items-center gap-1.5">
-            <Icon icon="solar:check-circle-bold" className="text-emerald-600" />{" "}
-            Native Accents
-          </span>
+        {/* Partner strip: aligned with hero card's inner padding so label sits under "P". */}
+        <div className="mt-4 px-6 pb-3 sm:mt-8 sm:px-10 sm:pb-10 lg:mt-12 lg:px-20 lg:pb-8">
+          <PartnerLogos />
         </div>
       </div>
-    </section>
+    </div>
   );
 }

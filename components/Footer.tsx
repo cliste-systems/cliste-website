@@ -2,64 +2,134 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
+import { ClisteLogo } from "@/components/ClisteLogo";
+import { SITE_FRAME_CLASS } from "@/lib/site-layout";
+import { CLISTE_TAGLINE } from "@/lib/site-copy";
 
 const currentYear = new Date().getFullYear();
+const CONTACT_EMAIL = "brendan@clistesystems.ie";
+
+const FOOTER_LINKS = {
+  product: [
+    { label: "Hear Cara", href: "/#cara" },
+    { label: "Cara for retail", href: "/#cara-retail-heading" },
+    { label: "FAQ", href: "/#cara-retail-faq-heading" },
+  ],
+  company: [
+    { label: "Contact", href: "/book" },
+    { label: "Log in", href: "https://app.clistesystems.ie/", external: true },
+  ],
+  legal: [
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+  ],
+} as const;
+
+function FooterLinks({
+  title,
+  links,
+}: {
+  title: string;
+  links: readonly { label: string; href: string; external?: boolean }[];
+}) {
+  return (
+    <div>
+      <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
+        {title}
+      </p>
+      <ul className="mt-4 space-y-2.5">
+        {links.map((link) => (
+          <li key={link.label}>
+            {link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1 text-sm text-slate-700 transition-colors hover:text-slate-950"
+              >
+                {link.label}
+                <ArrowUpRight
+                  className="size-3.5 opacity-35 group-hover:opacity-60"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
+              </a>
+            ) : (
+              <Link
+                href={link.href}
+                className="text-sm text-slate-700 transition-colors hover:text-slate-950"
+              >
+                {link.label}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Footer() {
   const pathname = usePathname();
-  const isBookPage = pathname === "/book";
+  const showContactCta =
+    pathname !== "/book" && pathname !== "/" && pathname !== "/retail";
 
   return (
-    <footer id="contact" className="bg-slate-50 pt-24 pb-12 border-t border-slate-200 scroll-mt-20 relative">
-      <div className="max-w-4xl mx-auto px-6 text-center relative">
-        {!isBookPage && (
-          <>
-            <div className="inline-flex items-center gap-2.5 px-3 py-1 mb-8 text-xs font-medium text-white bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 border border-white/10 rounded-full shadow-lg shadow-slate-200/50">
-              <span className="relative flex h-2 w-2" aria-hidden>
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <span className="tracking-wide uppercase text-[10px] font-bold">
-                Get in Touch
-              </span>
+    <footer id="contact" className="w-full border-t border-slate-200 bg-[#F8F9FB]">
+      <div className={`${SITE_FRAME_CLASS} px-4 sm:px-6 lg:px-8`}>
+        {showContactCta && (
+          <div className="flex flex-col gap-5 border-b border-slate-200 py-10 sm:flex-row sm:items-center sm:justify-between sm:py-12">
+            <div>
+              <p className="font-display text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+                Ready to hear Cara on your line?
+              </p>
+              <p className="mt-1.5 text-sm text-muted-foreground">
+                Book a call with our team.
+              </p>
             </div>
-            <h2 className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6">
-              Ready to Modernise Your Business?
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-slate-500 mb-10 max-w-2xl mx-auto">
-              Book a technical consultation to see how Cliste can automate your
-              workflow.
-            </p>
             <Link
               href="/book"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white transition-all bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 rounded-xl hover:opacity-90 shadow-xl shadow-slate-200/50 border border-transparent mb-16"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
             >
-              Book Consultation
-            </Link>
-          </>
-        )}
-
-        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {currentYear} Cliste Systems. All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            <a
-              href="https://clistesystems.ie"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-slate-600 transition-colors"
-            >
-              clistesystems.ie
-            </a>
-            <Link href="/privacy" className="hover:text-slate-600 transition-colors">
-              Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-slate-600 transition-colors">
-              Terms
-            </Link>
-            <Link href="#contact" className="hover:text-slate-600 transition-colors">
-              Engineering
+              Book a demo
             </Link>
           </div>
+        )}
+
+        <div className="grid gap-10 py-12 sm:grid-cols-2 sm:py-14 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,2fr)] lg:gap-16 lg:py-16">
+          <div>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3"
+              aria-label="Cliste Systems home"
+            >
+              <ClisteLogo />
+              <span className="font-display text-lg font-semibold tracking-tight text-slate-900">
+                Cliste Systems
+              </span>
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              {CLISTE_TAGLINE}
+            </p>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="mt-4 inline-block text-sm font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-slate-950 hover:decoration-slate-500"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10">
+            <FooterLinks title="Product" links={FOOTER_LINKS.product} />
+            <FooterLinks title="Company" links={FOOTER_LINKS.company} />
+            <FooterLinks title="Legal" links={FOOTER_LINKS.legal} />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 border-t border-slate-200 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {currentYear} Cliste Systems Limited</p>
+          <p className="text-slate-400">GDPR compliant · EU-hosted · Donegal, Ireland</p>
         </div>
       </div>
     </footer>

@@ -19,11 +19,11 @@ export function Capability() {
           </div>
           <h2
             id="capability-heading"
-            className="md:text-5xl text-4xl font-semibold tracking-tight leading-[1.2] pb-2 bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400 mb-6"
+            className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
             Your Phone Line, Fully Automated.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-slate-500">
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
             The phone is essential, but it is also your biggest distraction. We
             turn that distraction into a productivity engine.
           </p>
@@ -34,7 +34,7 @@ export function Capability() {
             <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
               <Icon icon="solar:lock-unlocked-linear" className="text-xl" />
             </div>
-            <h3 className="text-lg font-medium text-slate-900 mb-3">
+            <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-3">
               Unlock Your Staff
             </h3>
             <p className="text-sm text-slate-500 leading-relaxed">
@@ -49,7 +49,7 @@ export function Capability() {
             <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
               <Icon icon="solar:stop-circle-linear" className="text-xl" />
             </div>
-            <h3 className="text-lg font-medium text-slate-900 mb-3">
+            <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-3">
               End the Repetition
             </h3>
             <p className="text-sm text-slate-500 leading-relaxed">
@@ -63,12 +63,12 @@ export function Capability() {
             <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
               <Icon icon="solar:clock-circle-linear" className="text-xl" />
             </div>
-            <h3 className="text-lg font-medium text-slate-900 mb-3">
+            <h3 className="font-display text-lg font-semibold tracking-tight text-slate-900 mb-3">
               24/7 Reliability
             </h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               Your AI agent never gets sick, never takes a lunch break, and never
-              misses a lead—ensuring your business is reachable even when your
+              misses a lead, ensuring your business is reachable even when your
               doors are closed.
             </p>
           </article>
