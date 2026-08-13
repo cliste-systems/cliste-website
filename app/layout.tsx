@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import { CLISTE_META_DESCRIPTION } from "@/lib/site-copy";
+import { getSiteUrl } from "@/lib/site-url";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -31,7 +32,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clistesystems.ie";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
