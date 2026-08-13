@@ -19,6 +19,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/salon", destination: "/retail/salon", permanent: true },
       { source: "/barber", destination: "/retail/barber", permanent: true },
+      { source: "/privacy", destination: "/legal/privacy", permanent: true },
+      { source: "/terms", destination: "/legal/terms", permanent: true },
     ];
   },
 };
