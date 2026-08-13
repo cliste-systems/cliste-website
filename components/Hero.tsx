@@ -249,11 +249,11 @@ export function Hero() {
                   id="hero-heading"
                   className="hero-fade hero-fade-d3 font-display text-6xl font-semibold leading-[1.05] tracking-tight text-balance bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 sm:text-7xl lg:text-[7.5rem] pb-1.5"
                 >
-                  Phone? Sorted.
+                  Your phone, always answered.
                 </h1>
                 <p className="hero-fade hero-fade-d4 mt-6 max-w-3xl text-2xl font-normal leading-snug tracking-tight text-neutral-800 sm:mt-8 lg:text-3xl">
-                  AI that sounds like it&apos;s from down the road. Answers the
-                  phone, handles the conversation, gets the next step done.
+                  Cara answers your business phone when you can&apos;t. She sounds
+                  like a real person, and she never misses a call.
                 </p>
                 <div className="hero-fade hero-fade-d5 mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:w-auto sm:flex-row">
                   <Link
