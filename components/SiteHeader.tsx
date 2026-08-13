@@ -178,7 +178,7 @@ export function SiteHeader({
           <Link
             href="/"
             className={`${fadeClass(animated, "hero-fade-d1")} flex shrink-0 cursor-pointer items-center`}
-            aria-label="Cliste Systems home"
+            aria-label="Hello Cara home"
           >
             <ClisteLogo />
           </Link>
@@ -241,7 +241,7 @@ export function SiteHeader({
               <Link
                 href="/"
                 className="flex cursor-pointer items-center"
-                aria-label="Cliste Systems home"
+                aria-label="Hello Cara home"
                 onClick={() => setMenuOpen(false)}
               >
                 <ClisteLogo />

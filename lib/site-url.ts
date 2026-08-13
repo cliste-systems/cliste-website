@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://clistesystems.ie";
+const DEFAULT_SITE_URL = "https://hellocara.ie";
 
 /** Canonical site origin; empty env vars fall back to production URL. */
 export function getSiteUrl(): string {

@@ -5,7 +5,7 @@ import { TermsDocument } from "@/content/legal/terms-document";
 
 export const metadata: Metadata = {
   title: "Terms of service",
-  description: `Terms governing use of the Cliste platform operated by ${CLISTE_COMPANY.legalName}.`,
+  description: `Terms governing use of ${CLISTE_COMPANY.productName} operated by ${CLISTE_COMPANY.legalName}.`,
 };
 
 export default function TermsPage() {

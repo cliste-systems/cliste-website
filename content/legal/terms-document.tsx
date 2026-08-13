@@ -9,11 +9,13 @@ import { CLISTE_COMPANY, companyRegistrationLine } from "@/lib/company-details";
 
 
 export function TermsDocument() {
+  const product = CLISTE_COMPANY.productName;
+
   return (
     <>
       <LegalPageHeader
         title="Terms of service"
-        description={`These terms govern your business use of the Cliste platform operated by ${CLISTE_COMPANY.legalName}, registered in Ireland.`}
+        description={`These terms govern your business use of ${product} operated by ${CLISTE_COMPANY.legalName}, registered in Ireland.`}
       />
 
       <p className="text-[15px] leading-relaxed text-slate-700">
@@ -22,7 +24,7 @@ export function TermsDocument() {
 
       <LegalSection title="1. The service">
         <p>
-          Cliste provides a SaaS platform including an AI voice agent for inbound
+          {product} provides a SaaS platform including an AI voice agent for inbound
           calls, a dashboard (calls, Action Inbox, contacts, routing, agent
           setup), and optional SMS/email notifications. Platform subscription
           and usage are billed via Stripe Billing. We may add or change features
@@ -62,7 +64,7 @@ export function TermsDocument() {
             research is welcome where coordinated with us).
           </li>
           <li>
-            Send unsolicited marketing SMS or email through Cliste. Transactional
+            Send unsolicited marketing SMS or email through {product}. Transactional
             alerts you configure (e.g. Action Inbox) are permitted; bulk marketing
             is not.
           </li>
@@ -72,7 +74,7 @@ export function TermsDocument() {
       <LegalSection title="5. Customer and caller data">
         <p>
           You are the data controller for your callers&rsquo; and contacts&rsquo;
-          data. Cliste processes that data as processor — see our{" "}
+          data. {CLISTE_COMPANY.legalName} processes that data as processor — see our{" "}
           <LegalInlineLink href="/legal/privacy">privacy notice</LegalInlineLink>{" "}
           and <LegalInlineLink href="/legal/dpa">DPA</LegalInlineLink>.
         </p>
@@ -98,14 +100,14 @@ export function TermsDocument() {
 
       <LegalSection title="8. Intellectual property">
         <p>
-          Cliste owns platform IP. You own your business data and grant us rights
+          {CLISTE_COMPANY.legalName} owns platform IP. You own your business data and grant us rights
           needed to operate the service for you.
         </p>
       </LegalSection>
 
       <LegalSection title="9. Liability">
         <p>
-          To the extent permitted by Irish law, Cliste&rsquo;s aggregate liability
+          To the extent permitted by Irish law, {CLISTE_COMPANY.legalName}&rsquo;s aggregate liability
           in any 12-month period is capped at fees paid in that period. We exclude
           indirect or consequential loss except where law does not allow exclusion.
         </p>

@@ -22,7 +22,7 @@ export function Technology() {
             id="technology-heading"
             className="md:text-5xl text-4xl font-display font-semibold tracking-tight leading-[1.28] pb-2.5 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 mb-6"
           >
-            Built on &quot;Cliste Core.&quot;
+            Built on &quot;Hello Cara Core.&quot;
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
             We don&apos;t just wrap generic APIs. We engineered a proprietary

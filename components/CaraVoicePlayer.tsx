@@ -126,10 +126,10 @@ export function CaraVoicePlayer() {
               Cara
             </h3>
             <p className="mt-1 text-xs text-slate-600 sm:mt-2 sm:text-sm">
-              Cliste&rsquo;s Irish AI voice agent
+              Hello Cara&rsquo;s Irish AI voice agent
             </p>
             <blockquote className="mt-2.5 max-w-sm border-l-2 border-slate-200/90 pl-3 font-display text-[13px] leading-relaxed text-slate-800 sm:mt-6 sm:pl-5 sm:text-[15px] lg:mt-8 lg:text-base">
-              &ldquo;Hiya, you&rsquo;re through to Cliste. I&rsquo;m Cara, your
+              &ldquo;Hiya, you&rsquo;re through to Hello Cara. I&rsquo;m Cara, your
               AI receptionist. How can I help?&rdquo;
             </blockquote>
         </div>

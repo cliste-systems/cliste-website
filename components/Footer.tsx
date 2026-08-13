@@ -5,10 +5,12 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { ClisteLogo } from "@/components/ClisteLogo";
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
+import { CLISTE_COMPANY } from "@/lib/company-details";
 import { CLISTE_TAGLINE } from "@/lib/site-copy";
+import { APP_AUTHENTICATE_URL } from "@/lib/site-auth";
 
 const currentYear = new Date().getFullYear();
-const CONTACT_EMAIL = "brendan@clistesystems.ie";
+const CONTACT_EMAIL = CLISTE_COMPANY.helloEmail;
 
 const FOOTER_LINKS = {
   product: [
@@ -18,7 +20,7 @@ const FOOTER_LINKS = {
   ],
   company: [
     { label: "Contact", href: "/book" },
-    { label: "Log in", href: "https://app.clistesystems.ie/authenticate", external: true },
+    { label: "Log in", href: APP_AUTHENTICATE_URL, external: true },
   ],
   legal: [
     { label: "Privacy", href: "/legal/privacy" },
@@ -105,11 +107,11 @@ export function Footer() {
             <Link
               href="/"
               className="inline-flex items-center gap-3"
-              aria-label="Cliste Systems home"
+              aria-label="Hello Cara home"
             >
               <ClisteLogo />
               <span className="font-display text-lg font-semibold tracking-tight text-slate-900">
-                Cliste Systems
+                Hello Cara
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -131,7 +133,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-slate-200 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {currentYear} Cliste Systems Limited</p>
+          <p>© {currentYear} {CLISTE_COMPANY.legalName}</p>
           <p className="text-slate-400">GDPR compliant · EU-hosted · Donegal, Ireland</p>
         </div>
       </div>

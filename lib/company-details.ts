@@ -1,13 +1,16 @@
 /** Cliste Systems Limited company details for public legal documents. */
 
+export const PRODUCT_NAME = "Hello Cara";
+
 export const CLISTE_COMPANY = {
   legalName: "Cliste Systems Limited",
+  productName: PRODUCT_NAME,
   jurisdiction: "Ireland",
   croNumber: process.env.CLISTE_CRO_NUMBER?.trim() || null,
   registeredOffice: process.env.CLISTE_REGISTERED_OFFICE?.trim() || null,
-  privacyEmail: "privacy@clistesystems.ie",
-  supportEmail: "support@clistesystems.ie",
-  helloEmail: "hello@clistesystems.ie",
+  privacyEmail: "privacy@hellocara.ie",
+  supportEmail: "support@hellocara.ie",
+  helloEmail: "hello@hellocara.ie",
 } as const;
 
 export function companyRegistrationLine(): string {

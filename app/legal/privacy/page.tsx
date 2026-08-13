@@ -5,7 +5,7 @@ import { PrivacyNoticeDocument } from "@/content/legal/privacy-document";
 
 export const metadata: Metadata = {
   title: "Privacy notice",
-  description: `How ${CLISTE_COMPANY.legalName} processes business and caller personal data for the AI voice inbox platform.`,
+  description: `How ${CLISTE_COMPANY.legalName} processes business and caller personal data for the ${CLISTE_COMPANY.productName} AI voice inbox platform.`,
 };
 
 export default function PrivacyPage() {

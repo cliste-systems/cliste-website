@@ -5,7 +5,8 @@ import { LegalPathProvider } from "@/components/legal/legal-path-context";
 import { PublicLegalTabs } from "@/components/legal/PublicLegalTabs";
 import { LegalContentTransition } from "@/components/legal/LegalContentTransition";
 import { LoginLink } from "@/components/LoginLink";
-import { companyRegistrationLine } from "@/lib/company-details";
+import { CLISTE_COMPANY, companyRegistrationLine } from "@/lib/company-details";
+import { APP_ORIGIN } from "@/lib/site-auth";
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
 
 type PublicLegalShellProps = {
@@ -20,11 +21,11 @@ export function PublicLegalShell({ children }: PublicLegalShellProps) {
           <Link
             href="/"
             className="flex min-w-0 items-center gap-3 rounded-lg transition-opacity hover:opacity-80"
-            aria-label="Cliste Systems home"
+            aria-label="Hello Cara home"
           >
             <ClisteLogo />
             <span className="truncate font-display text-lg font-semibold tracking-tight text-slate-900">
-              Cliste Systems
+              Hello Cara
             </span>
           </Link>
           <LoginLink className="inline-flex h-10 shrink-0 items-center rounded-full bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800">
@@ -48,23 +49,23 @@ export function PublicLegalShell({ children }: PublicLegalShellProps) {
           <p>
             {companyRegistrationLine()} ·{" "}
             <a
-              href="mailto:hello@clistesystems.ie"
-              className="font-medium text-slate-700 underline-offset-2 hover:underline"
-            >
-              hello@clistesystems.ie
-            </a>{" "}
-            ·{" "}
-            <a
-              href="mailto:privacy@clistesystems.ie"
-              className="font-medium text-slate-700 underline-offset-2 hover:underline"
-            >
-              privacy@clistesystems.ie
+            href={`mailto:${CLISTE_COMPANY.helloEmail}`}
+            className="font-medium text-slate-700 underline-offset-2 hover:underline"
+          >
+            {CLISTE_COMPANY.helloEmail}
+          </a>{" "}
+          ·{" "}
+          <a
+            href={`mailto:${CLISTE_COMPANY.privacyEmail}`}
+            className="font-medium text-slate-700 underline-offset-2 hover:underline"
+          >
+            {CLISTE_COMPANY.privacyEmail}
             </a>
           </p>
           <p>
             Signed in? Manage GDPR requests in your{" "}
             <a
-              href="https://app.clistesystems.ie/dashboard/legal/data-requests"
+              href={`${APP_ORIGIN}/dashboard/legal/data-requests`}
               className="font-medium text-slate-700 underline-offset-2 hover:underline"
             >
               dashboard Legal &amp; privacy

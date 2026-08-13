@@ -1,7 +1,7 @@
-/** Primary Cliste company tagline */
+/** Primary Hello Cara product tagline */
 export const CLISTE_TAGLINE =
-  "The new era of communication for Irish business." as const;
+  "Ireland's AI voice receptionist for local business." as const;
 
 /** Default meta / Open Graph description */
 export const CLISTE_META_DESCRIPTION =
-  "The new era of communication for Irish business. AI voice agents engineered in Donegal." as const;
+  "Hello Cara is Ireland's AI voice receptionist — engineered in Donegal for Irish salons, barbers, and local businesses." as const;

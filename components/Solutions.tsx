@@ -4,7 +4,7 @@ import { Icon } from "./Icon";
 const solutions = [
   {
     icon: "solar:scissors-square-linear",
-    title: "Cliste Salon",
+    title: "Hello Cara Salon",
     description:
       "Irish voice agents for salon phones. Enquiries, hours, callbacks, and clear follow-ups.",
     cta: "Explore Salon",
@@ -13,7 +13,7 @@ const solutions = [
   },
   {
     icon: "solar:user-id-linear",
-    title: "Cliste Barber",
+    title: "Hello Cara Barber",
     description:
       "Voice agents for high-volume barbershop lines. Built for speed and busy days.",
     cta: "Explore Barber",
@@ -22,7 +22,7 @@ const solutions = [
   },
   {
     icon: "solar:stethoscope-linear",
-    title: "Cliste Clinic",
+    title: "Hello Cara Clinic",
     description:
       "For MedSpas & Physios. Engineered for triage protocols with strict privacy and data controls.",
     cta: "Explore Clinic",
@@ -55,7 +55,7 @@ export function Solutions() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
             <span className="tracking-wide uppercase text-[10px] font-bold">
-              The Cliste Suite
+              The Hello Cara Suite
             </span>
           </div>
           <h2
@@ -65,7 +65,7 @@ export function Solutions() {
             Custom-Built for Your Workflow.
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-            Every Cliste agent is configured to your rules, your tone, and your
+            Every Hello Cara agent is configured to your rules, your tone, and your
             call flows.
           </p>
         </div>

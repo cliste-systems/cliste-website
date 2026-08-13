@@ -6,6 +6,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
+import { CLISTE_COMPANY } from "@/lib/company-details";
 import { CLISTE_META_DESCRIPTION } from "@/lib/site-copy";
 import { getSiteUrl } from "@/lib/site-url";
 
@@ -37,8 +38,8 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Cliste Systems | AI Voice Engineers",
-    template: "%s | Cliste Systems",
+    default: "Hello Cara | AI Voice Receptionist",
+    template: "%s | Hello Cara",
   },
   description: CLISTE_META_DESCRIPTION,
   icons: {
@@ -54,31 +55,32 @@ export const metadata: Metadata = {
     "Ireland",
     "voice automation",
     "receptionist AI",
-    "Cliste Systems",
+    "Hello Cara",
+    "Cliste Systems Limited",
   ],
-  authors: [{ name: "Cliste Systems", url: siteUrl }],
-  creator: "Cliste Systems",
-  publisher: "Cliste Systems",
+  authors: [{ name: CLISTE_COMPANY.productName, url: siteUrl }],
+  creator: CLISTE_COMPANY.legalName,
+  publisher: CLISTE_COMPANY.legalName,
   formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     type: "website",
     locale: "en_IE",
     url: siteUrl,
-    siteName: "Cliste Systems",
-    title: "Cliste Systems | AI Voice Engineers",
+    siteName: CLISTE_COMPANY.productName,
+    title: "Hello Cara | AI Voice Receptionist",
     description: CLISTE_META_DESCRIPTION,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cliste Systems - AI Voice Engineers",
+        alt: "Hello Cara - AI Voice Receptionist",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cliste Systems | AI Voice Engineers",
+    title: "Hello Cara | AI Voice Receptionist",
     description: CLISTE_META_DESCRIPTION,
   },
   robots: {
@@ -103,10 +105,11 @@ function JsonLd() {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Cliste Systems",
+    name: CLISTE_COMPANY.productName,
+    legalName: CLISTE_COMPANY.legalName,
     url: siteUrl,
     description: CLISTE_META_DESCRIPTION,
-    email: "brendan@clistesystems.ie",
+    email: CLISTE_COMPANY.helloEmail,
     address: {
       "@type": "PostalAddress",
       addressRegion: "Donegal",
@@ -114,7 +117,7 @@ function JsonLd() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      email: "brendan@clistesystems.ie",
+      email: CLISTE_COMPANY.helloEmail,
       contactType: "sales",
       areaServed: "IE",
     },
@@ -123,7 +126,7 @@ function JsonLd() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Cliste Systems",
+    name: CLISTE_COMPANY.productName,
     url: siteUrl,
     description: CLISTE_META_DESCRIPTION,
     publisher: { "@id": `${siteUrl}#organization` },
