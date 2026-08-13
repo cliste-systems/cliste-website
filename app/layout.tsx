@@ -41,6 +41,10 @@ export const metadata: Metadata = {
     template: "%s | Cliste Systems",
   },
   description: CLISTE_META_DESCRIPTION,
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   keywords: [
     "AI voice",
     "voice AI",
