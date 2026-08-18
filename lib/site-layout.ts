@@ -22,7 +22,7 @@ export const NICHE_PAGE_FRAME_CLASS =
 
 /** Full-viewport hero shell (mobile + desktop niche pages) */
 export const HERO_VIEWPORT_SHELL_CLASS =
-  "bg-[#F8F9FB] flex min-h-[100dvh] flex-col lg:min-h-[100svh]" as const;
+  "bg-[#F8F9FB] flex min-h-[100svh] flex-col lg:min-h-[100svh]" as const;
 
 /** Inner frame under the viewport shell — card grows on mobile */
 export const HERO_PAGE_FRAME_INNER_CLASS =
@@ -30,7 +30,7 @@ export const HERO_PAGE_FRAME_INNER_CLASS =
 
 /** Rounded hero card — retail-style inset card filling mobile viewport */
 export const HERO_NICHE_CARD_CLASS =
-  "hero-bg-reveal relative flex w-full min-h-[calc(100dvh-2rem)] flex-1 flex-col overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:min-h-[calc(100dvh-3rem)] sm:rounded-[2rem] lg:min-h-0 lg:flex-1 lg:rounded-[2.5rem]" as const;
+  "hero-bg-reveal relative flex w-full h-[calc(100svh-2rem)] max-h-[calc(100svh-2rem)] flex-col overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:h-[calc(100svh-3rem)] sm:max-h-[calc(100svh-3rem)] sm:rounded-[2rem] lg:h-auto lg:max-h-none lg:min-h-0 lg:flex-1 lg:rounded-[2.5rem]" as const;
 
 export const HERO_NICHE_CARD_INNER_CLASS =
   "relative z-10 flex flex-1 flex-col px-6 py-8 sm:px-10 sm:py-12 lg:min-h-0 lg:flex-1 lg:px-20 lg:py-14" as const;
