@@ -81,7 +81,7 @@ export function LegalTable({ headers, rows }: LegalTableProps) {
           >
             <dl className="space-y-3">
               {headers.map((header, cellIndex) => (
-                <div key={header}>
+                <div key={`${rowIndex}-${cellIndex}`}>
                   <dt className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
                     {header}
                   </dt>
@@ -126,7 +126,7 @@ export function LegalTable({ headers, rows }: LegalTableProps) {
                 >
                   {cells.map((cell, cellIndex) => (
                     <td
-                      key={cellIndex}
+                      key={`${rowIndex}-${cellIndex}`}
                       className="px-4 py-3 align-top text-slate-700 first:min-w-[9rem] [&_code]:rounded [&_code]:bg-slate-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs"
                     >
                       {cell}

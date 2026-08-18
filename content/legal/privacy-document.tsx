@@ -69,11 +69,11 @@ export function PrivacyNoticeDocument() {
             ],
             [
               "Voice call data",
-              <>
+              <span>
                 Caller number, duration, redacted transcript, AI summary. Audio
                 is <strong>not retained</strong> by {CLISTE_COMPANY.legalName}; it is processed live
                 by speech vendors and discarded.
-              </>,
+              </span>,
               `Calls to your ${product} number`,
             ],
             [
@@ -88,10 +88,10 @@ export function PrivacyNoticeDocument() {
             ],
             [
               "Platform billing",
-              <>
+              <span>
                 Card data is handled by <strong>Stripe</strong>; we store
                 subscription and customer ids, not full card numbers.
-              </>,
+              </span>,
               "Stripe Billing / Customer Portal",
             ],
           ]}

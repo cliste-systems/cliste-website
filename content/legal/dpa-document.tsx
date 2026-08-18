@@ -254,14 +254,12 @@ export function DpaDocument() {
             ["Processor", `${CLISTE_COMPANY.legalName}, Ireland`],
             [
               "Processor contact",
-              <>
-                <a
-                  href={`mailto:${CLISTE_COMPANY.privacyEmail}`}
-                  className="font-medium text-emerald-800 underline-offset-2 hover:underline"
-                >
-                  {CLISTE_COMPANY.privacyEmail}
-                </a>
-              </>,
+              <a
+                href={`mailto:${CLISTE_COMPANY.privacyEmail}`}
+                className="font-medium text-emerald-800 underline-offset-2 hover:underline"
+              >
+                {CLISTE_COMPANY.privacyEmail}
+              </a>,
             ],
             ["Frequency", "Continuous, for the duration of the subscription"],
             [
