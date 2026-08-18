@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Book a Free Demo",
   description:
-    "Schedule a 30-minute call with Hello Cara. See how our Irish voice agents can automate your phone line.",
+    "Schedule a 30-minute call with HelloCara. See how our Irish voice agents can automate your phone line.",
 };
 
 export default function BookPage() {

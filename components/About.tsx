@@ -26,7 +26,7 @@ export function About() {
               Ireland&apos;s Dedicated AI Voice Engineers.
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
-              Based in Donegal, Hello Cara is built by Cliste Systems Limited on one core belief:
+              Based in Donegal, HelloCara is built by Cliste Systems Limited on one core belief:
               Local businesses deserve local technology. We are Ireland&apos;s
               premier team specializing in hyper-realistic Irish voice
               automation.

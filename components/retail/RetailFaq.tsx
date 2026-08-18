@@ -5,7 +5,6 @@ import {
   RETAIL_SECTION_INTRO_GRID,
   RETAIL_SECTION_INTRO_TITLE,
   SECTION_CONTENT_INSET,
-  SECTION_INTRO_DESC,
 } from "@/lib/site-layout";
 import { RetailFaqAccordion } from "./RetailFaqAccordion";
 
@@ -23,7 +22,6 @@ export function RetailFaq() {
               {RETAIL_FAQ_INTRO.titleGradient}
             </span>
           </h2>
-          <p className={SECTION_INTRO_DESC}>{RETAIL_FAQ_INTRO.desc}</p>
         </div>
 
         <div className={SECTION_CONTENT_INSET}>

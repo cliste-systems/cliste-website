@@ -111,7 +111,7 @@ export function CaraDemo() {
               </h2>
             </div>
             <p className={SECTION_INTRO_DESC}>
-              Press play. This is Cara introducing herself in her own accent.
+              Press play. This is Cara on your line, in an Irish accent.
               Unedited, unfiltered.
             </p>
           </div>

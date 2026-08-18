@@ -12,7 +12,7 @@ function fmt(ms: number) {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 }
 
-export function CaraVoicePlayer() {
+export function CaraVoicePlayer({ compact = false }: { compact?: boolean }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
@@ -114,6 +114,98 @@ export function CaraVoicePlayer() {
   const progress = duration > 0 ? currentMs / duration : 0;
   const playedBars = Math.floor(progress * BARS);
 
+  const waveform = (
+    <div
+      className={
+        compact
+          ? "mt-0 flex h-8 items-end gap-px sm:h-10 sm:gap-[2px]"
+          : "mt-0 flex h-10 items-end gap-px sm:h-16 sm:gap-[3px] lg:h-20 lg:gap-[4px]"
+      }
+      aria-hidden
+    >
+      {levels.map((v, i) => {
+        const played = i <= playedBars && progress > 0;
+        const h = Math.max(v * 100, 12);
+        return (
+          <span
+            key={i}
+            className="block flex-1 rounded-[2px] transition-colors"
+            style={{
+              height: `${h}%`,
+              backgroundColor: played
+                ? "rgb(52 211 153)"
+                : "rgba(15, 23, 42, 0.12)",
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+
+  const times = (
+    <div className="mt-2 flex items-center justify-between text-[10px] text-slate-500 tabular-nums sm:mt-3 sm:text-[11px]">
+      <span>{fmt(currentMs)}</span>
+      <span>{duration > 0 ? fmt(duration) : "0:00"}</span>
+    </div>
+  );
+
+  const playButton = (
+    <div
+      className={
+        compact
+          ? "flex flex-wrap items-center gap-3"
+          : "mt-2.5 flex flex-wrap items-center gap-3 sm:mt-5 sm:gap-4"
+      }
+    >
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={isPlaying ? "Pause Cara sample" : "Play Cara sample"}
+        className={
+          compact
+            ? "flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white shadow-md transition-transform hover:bg-slate-500 active:scale-95"
+            : "flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white shadow-md transition-transform hover:bg-slate-500 active:scale-95 sm:h-16 sm:w-16"
+        }
+      >
+        {isPlaying ? (
+          <Pause className="size-5 sm:size-6" strokeWidth={2.5} />
+        ) : (
+          <Play className="ml-0.5 size-5 sm:size-6" strokeWidth={2.5} />
+        )}
+      </button>
+      <div className="min-w-0 leading-tight">
+        <p className="font-display text-[15px] font-semibold tracking-tight text-slate-900">
+          {isPlaying ? "Playing Cara's voice" : "Play Cara's voice"}
+        </p>
+        <p className="mt-0.5 text-[12px] text-slate-500">
+          What you hear is Cara. No effects. No edits.
+        </p>
+      </div>
+    </div>
+  );
+
+  const audioEl = (
+    <audio
+      ref={audioRef}
+      src={SAMPLE_AUDIO_SRC}
+      preload="metadata"
+      className="sr-only"
+    />
+  );
+
+  if (compact) {
+    return (
+      <>
+        <div className="min-w-0">
+          {playButton}
+          <div className="mt-4">{waveform}</div>
+          {times}
+        </div>
+        {audioEl}
+      </>
+    );
+  }
+
   return (
     <>
       <div className="min-w-0 space-y-0">
@@ -126,73 +218,21 @@ export function CaraVoicePlayer() {
               Cara
             </h3>
             <p className="mt-1 text-xs text-slate-600 sm:mt-2 sm:text-sm">
-              Hello Cara&rsquo;s Irish AI voice agent
+              HelloCara&rsquo;s Irish AI voice agent
             </p>
             <blockquote className="mt-2.5 max-w-sm border-l-2 border-slate-200/90 pl-3 font-display text-[13px] leading-relaxed text-slate-800 sm:mt-6 sm:pl-5 sm:text-[15px] lg:mt-8 lg:text-base">
-              &ldquo;Hiya, you&rsquo;re through to Hello Cara. I&rsquo;m Cara, your
+              &ldquo;Hiya, you&rsquo;re through to HelloCara. I&rsquo;m Cara, your
               AI receptionist. How can I help?&rdquo;
             </blockquote>
         </div>
 
         <div className="min-w-0 mt-0">
-          <div
-            className="mt-0 flex h-10 items-end gap-px sm:h-16 sm:gap-[3px] lg:h-20 lg:gap-[4px]"
-            aria-hidden
-          >
-            {levels.map((v, i) => {
-              const played = i <= playedBars && progress > 0;
-              const h = Math.max(v * 100, 12);
-              return (
-                <span
-                  key={i}
-                  className="block flex-1 rounded-[2px] transition-colors"
-                  style={{
-                    height: `${h}%`,
-                    backgroundColor: played
-                      ? "rgb(52 211 153)"
-                      : "rgba(15, 23, 42, 0.12)",
-                  }}
-                />
-              );
-            })}
-          </div>
-
-          <div className="mt-2 flex items-center justify-between text-[10px] text-slate-500 tabular-nums sm:mt-3 sm:text-[11px]">
-            <span>{fmt(currentMs)}</span>
-            <span>{duration > 0 ? fmt(duration) : "0:00"}</span>
-          </div>
-
-          <div className="mt-2.5 flex flex-wrap items-center gap-3 sm:mt-5 sm:gap-4 sm:gap-5">
-            <button
-              type="button"
-              onClick={toggle}
-              aria-label={isPlaying ? "Pause Cara sample" : "Play Cara sample"}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-600 text-white shadow-md transition-transform hover:bg-slate-500 active:scale-95 sm:h-16 sm:w-16"
-            >
-              {isPlaying ? (
-                <Pause className="size-5 sm:size-6" strokeWidth={2.5} />
-              ) : (
-                <Play className="ml-0.5 size-5 sm:size-6" strokeWidth={2.5} />
-              )}
-            </button>
-            <div className="min-w-0 leading-tight">
-              <p className="font-display text-[15px] font-semibold tracking-tight text-slate-900">
-                {isPlaying ? "Playing her voice" : "Play her voice"}
-              </p>
-              <p className="mt-0.5 text-[12px] text-slate-500">
-                What you hear is her. No effects. No edits.
-              </p>
-            </div>
-          </div>
+          {waveform}
+          {times}
+          {playButton}
         </div>
       </div>
-
-      <audio
-        ref={audioRef}
-        src={SAMPLE_AUDIO_SRC}
-        preload="metadata"
-        className="sr-only"
-      />
+      {audioEl}
     </>
   );
 }

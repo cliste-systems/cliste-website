@@ -186,16 +186,22 @@ export function DpaDocument() {
 
       <LegalSection title="7. Sub-processors">
         <p>
-          The current list of sub-processors is published at{" "}
+          A <strong>category summary</strong> is published at{" "}
           <LegalInlineLink href="/legal/sub-processors">
             /legal/sub-processors
           </LegalInlineLink>
-          . The Controller provides general written authorisation for {CLISTE_COMPANY.legalName} to
-          engage these and future sub-processors. {CLISTE_COMPANY.legalName} will give at least{" "}
-          <strong>30 days&apos; notice</strong> of any new or replaced
-          sub-processor by updating that page and notifying the Controller&apos;s
-          primary admin user by email. The Controller may object on reasonable
-          grounds within that notice period; if {CLISTE_COMPANY.legalName} cannot accommodate the
+          . The <strong>named</strong> sub-processor annex for Controllers is in the
+          customer dashboard (
+          <LegalInlineLink href="/dashboard/legal/sub-processors">
+            Legal &amp; privacy → Sub-processors
+          </LegalInlineLink>
+          ) and in <strong>Annex III</strong> below. The Controller provides general
+          written authorisation for {CLISTE_COMPANY.legalName} to engage these and
+          future sub-processors. {CLISTE_COMPANY.legalName} will give at least{" "}
+          <strong>30 days&apos; notice</strong> of any new or replaced sub-processor
+          by updating the dashboard annex and notifying the Controller&apos;s primary
+          admin user by email. The Controller may object on reasonable grounds within
+          that notice period; if {CLISTE_COMPANY.legalName} cannot accommodate the
           objection, the Controller may terminate the agreement.
         </p>
       </LegalSection>
@@ -300,16 +306,16 @@ export function DpaDocument() {
 
       <LegalSection title="Annex III — Sub-processors and locations">
         <p>
-          The authoritative named list with country, transfer mechanism and
-          purpose is in the customer dashboard (
+          The living named list (vendor, country, transfer mechanism, and purpose) is
+          maintained in the customer dashboard (
           <LegalInlineLink href="/dashboard/legal/sub-processors">
             Legal &amp; privacy → Sub-processors
           </LegalInlineLink>
-          ) and at{" "}
+          ). The public site publishes a <strong>category summary only</strong> at{" "}
           <LegalInlineLink href="/legal/sub-processors">
             /legal/sub-processors
-          </LegalInlineLink>{" "}
-          (category summary). Snapshot as of the date this DPA is accepted:
+          </LegalInlineLink>
+          . Snapshot as of the date this DPA is accepted:
         </p>
         <LegalTable
           headers={["Sub-processor", "Location", "Transfer mechanism"]}

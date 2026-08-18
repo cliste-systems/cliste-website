@@ -1,4 +1,4 @@
-/** Industry cards for platform UI. Header nav uses `CLISTE_STUDIO_INDUSTRY_LINKS` only. */
+/** Industry cards for platform UI. Header nav uses `PRODUCTS_NAV`. */
 
 export type IndustryCard = {
   label: string;
@@ -83,18 +83,44 @@ export const INDUSTRY_CARDS: readonly IndustryCard[] = [
 
 export const INDUSTRIES: string[] = INDUSTRY_CARDS.map((c) => c.label);
 
-/** Header nav: Services dropdown — niche landing pages */
-export const NICHE_NAV_LINKS: readonly {
+export const HOW_CARA_WORKS_HREF = "/how-cara-works" as const;
+
+export const HOW_CARA_IS_BUILT_HREF = "/how-cara-is-built" as const;
+
+export const HOW_CARA_WORKS_LINK = {
+  label: "How Cara works",
+  href: HOW_CARA_WORKS_HREF,
+} as const;
+
+export const HOW_CARA_IS_BUILT_LINK = {
+  label: "How Cara is built",
+  href: HOW_CARA_IS_BUILT_HREF,
+} as const;
+
+export type HeaderNavItem = {
   label: string;
-  navLabel: string;
   href: string;
-}[] = [
-  {
-    label: "Retail",
-    navLabel: "Cara for retail",
-    href: "/retail",
-  },
-] as const;
+};
+
+export type HeaderNavMenu = {
+  trigger: string;
+  items: readonly HeaderNavItem[];
+};
+
+/** Mobile menu: Cara section (desktop uses separate top-level links) */
+export const CARA_NAV: HeaderNavMenu = {
+  trigger: "Cara",
+  items: [
+    { label: HOW_CARA_WORKS_LINK.label, href: HOW_CARA_WORKS_LINK.href },
+    { label: HOW_CARA_IS_BUILT_LINK.label, href: HOW_CARA_IS_BUILT_LINK.href },
+  ],
+};
+
+/** Header nav: Products dropdown */
+export const PRODUCTS_NAV: HeaderNavMenu = {
+  trigger: "Products",
+  items: [{ label: "Cara for Retail", href: "/retail" }],
+};
 
 /** Header nav: Industries → Cara for retail → these verticals only */
 export const CLISTE_STUDIO_INDUSTRY_LINKS: readonly {

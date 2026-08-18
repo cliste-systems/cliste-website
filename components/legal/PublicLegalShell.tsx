@@ -17,29 +17,29 @@ export function PublicLegalShell({ children }: PublicLegalShellProps) {
   return (
     <div className="min-h-screen bg-[#F8F9FB] text-slate-900 antialiased">
       <div className={`${SITE_FRAME_CLASS} px-4 sm:px-6 lg:px-8`}>
-        <header className="flex items-center justify-between gap-4 border-b border-slate-200 py-5 sm:py-6">
+        <header className="flex items-center justify-between gap-3 border-b border-slate-200 py-4 sm:gap-4 sm:py-6">
           <Link
             href="/"
-            className="flex min-w-0 items-center gap-3 rounded-lg transition-opacity hover:opacity-80"
-            aria-label="Hello Cara home"
+            className="flex min-w-0 shrink items-center gap-3 rounded-lg transition-opacity hover:opacity-80"
+            aria-label="HelloCara home"
           >
             <ClisteLogo />
-            <span className="truncate font-display text-lg font-semibold tracking-tight text-slate-900">
-              Hello Cara
+            <span className="hidden truncate font-display text-lg font-semibold tracking-tight text-slate-900 sm:inline">
+              HelloCara
             </span>
           </Link>
-          <LoginLink className="inline-flex h-10 shrink-0 items-center rounded-full bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800">
+          <LoginLink className="inline-flex h-9 shrink-0 items-center rounded-full bg-slate-900 px-4 text-sm font-medium text-white transition-colors hover:bg-slate-800 sm:h-10 sm:px-5">
             Log in
           </LoginLink>
         </header>
 
-        <div className="py-5 sm:py-6">
+        <div className="py-4 sm:py-6">
           <PublicLegalTabs />
         </div>
 
         <LegalPathProvider>
           <main className="pb-4">
-            <div className="rounded-[1.5rem] border border-slate-200/90 bg-white px-6 py-8 shadow-[0_1px_0_rgba(15,23,42,0.04)] sm:rounded-[2rem] sm:px-10 sm:py-10 lg:px-12 lg:py-12">
+            <div className="rounded-[1.5rem] border border-slate-200/90 bg-white px-4 py-6 shadow-[0_1px_0_rgba(15,23,42,0.04)] sm:rounded-[2rem] sm:px-10 sm:py-10 lg:px-12 lg:py-12">
               <LegalContentTransition>{children}</LegalContentTransition>
             </div>
           </main>

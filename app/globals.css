@@ -439,6 +439,23 @@ html {
   scroll-behavior: auto;
 }
 
+/* Horizontal scroll regions (legal tabs, wide tables on tablet) */
+.legal-scroll-x {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.legal-scroll-x::-webkit-scrollbar {
+  height: 4px;
+}
+
+.legal-scroll-x::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

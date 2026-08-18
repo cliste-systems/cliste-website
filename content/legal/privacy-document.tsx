@@ -17,7 +17,7 @@ export function PrivacyNoticeDocument() {
     <>
       <LegalPageHeader
         title="Privacy notice"
-        description={`How ${CLISTE_COMPANY.legalName} processes personal data when you use ${product} as a business customer, when your team uses the dashboard, and when people call your Hello Cara number.`}
+        description={`How ${CLISTE_COMPANY.legalName} processes personal data when you use ${product} as a business customer, when your team uses the dashboard, and when people call your HelloCara number.`}
       />
 
       <LegalCallout variant="info">
@@ -199,9 +199,18 @@ export function PrivacyNoticeDocument() {
           <LegalInlineLink href="/legal/sub-processors">
             /legal/sub-processors
           </LegalInlineLink>
-          . <strong>Business customers</strong> receive the named vendor annex in
-          the dashboard (Legal &amp; privacy) and in the DPA. We notify you before
-          material additions where required by contract.
+          . We do not publish a full vendor directory on the marketing site.
+          <strong> Business customers</strong> receive the named annex in the
+          dashboard (Legal &amp; privacy) and in the DPA. Others may request the
+          current summary by emailing{" "}
+          <a
+            href={`mailto:${CLISTE_COMPANY.privacyEmail}`}
+            className="font-medium text-emerald-800 underline-offset-2 hover:underline"
+          >
+            {CLISTE_COMPANY.privacyEmail}
+          </a>
+          . We notify business customers before material additions where required by
+          contract.
         </p>
       </LegalSection>
 

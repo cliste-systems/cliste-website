@@ -1,6 +1,6 @@
 /** Cliste Systems Limited company details for public legal documents. */
 
-export const PRODUCT_NAME = "Hello Cara";
+export const PRODUCT_NAME = "HelloCara";
 
 export const CLISTE_COMPANY = {
   legalName: "Cliste Systems Limited",

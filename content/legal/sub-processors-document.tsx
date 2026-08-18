@@ -36,34 +36,55 @@ export function SubProcessorsDocument({
         description={
           isCustomer
             ? `Named third parties we use to deliver ${product}. This annex forms part of our DPA with your business.`
-            : `How ${product} uses third parties to run the platform. Categories below; business customers receive the named list in their dashboard.`
+            : `How ${product} uses third parties to run the platform. This page lists categories only — not a full vendor directory.`
         }
       />
 
       <LegalSection title="Where your data lives">
-        <p>
-          <strong>Primary business and caller data</strong> (database records,
-          transcripts, contacts, action-inbox items) is stored in the{" "}
-          <strong>EEA</strong> — Supabase on AWS <strong>eu-west-1 (Ireland)</strong>.
-          The dashboard APIs run on Vercel in <strong>dub1 (Dublin)</strong> and the
-          voice worker on <strong>Railway EU West</strong>.
-        </p>
-        <p>
-          <strong>LiveKit Cloud</strong> receives inbound Irish calls on an{" "}
-          <strong>EU SIP endpoint (Frankfurt)</strong> via our Twilio trunk.
-          WebRTC media between the worker and LiveKit still uses global routing
-          until LiveKit <strong>protocol region pinning</strong> is enabled
-          (Scale plan + Support request).
-          Text-to-speech and LLM routing use United States vendors (ElevenLabs,
-          OpenRouter). Transactional email (SendGrid) uses the global API today; EU
-          residency is available when configured. Where processing leaves the EEA we
-          rely on <strong>EU–US Data Privacy Framework</strong> certification
-          where the sub-processor is certified, and the European Commission&apos;s{" "}
-          <strong>Standard Contractual Clauses</strong> (Module 3) elsewhere, plus
-          technical measures documented in our transfer impact assessment: TLS, no
-          voice-audio retention, transcript redaction, and automated retention
-          deletion.
-        </p>
+        {isCustomer ? (
+          <>
+            <p>
+              <strong>Primary business and caller data</strong> (database records,
+              transcripts, contacts, action-inbox items) is stored in the{" "}
+              <strong>EEA</strong> — Supabase on AWS <strong>eu-west-1 (Ireland)</strong>.
+              The dashboard APIs run on Vercel in <strong>dub1 (Dublin)</strong> and the
+              voice worker on <strong>Railway EU West</strong>.
+            </p>
+            <p>
+              <strong>LiveKit Cloud</strong> receives inbound Irish calls on an{" "}
+              <strong>EU SIP endpoint (Frankfurt)</strong> via our Twilio trunk.
+              WebRTC media between the worker and LiveKit still uses global routing
+              until LiveKit <strong>protocol region pinning</strong> is enabled
+              (Scale plan + Support request).
+              Text-to-speech and LLM routing use United States vendors (ElevenLabs,
+              OpenRouter). Transactional email (SendGrid) uses the global API today; EU
+              residency is available when configured. Where processing leaves the EEA we
+              rely on <strong>EU–US Data Privacy Framework</strong> certification
+              where the sub-processor is certified, and the European Commission&apos;s{" "}
+              <strong>Standard Contractual Clauses</strong> (Module 3) elsewhere, plus
+              technical measures documented in our transfer impact assessment: TLS, no
+              voice-audio retention, transcript redaction, and automated retention
+              deletion.
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              <strong>Primary business and caller data</strong> (database records,
+              transcripts, contacts, action-inbox items) is stored in the{" "}
+              <strong>EEA (Ireland)</strong>. Dashboard APIs and the voice worker run
+              in <strong>EU hosting regions</strong> (Ireland / EU West).
+            </p>
+            <p>
+              Inbound phone calls connect through <strong>EU telecom infrastructure</strong>.
+              Real-time speech recognition, text-to-speech, and language models may use
+              <strong> United States providers</strong> under EU–US Data Privacy Framework
+              certification or <strong>Standard Contractual Clauses</strong> (Module 3),
+              with supplementary measures: TLS, no voice-audio retention, transcript
+              redaction, and automated retention deletion.
+            </p>
+          </>
+        )}
       </LegalSection>
 
       <LegalSection title="What we publish (and what we do not)">
@@ -78,16 +99,24 @@ export function SubProcessorsDocument({
           <LegalInlineLink href="/legal/dpa">Data Processing Agreement</LegalInlineLink>.
         </p>
         <p>
+          This public page lists <strong>categories</strong> only. We do not publish
+          a full vendor directory here. To request the current named summary, email{" "}
+          <a
+            href={`mailto:${CLISTE_COMPANY.privacyEmail}`}
+            className="font-medium text-emerald-800 underline-offset-2 hover:underline"
+          >
+            {CLISTE_COMPANY.privacyEmail}
+          </a>
+          .
+        </p>
+        <p>
           For <strong>callers</strong>, your privacy notice should describe{" "}
           <em>categories</em> of recipients (hosting, AI speech services, SMS) —
           you do not need to list vendor product names on your shop window.
         </p>
         <p>
           We do <strong>not</strong> publish proprietary architecture, integration
-          details, or model routing — those are trade secrets. Competitors cannot
-          lawfully avoid naming their own sub-processors in customer contracts
-          either; the public category summary here is for transparency, not a
-          build sheet.
+          details, or model routing — those are trade secrets.
         </p>
       </LegalSection>
 
@@ -104,12 +133,20 @@ export function SubProcessorsDocument({
               ])}
             />
             <p className="text-[12px] text-slate-500">
-              Signed-in business customers: open{" "}
+              <strong>Business customers:</strong> the current named vendor list is in{" "}
               <LegalInlineLink href="/dashboard/legal/sub-processors">
                 Legal &amp; privacy → Sub-processors
               </LegalInlineLink>{" "}
-              for the current named vendor list, or email{" "}
-              <strong>{CLISTE_COMPANY.privacyEmail}</strong>.
+              and in the{" "}
+              <LegalInlineLink href="/legal/dpa">DPA</LegalInlineLink>.{" "}
+              <strong>Others:</strong> email{" "}
+              <a
+                href={`mailto:${CLISTE_COMPANY.privacyEmail}`}
+                className="font-medium text-slate-700 underline-offset-2 hover:underline"
+              >
+                {CLISTE_COMPANY.privacyEmail}
+              </a>{" "}
+              for the current summary.
             </p>
           </LegalSection>
         </>

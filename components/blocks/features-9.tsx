@@ -413,7 +413,7 @@ function CallFlowRow() {
         </h3>
 
         <p className="mt-7 max-w-md text-[16px] leading-[1.6] text-slate-500">
-          Your agent does more than pick up. She runs the conversation and
+          Cara does more than pick up. Cara runs the conversation and
           moves each caller to the right outcome.
         </p>
 

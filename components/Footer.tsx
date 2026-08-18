@@ -15,6 +15,8 @@ const CONTACT_EMAIL = CLISTE_COMPANY.helloEmail;
 const FOOTER_LINKS = {
   product: [
     { label: "Hear Cara", href: "/#cara" },
+    { label: "How Cara works", href: "/how-cara-works" },
+    { label: "How Cara is built", href: "/how-cara-is-built" },
     { label: "Cara for retail", href: "/#cara-retail-heading" },
     { label: "FAQ", href: "/#cara-retail-faq-heading" },
   ],
@@ -78,7 +80,11 @@ function FooterLinks({
 export function Footer() {
   const pathname = usePathname();
   const showContactCta =
-    pathname !== "/book" && pathname !== "/" && pathname !== "/retail";
+    pathname !== "/book" &&
+    pathname !== "/" &&
+    pathname !== "/retail" &&
+    pathname !== "/how-cara-works" &&
+    pathname !== "/how-cara-is-built";
 
   return (
     <footer id="contact" className="w-full border-t border-slate-200 bg-[#F8F9FB]">
@@ -107,11 +113,11 @@ export function Footer() {
             <Link
               href="/"
               className="inline-flex items-center gap-3"
-              aria-label="Hello Cara home"
+              aria-label="HelloCara home"
             >
               <ClisteLogo />
               <span className="font-display text-lg font-semibold tracking-tight text-slate-900">
-                Hello Cara
+                HelloCara
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">

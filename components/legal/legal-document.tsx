@@ -72,40 +72,73 @@ type LegalTableProps = {
 
 export function LegalTable({ headers, rows }: LegalTableProps) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-200/90 bg-white shadow-[0_1px_0_rgba(15,23,42,0.04)]">
-      <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-        <thead>
-          <tr className="border-b border-slate-200 bg-slate-50/90">
-            {headers.map((header) => (
-              <th
-                key={header}
-                scope="col"
-                className="px-4 py-3 text-[11px] font-semibold uppercase tracking-wide text-slate-600"
-              >
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((cells, rowIndex) => (
-            <tr
-              key={rowIndex}
-              className="border-b border-slate-100 last:border-0 even:bg-slate-50/40"
-            >
-              {cells.map((cell, cellIndex) => (
-                <td
-                  key={cellIndex}
-                  className="px-4 py-3 align-top text-slate-700 [&_code]:rounded [&_code]:bg-slate-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs"
-                >
-                  {cell}
-                </td>
+    <>
+      <div className="space-y-3 sm:hidden">
+        {rows.map((cells, rowIndex) => (
+          <div
+            key={rowIndex}
+            className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+          >
+            <dl className="space-y-3">
+              {headers.map((header, cellIndex) => (
+                <div key={header}>
+                  <dt className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                    {header}
+                  </dt>
+                  <dd
+                    className="mt-1 text-sm leading-relaxed text-slate-700 [&_code]:rounded [&_code]:bg-slate-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs"
+                  >
+                    {cells[cellIndex]}
+                  </dd>
+                </div>
               ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+            </dl>
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="legal-scroll-x -mx-4 hidden overflow-x-auto px-4 sm:mx-0 sm:block sm:px-0"
+        tabIndex={0}
+        role="region"
+        aria-label="Scrollable table"
+      >
+        <div className="rounded-2xl border border-slate-200/90 bg-white shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+          <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-slate-200 bg-slate-50/90">
+                {headers.map((header) => (
+                  <th
+                    key={header}
+                    scope="col"
+                    className="px-4 py-3 text-[11px] font-semibold uppercase tracking-wide text-slate-600 first:min-w-[9rem]"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((cells, rowIndex) => (
+                <tr
+                  key={rowIndex}
+                  className="border-b border-slate-100 last:border-0 even:bg-slate-50/40"
+                >
+                  {cells.map((cell, cellIndex) => (
+                    <td
+                      key={cellIndex}
+                      className="px-4 py-3 align-top text-slate-700 first:min-w-[9rem] [&_code]:rounded [&_code]:bg-slate-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-xs"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
   );
 }
 

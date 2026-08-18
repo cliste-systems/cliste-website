@@ -19,7 +19,7 @@ export function PublicLegalTabs() {
   return (
     <nav
       aria-label="Legal documents"
-      className="no-scrollbar flex w-full items-stretch overflow-x-auto overflow-y-hidden rounded-full border border-slate-200/90 bg-white p-1 shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+      className="legal-scroll-x -mx-1 flex w-full items-stretch gap-1 overflow-x-auto overflow-y-hidden rounded-full border border-slate-200/90 bg-white p-1 shadow-[0_1px_0_rgba(15,23,42,0.04)] sm:mx-0 sm:gap-0"
     >
       {PUBLIC_LEGAL_PAGES.map((page) => {
         const active = pathname === page.href;
@@ -29,7 +29,7 @@ export function PublicLegalTabs() {
             href={page.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "relative flex min-w-[4.75rem] flex-1 items-center justify-center rounded-full px-2.5 py-2 text-center text-xs font-medium whitespace-nowrap transition-colors duration-200 sm:min-w-0 sm:px-3 sm:text-sm",
+              "relative flex shrink-0 items-center justify-center rounded-full px-3 py-2 text-center text-xs font-medium whitespace-nowrap transition-colors duration-200 sm:min-w-0 sm:flex-1 sm:px-3 sm:text-sm",
               active
                 ? "text-white"
                 : "text-slate-600 hover:bg-slate-50 hover:text-slate-900",

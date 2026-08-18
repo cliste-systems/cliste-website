@@ -8,11 +8,11 @@ export function ClisteLogo({ className }: ClisteLogoProps) {
   return (
     <span
       className={`inline-flex items-center text-neutral-950 ${className ?? ""}`}
-      aria-label="Hello Cara"
+      aria-label="HelloCara"
     >
       <Image
         src="/cliste-logo-v3.png"
-        alt="Hello Cara"
+        alt="HelloCara"
         width={64}
         height={64}
         priority

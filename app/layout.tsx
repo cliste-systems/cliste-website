@@ -38,8 +38,8 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Hello Cara | AI Voice Receptionist",
-    template: "%s | Hello Cara",
+    default: "HelloCara | AI Voice Receptionist",
+    template: "%s | HelloCara",
   },
   description: CLISTE_META_DESCRIPTION,
   icons: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     "Ireland",
     "voice automation",
     "receptionist AI",
-    "Hello Cara",
+    "HelloCara",
     "Cliste Systems Limited",
   ],
   authors: [{ name: CLISTE_COMPANY.productName, url: siteUrl }],
@@ -67,20 +67,20 @@ export const metadata: Metadata = {
     locale: "en_IE",
     url: siteUrl,
     siteName: CLISTE_COMPANY.productName,
-    title: "Hello Cara | AI Voice Receptionist",
+    title: "HelloCara | AI Voice Receptionist",
     description: CLISTE_META_DESCRIPTION,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hello Cara - AI Voice Receptionist",
+        alt: "HelloCara - AI Voice Receptionist",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hello Cara | AI Voice Receptionist",
+    title: "HelloCara | AI Voice Receptionist",
     description: CLISTE_META_DESCRIPTION,
   },
   robots: {

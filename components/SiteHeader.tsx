@@ -4,7 +4,13 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { NICHE_NAV_LINKS } from "@/lib/industries";
+import {
+  CARA_NAV,
+  HOW_CARA_IS_BUILT_LINK,
+  HOW_CARA_WORKS_LINK,
+  PRODUCTS_NAV,
+  type HeaderNavMenu,
+} from "@/lib/industries";
 import { scrollToSectionAfterMenuClose } from "@/lib/scroll-to-section";
 import { LoginLink } from "./LoginLink";
 import { ClisteLogo } from "./ClisteLogo";
@@ -23,11 +29,13 @@ function fadeClass(animated: boolean, delay: string) {
   return animated ? `hero-fade ${delay}` : "";
 }
 
-function ServicesNav({
+function HeaderDropdown({
+  menu,
   surface,
   className = "",
   onNavigate,
 }: {
+  menu: HeaderNavMenu;
   surface: "hero" | "light";
   className?: string;
   onNavigate?: () => void;
@@ -99,7 +107,7 @@ function ServicesNav({
         aria-haspopup="menu"
         onClick={() => setOpen((current) => !current)}
       >
-        Services
+        {menu.trigger}
         <ChevronDown
           className={`h-3.5 w-3.5 text-neutral-500 transition-transform duration-200 group-hover/trigger:text-neutral-700 ${open ? "rotate-180" : ""}`}
           strokeWidth={1.75}
@@ -116,9 +124,9 @@ function ServicesNav({
             transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="absolute right-0 top-[calc(100%+0.35rem)] z-50 min-w-[11.5rem]"
             role="menu"
-            aria-label="Services"
+            aria-label={menu.trigger}
           >
-            {NICHE_NAV_LINKS.map((item) => (
+            {menu.items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -129,7 +137,7 @@ function ServicesNav({
                   onNavigate?.();
                 }}
               >
-                {item.navLabel}
+                {item.label}
                 <ChevronRight
                   className="size-3.5 shrink-0 text-slate-400 transition-transform duration-200 group-hover/item:translate-x-0.5 group-hover/item:text-slate-600"
                   strokeWidth={1.75}
@@ -169,6 +177,11 @@ export function SiteHeader({
       ? "cursor-pointer rounded-full border border-white/50 bg-white/50 px-5 py-2 text-sm font-medium text-neutral-950 shadow-sm backdrop-blur-sm transition-all hover:bg-white/80"
       : "cursor-pointer rounded-full border border-slate-200/90 bg-white px-5 py-2 text-sm font-medium text-neutral-950 shadow-sm transition-all hover:bg-slate-50";
 
+  const navLinkClassName =
+    surface === "hero"
+      ? "flex cursor-pointer items-center rounded-full px-3 py-2 text-sm font-medium text-neutral-800 transition-all hover:bg-white/55 hover:text-neutral-950"
+      : "flex cursor-pointer items-center rounded-full px-3 py-2 text-sm font-medium text-neutral-700 transition-all hover:bg-slate-100/80 hover:text-neutral-950";
+
   return (
     <>
       <header
@@ -178,7 +191,7 @@ export function SiteHeader({
           <Link
             href="/"
             className={`${fadeClass(animated, "hero-fade-d1")} flex shrink-0 cursor-pointer items-center`}
-            aria-label="Hello Cara home"
+            aria-label="HelloCara home"
           >
             <ClisteLogo />
           </Link>
@@ -201,7 +214,13 @@ export function SiteHeader({
         <nav
           className={`${fadeClass(animated, "hero-fade-d2")} z-10 hidden items-center gap-3 lg:flex`}
         >
-          <ServicesNav surface={surface} />
+          <Link href={HOW_CARA_WORKS_LINK.href} className={navLinkClassName}>
+            {HOW_CARA_WORKS_LINK.label}
+          </Link>
+          <Link href={HOW_CARA_IS_BUILT_LINK.href} className={navLinkClassName}>
+            {HOW_CARA_IS_BUILT_LINK.label}
+          </Link>
+          <HeaderDropdown menu={PRODUCTS_NAV} surface={surface} />
           <LoginLink className={loginClassName}>Log in</LoginLink>
         </nav>
 
@@ -241,7 +260,7 @@ export function SiteHeader({
               <Link
                 href="/"
                 className="flex cursor-pointer items-center"
-                aria-label="Hello Cara home"
+                aria-label="HelloCara home"
                 onClick={() => setMenuOpen(false)}
               >
                 <ClisteLogo />
@@ -269,9 +288,22 @@ export function SiteHeader({
                   className="flex flex-col gap-4"
                 >
                   <p className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">
-                    Services
+                    {CARA_NAV.trigger}
                   </p>
-                  {NICHE_NAV_LINKS.map((item) => (
+                  {CARA_NAV.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="cursor-pointer transition-colors hover:text-neutral-600"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">
+                    {PRODUCTS_NAV.trigger}
+                  </p>
+                  {PRODUCTS_NAV.items.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
