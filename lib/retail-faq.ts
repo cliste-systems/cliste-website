@@ -3,7 +3,7 @@ export type RetailFaqItem = {
   answer: string;
 };
 
-/** Shop-only FAQs — 8 items; general topics link to /how-cara-works and /how-cara-is-built */
+/** Shop FAQs for /retail */
 export const RETAIL_FAQS: readonly RetailFaqItem[] = [
   {
     question: "How much does it cost?",
@@ -14,6 +14,11 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
     question: "How long until we're live, and how much of my time?",
     answer:
       "We visit your shop, learn how it runs, then set Cara up within about a week. Nothing for your team to install.",
+  },
+  {
+    question: "Do I have to change my number or install anything?",
+    answer:
+      "No. Keep your shop number and the phones you already have. Nothing to install on the till, no extra hardware to buy. We configure Cara and connect your line.",
   },
   {
     question: "Can Cara handle multiple calls at once?",
@@ -31,6 +36,11 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
       "From your price lists and what you've told us. If your stock system is connected, Cara can check live on the call. If Cara isn't sure, Cara opens a ticket and your team confirms before the next caller hears it.",
   },
   {
+    question: "What if Cara doesn't know the answer?",
+    answer:
+      "Cara won't guess. Cara takes the details on the call and your team confirms in the dashboard before the next caller hears it.",
+  },
+  {
     question: "Where do calls and messages go?",
     answer:
       "Your dashboard. Every call leaves a record there, plus anything Cara took for your team to follow up.",
@@ -44,6 +54,11 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
     question: "What happens when we're closed?",
     answer:
       "Cara still answers. Cara can give your opening hours, take a collection or callback request, or leave a message for the next morning.",
+  },
+  {
+    question: "Does Cara work 24/7?",
+    answer:
+      "Yes. Evenings, Sundays, bank holidays, and whenever nobody's on the shop floor. Most missed shop calls happen outside your usual hours.",
   },
   {
     question: "Does this work for click and collect?",
