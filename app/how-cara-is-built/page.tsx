@@ -4,6 +4,7 @@ import { SiteFrameRails } from "@/components/SiteFrameRails";
 import { HowCaraIsBuiltContent } from "@/components/how-it-works/HowCaraIsBuiltContent";
 import { HowCaraIsBuiltHero } from "@/components/how-it-works/HowCaraIsBuiltHero";
 import { HOW_CARA_IS_BUILT_META } from "@/lib/how-cara-is-built-copy";
+import { HERO_VIEWPORT_SHELL_CLASS } from "@/lib/site-layout";
 
 export const metadata: Metadata = {
   title: HOW_CARA_IS_BUILT_META.title,
@@ -14,7 +15,7 @@ export default function HowCaraIsBuiltPage() {
   return (
     <main className="relative min-h-screen overflow-x-clip bg-white text-neutral-900 antialiased">
       <div className="relative w-full min-w-0">
-        <div className="bg-[#F8F9FB] lg:flex lg:min-h-[100svh] lg:flex-col">
+        <div className={HERO_VIEWPORT_SHELL_CLASS}>
           <HowCaraIsBuiltHero />
         </div>
         <HowCaraIsBuiltContent />

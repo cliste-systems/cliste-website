@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { HERO_CARD_GRADIENT } from "@/lib/site-layout";
+import {
+  HERO_CARD_GRADIENT,
+  HERO_NICHE_CARD_CLASS,
+  HERO_NICHE_CARD_INNER_CLASS,
+  HERO_NICHE_CTA_ROW_CLASS,
+  HERO_PAGE_FRAME_INNER_CLASS,
+  HERO_VIEWPORT_SHELL_CLASS,
+} from "@/lib/site-layout";
+import { cn } from "@/lib/utils";
 import { scrollToSection } from "@/lib/scroll-to-section";
 import { ColorBends } from "./ColorBends";
 import { SiteHeader } from "./SiteHeader";
@@ -143,11 +151,21 @@ function PartnerLogos() {
 
 export function Hero() {
   return (
-    <div className="min-h-0 bg-white text-neutral-900 antialiased selection:bg-indigo-200 selection:text-neutral-900">
-      <div className="mx-auto w-full max-w-[1920px] p-4 sm:p-6 lg:p-8">
-        {/* Rounded card: animated Grainient gradient + cross grid overlay */}
+    <div
+      className="min-h-0 bg-[#F8F9FB] text-neutral-900 antialiased selection:bg-indigo-200 selection:text-neutral-900 lg:bg-white"
+    >
+      <div
+        className={cn(
+          HERO_VIEWPORT_SHELL_CLASS,
+          HERO_PAGE_FRAME_INNER_CLASS,
+          "lg:mx-auto lg:max-w-[1920px] lg:min-h-0 lg:bg-white lg:p-6 lg:pt-8 lg:pb-0",
+        )}
+      >
         <div
-          className="hero-bg-reveal relative w-full overflow-hidden rounded-[2.5rem] shadow-sm ring-1 ring-black/[0.06] lg:rounded-[3.5rem]"
+          className={cn(
+            HERO_NICHE_CARD_CLASS,
+            "shadow-sm ring-black/[0.06] lg:min-h-[calc(100svh-12rem)] lg:max-h-[820px] lg:flex-none lg:rounded-[3.5rem]",
+          )}
           style={{ background: HERO_CARD_GRADIENT }}
         >
             {/* Animated ColorBends: confined to the right pink area.
@@ -216,7 +234,7 @@ export function Hero() {
             </div>
 
             <svg
-              className="pointer-events-none absolute inset-0 z-[1] hidden h-full w-full md:block"
+              className="pointer-events-none absolute inset-0 z-[1] h-full w-full"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden
             >
@@ -241,21 +259,26 @@ export function Hero() {
               <rect width="100%" height="100%" fill="url(#grid-pattern)" />
             </svg>
 
-            <div className="relative z-[2] flex min-h-[560px] flex-col px-6 py-8 sm:min-h-[580px] sm:px-10 sm:py-12 lg:px-20 lg:py-14 lg:min-h-[calc(100svh-12rem)] lg:max-h-[820px]">
+            <div
+              className={cn(
+                HERO_NICHE_CARD_INNER_CLASS,
+                "relative z-[2] lg:min-h-[calc(100svh-12rem)] lg:max-h-[820px]",
+              )}
+            >
               <SiteHeader animated homeScroll surface="hero" />
 
-              <div className="z-10 mt-24 flex max-w-5xl flex-col sm:mt-28 lg:mb-auto lg:mt-auto">
+              <div className="z-10 mt-24 flex max-w-5xl flex-1 flex-col sm:mt-28 lg:mb-auto lg:mt-auto lg:flex-none">
                 <h1
                   id="hero-heading"
-                  className="hero-fade hero-fade-d3 font-display text-6xl font-semibold leading-[1.05] tracking-tight text-balance bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 sm:text-7xl lg:text-[7.5rem] pb-1.5"
+                  className="hero-fade hero-fade-d3 font-display text-[2.35rem] font-semibold leading-[1.12] tracking-tight text-balance bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 sm:text-5xl lg:text-[7.5rem] lg:leading-[1.05] lg:pb-1.5"
                 >
                   Your phone, always answered.
                 </h1>
-                <p className="hero-fade hero-fade-d4 mt-6 max-w-3xl text-2xl font-normal leading-snug tracking-tight text-neutral-800 sm:mt-8 lg:text-3xl">
+                <p className="hero-fade hero-fade-d4 mt-6 max-w-3xl text-base leading-relaxed text-neutral-800 lg:mt-8 lg:text-3xl lg:font-normal lg:leading-snug lg:tracking-tight">
                   Cara answers your business phone when you can&apos;t. Cara sounds
                   like a real person, and never misses a call.
                 </p>
-                <div className="hero-fade hero-fade-d5 mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:w-auto sm:flex-row">
+                <div className={HERO_NICHE_CTA_ROW_CLASS}>
                   <Link
                     href="/book"
                     className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-3 text-base font-normal text-white transition-colors hover:bg-slate-500 sm:w-auto"
@@ -274,8 +297,8 @@ export function Hero() {
             </div>
         </div>
 
-        {/* Partner strip: aligned with hero card's inner padding so label sits under "P". */}
-        <div className="mt-4 px-6 pb-3 sm:mt-8 sm:px-10 sm:pb-10 lg:mt-12 lg:px-20 lg:pb-8">
+        {/* Partner strip — desktop only so mobile hero fills the viewport */}
+        <div className="mt-4 hidden px-6 pb-3 sm:px-10 sm:pb-10 lg:block lg:mt-12 lg:px-20 lg:pb-8">
           <PartnerLogos />
         </div>
       </div>

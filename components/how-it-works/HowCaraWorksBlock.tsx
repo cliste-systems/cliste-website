@@ -12,6 +12,7 @@ type HowCaraWorksBlockProps = {
   imageAlt: string;
   imageOn?: "left" | "right";
   tone?: "white" | "grey";
+  imageAspectClass?: string;
 };
 
 export function HowCaraWorksBlock({
@@ -24,6 +25,7 @@ export function HowCaraWorksBlock({
   imageAlt,
   imageOn = "right",
   tone = "white",
+  imageAspectClass,
 }: HowCaraWorksBlockProps) {
   const imageFirstOnDesktop = imageOn === "left";
 
@@ -47,6 +49,7 @@ export function HowCaraWorksBlock({
             <HowCaraWorksSectionImage
               src={imageSrc}
               alt={imageAlt}
+              aspectClass={imageAspectClass}
               className={tone === "grey" ? "bg-[#F8F9FB]" : "bg-white"}
             />
           </div>

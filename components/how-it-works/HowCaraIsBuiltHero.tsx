@@ -1,9 +1,18 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Wrench } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { BgGradient } from "@/components/ui/bg-gredient";
 import { HOW_CARA_IS_BUILT_HERO } from "@/lib/how-cara-is-built-copy";
-import { NICHE_PAGE_FRAME_CLASS } from "@/lib/site-layout";
+import {
+  HERO_NICHE_CARD_CLASS,
+  HERO_NICHE_CARD_INNER_CLASS,
+  HERO_NICHE_CONTENT_CLASS,
+  HERO_NICHE_CTA_ROW_CLASS,
+  HERO_NICHE_DIVIDER_CLASS,
+  HERO_NICHE_HEADING_CLASS,
+  HERO_NICHE_INTRO_CLASS,
+  HERO_PAGE_FRAME_INNER_CLASS,
+} from "@/lib/site-layout";
 
 const HERO_BG = {
   gradientFrom: "#e2e8f0",
@@ -15,11 +24,9 @@ const HERO_BG = {
 
 export function HowCaraIsBuiltHero() {
   return (
-    <header className="relative z-[1] w-full bg-[#F8F9FB] text-slate-900 lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
-      <div
-        className={`${NICHE_PAGE_FRAME_CLASS} pb-0 lg:flex lg:min-h-0 lg:flex-1 lg:flex-col`}
-      >
-        <div className="hero-bg-reveal relative w-full overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:rounded-[2rem] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:rounded-[2.5rem]">
+    <header className="relative z-[1] flex min-h-0 w-full flex-1 flex-col text-slate-900">
+      <div className={HERO_PAGE_FRAME_INNER_CLASS}>
+        <div className={HERO_NICHE_CARD_CLASS}>
           <BgGradient {...HERO_BG} />
 
           <svg
@@ -52,29 +59,32 @@ export function HowCaraIsBuiltHero() {
             />
           </svg>
 
-          <div className="relative z-10 flex min-h-[560px] flex-col px-6 py-8 sm:min-h-[580px] sm:px-10 sm:py-12 lg:min-h-0 lg:flex-1 lg:px-20 lg:py-14">
-            <SiteHeader surface="light" />
+          <div className={HERO_NICHE_CARD_INNER_CLASS}>
+            <SiteHeader animated surface="light" />
 
-            <div className="z-10 mt-24 flex max-w-5xl flex-col sm:mt-28 lg:mx-auto lg:mt-0 lg:flex lg:max-w-3xl lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:text-center">
-              <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
-                {HOW_CARA_IS_BUILT_HERO.eyebrow}
-              </p>
+            <div className={HERO_NICHE_CONTENT_CLASS}>
+              <div className="hero-fade hero-fade-d2 mb-5 flex flex-wrap items-center gap-2 sm:justify-start lg:justify-center">
+                <span
+                  aria-hidden
+                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-200/80 bg-white text-slate-600 shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+                >
+                  <Wrench className="h-3.5 w-3.5" strokeWidth={1.75} />
+                </span>
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
+                  {HOW_CARA_IS_BUILT_HERO.eyebrow}
+                </p>
+              </div>
 
-              <h1
-                id="how-cara-is-built-heading"
-                className="font-display text-[2.35rem] font-semibold leading-[1.12] tracking-tight text-balance text-slate-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]"
-              >
+              <h1 id="how-cara-is-built-heading" className={HERO_NICHE_HEADING_CLASS}>
                 <span className="block">{HOW_CARA_IS_BUILT_HERO.titleDark}</span>
                 <span className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400">
                   {HOW_CARA_IS_BUILT_HERO.titleGradient}
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-600 lg:mt-8 lg:text-lg">
-                {HOW_CARA_IS_BUILT_HERO.intro}
-              </p>
+              <p className={HERO_NICHE_INTRO_CLASS}>{HOW_CARA_IS_BUILT_HERO.intro}</p>
 
-              <div className="mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:w-auto sm:flex-row lg:justify-center">
+              <div className={HERO_NICHE_CTA_ROW_CLASS}>
                 <Link
                   href="/book"
                   className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-3 text-base font-normal text-white transition-colors hover:bg-slate-500 sm:w-auto"
@@ -99,7 +109,7 @@ export function HowCaraIsBuiltHero() {
           </div>
         </div>
 
-        <div className="mt-6 -mx-4 sm:mt-8 sm:-mx-6 lg:mt-10 lg:-mx-8" aria-hidden>
+        <div className={HERO_NICHE_DIVIDER_CLASS} aria-hidden>
           <div className="h-px min-h-px bg-slate-200" />
         </div>
       </div>

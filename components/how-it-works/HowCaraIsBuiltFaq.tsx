@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   HOW_CARA_IS_BUILT_FAQ_INTRO,
   HOW_CARA_IS_BUILT_FAQS,
@@ -25,25 +24,6 @@ export function HowCaraIsBuiltFaq() {
           >
             {HOW_CARA_IS_BUILT_FAQ_INTRO.heading}
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
-            {HOW_CARA_IS_BUILT_FAQ_INTRO.desc}{" "}
-            {HOW_CARA_IS_BUILT_FAQ_INTRO.worksNote}{" "}
-            <Link
-              href={HOW_CARA_IS_BUILT_FAQ_INTRO.worksHref}
-              className="font-medium text-slate-900 underline decoration-slate-300 underline-offset-2 transition-colors hover:decoration-slate-500"
-            >
-              {HOW_CARA_IS_BUILT_FAQ_INTRO.worksLinkLabel}
-            </Link>
-            .{" "}
-            {HOW_CARA_IS_BUILT_FAQ_INTRO.retailNote}{" "}
-            <Link
-              href={HOW_CARA_IS_BUILT_FAQ_INTRO.retailHref}
-              className="font-medium text-slate-900 underline decoration-slate-300 underline-offset-2 transition-colors hover:decoration-slate-500"
-            >
-              {HOW_CARA_IS_BUILT_FAQ_INTRO.retailLinkLabel}
-            </Link>
-            .
-          </p>
         </div>
 
         <div className={`${SECTION_CONTENT_INSET} mt-8`}>

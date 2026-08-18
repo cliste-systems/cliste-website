@@ -8,19 +8,23 @@ type HowCaraWorksSectionImageProps = {
   src: string;
   alt: string;
   className?: string;
+  /** Tailwind aspect class — default 3:2; use 2:1 for wide diagrams */
+  aspectClass?: string;
 };
 
 export function HowCaraWorksSectionImage({
   src,
   alt,
   className,
+  aspectClass = "aspect-[3/2]",
 }: HowCaraWorksSectionImageProps) {
   const [failed, setFailed] = useState(false);
 
   return (
     <figure
       className={cn(
-        "relative aspect-[3/2] w-full",
+        "relative w-full",
+        aspectClass,
         RETAIL_SECTION_SHELL,
         className,
       )}

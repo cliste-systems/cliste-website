@@ -1,11 +1,22 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Store } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { BgGradient } from "@/components/ui/bg-gredient";
 import { RETAIL_HERO } from "@/lib/retail-copy";
-import { NICHE_PAGE_FRAME_CLASS } from "@/lib/site-layout";
+import {
+  HERO_NICHE_CARD_CLASS,
+  HERO_NICHE_CARD_INNER_CLASS,
+  HERO_NICHE_CONTENT_CLASS,
+  HERO_NICHE_CTA_ROW_CLASS,
+  HERO_NICHE_DIVIDER_CLASS,
+  HERO_NICHE_HEADING_CLASS,
+  HERO_NICHE_INTRO_CLASS,
+  HERO_PAGE_FRAME_INNER_CLASS,
+} from "@/lib/site-layout";
 
 /** 21st.dev-style radial: soft grey at bottom → white at top */
 const RETAIL_HERO_BG = {
@@ -16,13 +27,26 @@ const RETAIL_HERO_BG = {
   gradientStop: "32%",
 } as const;
 
+const ROTATING_WORDS = RETAIL_HERO.rotatingWords;
+
 export function RetailHero() {
+  const reduceMotion = useReducedMotion();
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    const id = window.setInterval(() => {
+      setWordIndex((current) => (current + 1) % ROTATING_WORDS.length);
+    }, 2800);
+
+    return () => window.clearInterval(id);
+  }, [reduceMotion]);
+
   return (
-    <header className="relative z-[1] w-full bg-[#F8F9FB] text-slate-900 lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
-      <div
-        className={`${NICHE_PAGE_FRAME_CLASS} pb-0 lg:flex lg:min-h-0 lg:flex-1 lg:flex-col`}
-      >
-        <div className="hero-bg-reveal relative w-full overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:rounded-[2rem] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:rounded-[2.5rem]">
+    <header className="relative z-[1] flex min-h-0 w-full flex-1 flex-col text-slate-900">
+      <div className={HERO_PAGE_FRAME_INNER_CLASS}>
+        <div className={HERO_NICHE_CARD_CLASS}>
           <BgGradient {...RETAIL_HERO_BG} />
 
           <svg
@@ -51,10 +75,10 @@ export function RetailHero() {
             <rect width="100%" height="100%" fill="url(#retail-grid-pattern)" />
           </svg>
 
-          <div className="relative z-10 flex min-h-[560px] flex-col px-6 py-8 sm:min-h-[580px] sm:px-10 sm:py-12 lg:min-h-0 lg:flex-1 lg:px-20 lg:py-14">
+          <div className={HERO_NICHE_CARD_INNER_CLASS}>
             <SiteHeader animated surface="light" />
 
-            <div className="z-10 mt-24 flex max-w-5xl flex-col sm:mt-28 lg:mx-auto lg:mt-0 lg:flex lg:max-w-3xl lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:text-center">
+            <div className={HERO_NICHE_CONTENT_CLASS}>
               <div className="hero-fade hero-fade-d2 mb-5 flex flex-wrap items-center gap-2 sm:justify-start lg:justify-center">
                 <span
                   aria-hidden
@@ -67,11 +91,10 @@ export function RetailHero() {
                 </p>
               </div>
 
-              <h1
-                id="retail-hero-heading"
-                className="hero-fade hero-fade-d3 font-display text-[2.35rem] font-semibold leading-[1.12] tracking-tight text-balance text-slate-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]"
-              >
-                <span className="hidden lg:block">{RETAIL_HERO.titleDark}</span>
+              <h1 id="retail-hero-heading" className={HERO_NICHE_HEADING_CLASS}>
+                <span className="hidden text-slate-900 lg:block">
+                  {RETAIL_HERO.titleDark}
+                </span>
                 <span className="block lg:hidden">
                   {RETAIL_HERO.titleMobileLines.map((line) => (
                     <span key={line} className="block">
@@ -79,23 +102,51 @@ export function RetailHero() {
                     </span>
                   ))}
                 </span>
-                <span className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400">
-                  {RETAIL_HERO.titleGradient}
-                </span>
+                {reduceMotion ? (
+                  <span className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400">
+                    {RETAIL_HERO.titleGradient}
+                  </span>
+                ) : (
+                  <>
+                    <span className="mt-2 block text-slate-600">
+                      Even when you&apos;re
+                    </span>
+                    <span
+                      className="relative mx-auto mt-1 block h-[1.15em] w-full max-w-xl overflow-hidden sm:mt-2"
+                      aria-live="polite"
+                    >
+                      <AnimatePresence mode="wait" initial={false}>
+                        <motion.span
+                          key={ROTATING_WORDS[wordIndex]}
+                          initial={{ y: "100%", opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={{ y: "-100%", opacity: 0 }}
+                          transition={{
+                            duration: 0.45,
+                            ease: [0.22, 1, 0.36, 1],
+                          }}
+                          className="absolute inset-x-0 block bg-clip-text font-semibold text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400"
+                        >
+                          {ROTATING_WORDS[wordIndex]}
+                        </motion.span>
+                      </AnimatePresence>
+                    </span>
+                  </>
+                )}
               </h1>
 
-              <p className="hero-fade hero-fade-d4 mt-6 max-w-3xl text-base leading-relaxed text-slate-600 lg:hidden">
+              <p className={`${HERO_NICHE_INTRO_CLASS} lg:hidden`}>
                 {RETAIL_HERO.introMobileLines.map((line) => (
                   <span key={line} className="block">
                     {line}
                   </span>
                 ))}
               </p>
-              <p className="hero-fade hero-fade-d4 mt-6 hidden max-w-3xl text-base leading-relaxed text-slate-600 lg:mt-8 lg:block lg:text-lg">
+              <p className={`${HERO_NICHE_INTRO_CLASS} hidden lg:block`}>
                 {RETAIL_HERO.intro}
               </p>
 
-              <div className="hero-fade hero-fade-d5 mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:w-auto sm:flex-row lg:justify-center">
+              <div className={HERO_NICHE_CTA_ROW_CLASS}>
                 <Link
                   href="/book"
                   className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-3 text-base font-normal text-white transition-colors hover:bg-slate-500 sm:w-auto"
@@ -107,7 +158,7 @@ export function RetailHero() {
           </div>
         </div>
 
-        <div className="mt-6 -mx-4 sm:mt-8 sm:-mx-6 lg:mt-10 lg:-mx-8" aria-hidden>
+        <div className={HERO_NICHE_DIVIDER_CLASS} aria-hidden>
           <div className="h-px min-h-px bg-slate-200" />
         </div>
       </div>

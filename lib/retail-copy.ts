@@ -12,6 +12,13 @@ export const RETAIL_HERO = {
   eyebrow: "Built for retail",
   titleDark: "Every retail call answered.",
   titleGradient: "Even when you're on the floor.",
+  rotatingWords: [
+    "on the floor",
+    "with a customer",
+    "short-staffed",
+    "after hours",
+    "at the till",
+  ] as const,
   intro: "Your shop phone still rings. If nobody gets it, Cara answers.",
   titleMobileLines: ["Every retail", "call answered."] as const,
   introMobileLines: [

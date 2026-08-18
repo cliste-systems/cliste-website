@@ -1,7 +1,7 @@
 export const HOW_CARA_IS_BUILT_META = {
   title: "How Cara is built",
   description:
-    "Built for your business only. We configure Cara from what you tell us, you go live when you're ready, and Cara gets sharper when you teach Cara.",
+    "Your own Cara, built for your business only. No shared brain, nothing goes live unless you approve it, and your calls stay in the EU.",
 } as const;
 
 export const HOW_CARA_IS_BUILT_HERO = {
@@ -15,19 +15,19 @@ export const HOW_CARA_IS_BUILT_HERO = {
 } as const;
 
 export const BUILT_CUSTOM = {
-  headingDark: "Completely custom.",
-  headingGradient: "Only your business.",
-  body: "Configured how your business runs, not a generic script off the shelf. Cara only knows your place. Not the internet. Not another business.",
+  headingDark: "Yours alone.",
+  headingGradient: "No shared brain.",
+  body: "Cara knows your business and nothing else. Not the internet, not another business down the road. Nobody else's Cara can see your prices, your customers, or your calls.",
   image: {
-    src: "/how-cara-is-built/custom.png",
-    alt: "Cara configured for your business only, not a shared script.",
+    src: "/how-cara-is-built/yours-alone.png",
+    alt: "Your Cara knows only your business. No shared brain with anyone else.",
   },
 } as const;
 
 export const BUILT_FROM = {
   headingDark: "Built from what you tell us.",
-  headingGradient: "Hours, menu, and rules.",
-  body: "Hours, location, what you offer, price lists, and policies. Set Cara up in the dashboard, or we work with you on a custom job.",
+  headingGradient: "Hours, prices, and rules.",
+  body: "Your hours, your location, what you offer, your price lists, your policies. Set Cara up in the dashboard yourself, or we'll do it with you.",
   image: {
     src: "/how-cara-is-built/learn.png",
     alt: "We build Cara from your hours, rules, menu, and files.",
@@ -35,19 +35,19 @@ export const BUILT_FROM = {
 } as const;
 
 export const BUILT_LINE = {
-  headingDark: "Go live.",
-  headingGradient: "When you're ready.",
-  body: "Nothing to install. Keep your number and forward missed calls, or every call, when you switch Cara on. Set Cara up yourself, or we configure with you on a custom job and connect the line after.",
+  headingDark: "Nothing changes.",
+  headingGradient: "Unless you say so.",
+  body: "You decide what Cara says. A new answer doesn't go live until you approve it, and you can take it back any time. Change your hours in the morning and Cara has it on the next call.",
   image: {
-    src: "/how-cara-is-built/connect-line.png",
-    alt: "Go live when you're ready. Keep your number and connect Cara to your line.",
+    src: "/how-cara-is-built/approval.png",
+    alt: "You approve every answer before it goes live.",
   },
 } as const;
 
 export const BUILT_TICKETS = {
   headingDark: "Cara doesn't guess.",
   headingGradient: "Cara asks you.",
-  body: "Cara only answers from your setup. If a caller asks something Cara isn't sure of, Cara doesn't make it up. Cara opens a ticket in your dashboard. Your team adds the answer. The next caller gets the right line because you taught Cara.",
+  body: "Cara only answers from your setup. If a caller asks something Cara isn't sure of, Cara doesn't make it up. Cara opens a ticket in your dashboard, your team adds the answer, and the next caller gets the right line.",
   image: {
     src: "/how-cara-is-built/tickets.png",
     alt: "If Cara doesn't know, Cara opens a ticket. Your team teaches Cara the answer.",
@@ -55,9 +55,9 @@ export const BUILT_TICKETS = {
 } as const;
 
 export const BUILT_DASHBOARD = {
-  headingDark: "Everything in one place.",
-  headingGradient: "Your dashboard.",
-  body: "Every call leaves a record. Calls, orders, and messages live in your dashboard. Answer tickets, update hours or offers, and that's what Cara uses on the next call. We only text management when something important needs you.",
+  headingDark: "Every call, in one place.",
+  headingGradient: "Kept in the EU.",
+  body: "Calls, orders, and messages land in your dashboard, and every call leaves a record. Your data stays in the EU, it's never sold, and we only text you when something genuinely needs you.",
   image: {
     src: "/how-cara-is-built/dashboard.png",
     alt: "Calls, tickets, and messages in your Cara dashboard.",
@@ -66,35 +66,28 @@ export const BUILT_DASHBOARD = {
 
 export const HOW_CARA_IS_BUILT_FAQ_INTRO = {
   heading: "Questions.",
-  desc: "Straight answers about how we build Cara for your business.",
-  worksNote: "What happens on the call?",
-  worksLinkLabel: "How Cara works",
-  worksHref: "/how-cara-works",
-  retailNote: "Running a shop?",
-  retailLinkLabel: "See Cara for retail",
-  retailHref: "/retail",
 } as const;
 
 export const HOW_CARA_IS_BUILT_FAQS = [
   {
-    question: "Will Cara answer every call for us?",
+    question: "Can another business's Cara see ours?",
     answer:
-      "Only when nobody else can. Your phone rings as normal. If someone's free, they pick up and nothing changes. Cara takes the calls that would otherwise ring out.",
+      "No. Your Cara is built against your business only. There's no shared pot of answers, and nobody else's Cara can reach your prices, your callers, or your recordings.",
+  },
+  {
+    question: "Where do our calls and recordings end up?",
+    answer:
+      "In your dashboard, and in the EU. Calls are recorded, transcripts are kept for 30 days and summaries for 13 months, then they're deleted. We don't sell your data.",
+  },
+  {
+    question: "What if Cara goes down?",
+    answer:
+      "Ring us. We'll tell you exactly what's happening on your line and get it sorted.",
   },
   {
     question: "Will people know it's not a real person?",
     answer:
       "Every call opens with a clear AI disclosure. Cara sounds natural, with an Irish accent. Cara won't pretend to be human.",
-  },
-  {
-    question: "What if Cara doesn't know the answer?",
-    answer:
-      "Cara won't guess. Cara takes a message and texts it straight to you.",
-  },
-  {
-    question: "How much does Cara know about my business?",
-    answer:
-      "As much as you tell us. Your hours, prices, services, departments, and how you like customers looked after. Cara is built around your business, not a generic answering service.",
   },
   {
     question: "How many hours a week does Cara work?",
@@ -107,14 +100,14 @@ export const HOW_CARA_IS_BUILT_FAQS = [
       "Cara takes them all. Nobody's put on hold, nobody gets an engaged tone.",
   },
   {
-    question: "Do I have to change my number or install anything?",
+    question: "Can Cara put a caller through to someone?",
     answer:
-      "No. Same number, same phone, nothing to install, nothing for your team to learn.",
+      "If you use a new Cara number, yes. If you keep your own number and forward it, no — Cara takes the message instead.",
   },
   {
-    question: "How quickly can I start, and can I change my mind?",
+    question: "Who actually builds and runs this?",
     answer:
-      "Set Cara up yourself and go live when you're ready, or one session with us on a custom job. Change what Cara says, or switch Cara off, any time.",
+      "A small team in Donegal. Ring us and you'll speak to one of us — not a call centre.",
   },
 ] as const;
 
