@@ -6,10 +6,9 @@ export const HOW_CARA_WORKS_META = {
 
 export const HOW_CARA_WORKS_HERO = {
   eyebrow: "How Cara works",
-  titleDark: "Cara's not a phone system.",
-  titleGradient: "Cara's the one who answers it.",
-  intro:
-    "Customers call your number. Cara steps in when nobody can get to it.",
+  titleDark: "Not a phone system.",
+  titleGradient: "Cara answers it.",
+  intro: "Customers call your number. Cara steps in when nobody can get to it.",
   primaryCta: "Contact us",
   secondaryCta: "See how it works",
 } as const;

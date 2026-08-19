@@ -9,7 +9,9 @@ import {
   HERO_NICHE_CONTENT_CLASS,
   HERO_NICHE_CTA_ROW_CLASS,
   HERO_NICHE_DIVIDER_CLASS,
+  HERO_NICHE_EYEBROW_CLASS,
   HERO_NICHE_HEADING_CLASS,
+  HERO_NICHE_TITLE_GRADIENT_CLASS,
   HERO_NICHE_INTRO_CLASS,
   HERO_PAGE_FRAME_INNER_CLASS,
 } from "@/lib/site-layout";
@@ -59,7 +61,7 @@ export function HowCaraWorksHero() {
             <SiteHeader animated surface="light" />
 
             <div className={HERO_NICHE_CONTENT_CLASS}>
-              <div className="hero-fade hero-fade-d2 mb-5 flex flex-wrap items-center gap-2 sm:justify-start lg:justify-center">
+              <div className={HERO_NICHE_EYEBROW_CLASS}>
                 <span
                   aria-hidden
                   className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-200/80 bg-white text-slate-600 shadow-[0_1px_0_rgba(15,23,42,0.04)]"
@@ -72,8 +74,10 @@ export function HowCaraWorksHero() {
               </div>
 
               <h1 id="how-cara-works-heading" className={HERO_NICHE_HEADING_CLASS}>
-                <span className="block">{HOW_CARA_WORKS_HERO.titleDark}</span>
-                <span className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400">
+                <span className="block text-slate-900">
+                  {HOW_CARA_WORKS_HERO.titleDark}
+                </span>
+                <span className={HERO_NICHE_TITLE_GRADIENT_CLASS}>
                   {HOW_CARA_WORKS_HERO.titleGradient}
                 </span>
               </h1>
@@ -89,7 +93,7 @@ export function HowCaraWorksHero() {
                 </Link>
                 <Link
                   href="#when-someone-rings"
-                  className="group flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-500/10 px-7 py-3 text-base font-normal text-slate-900 transition-all duration-300 hover:bg-slate-500/15 sm:w-auto sm:py-1.5 sm:pl-5 sm:pr-1.5"
+                  className="group flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-500/10 px-7 py-2.5 text-base font-normal text-slate-900 transition-all duration-300 hover:bg-slate-500/15 sm:w-auto sm:py-1.5 sm:pl-5 sm:pr-1.5"
                 >
                   {HOW_CARA_WORKS_HERO.secondaryCta}
                   <span className="ml-2.5 hidden h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white transition-transform duration-300 group-hover:translate-x-0.5 sm:ml-3 sm:flex sm:h-9 sm:w-9">

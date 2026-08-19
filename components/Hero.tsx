@@ -7,6 +7,7 @@ import {
   HERO_NICHE_CARD_CLASS,
   HERO_NICHE_CARD_INNER_CLASS,
   HERO_NICHE_CTA_ROW_CLASS,
+  HERO_NICHE_DIVIDER_CLASS,
   HERO_PAGE_FRAME_INNER_CLASS,
   HERO_VIEWPORT_SHELL_CLASS,
 } from "@/lib/site-layout";
@@ -267,7 +268,7 @@ export function Hero() {
             >
               <SiteHeader animated homeScroll surface="hero" />
 
-              <div className="z-10 mt-24 flex max-w-5xl flex-1 flex-col sm:mt-28 lg:mb-auto lg:mt-auto lg:flex-none">
+              <div className="z-10 mt-16 flex max-w-5xl flex-col sm:mt-28 lg:mb-auto lg:mt-auto lg:flex-none">
                 <h1
                   id="hero-heading"
                   className="hero-fade hero-fade-d3 font-display text-[2.35rem] font-semibold leading-[1.12] tracking-tight text-balance bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-600 to-slate-300 sm:text-5xl lg:text-[7.5rem] lg:leading-[1.05] lg:pb-1.5"
@@ -295,6 +296,10 @@ export function Hero() {
                 </div>
               </div>
             </div>
+        </div>
+
+        <div className={HERO_NICHE_DIVIDER_CLASS} aria-hidden>
+          <div className="h-px min-h-px bg-slate-200" />
         </div>
 
         {/* Partner strip — desktop only so mobile hero fills the viewport */}

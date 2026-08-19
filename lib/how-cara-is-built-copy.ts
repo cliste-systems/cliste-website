@@ -6,10 +6,10 @@ export const HOW_CARA_IS_BUILT_META = {
 
 export const HOW_CARA_IS_BUILT_HERO = {
   eyebrow: "How Cara is built",
-  titleDark: "Cara's not off the shelf.",
-  titleGradient: "Built for your business.",
+  titleDark: "Not off the shelf.",
+  titleGradient: "Built for you.",
   intro:
-    "Your own Cara, built from how your business runs. You teach Cara. Cara never borrows answers from anywhere else.",
+    "Your Cara, from how your business runs. You teach Cara. No borrowed answers.",
   primaryCta: "Contact us",
   secondaryCta: "See how we build Cara",
 } as const;

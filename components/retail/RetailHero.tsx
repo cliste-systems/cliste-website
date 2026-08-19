@@ -13,8 +13,10 @@ import {
   HERO_NICHE_CONTENT_CLASS,
   HERO_NICHE_CTA_ROW_CLASS,
   HERO_NICHE_DIVIDER_CLASS,
+  HERO_NICHE_EYEBROW_CLASS,
   HERO_NICHE_HEADING_CLASS,
   HERO_NICHE_INTRO_CLASS,
+  HERO_NICHE_TITLE_GRADIENT_CLASS,
   HERO_PAGE_FRAME_INNER_CLASS,
 } from "@/lib/site-layout";
 
@@ -79,7 +81,7 @@ export function RetailHero() {
             <SiteHeader animated surface="light" />
 
             <div className={HERO_NICHE_CONTENT_CLASS}>
-              <div className="hero-fade hero-fade-d2 mb-5 flex flex-wrap items-center gap-2 sm:justify-start lg:justify-center">
+              <div className={HERO_NICHE_EYEBROW_CLASS}>
                 <span
                   aria-hidden
                   className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-200/80 bg-white text-slate-600 shadow-[0_1px_0_rgba(15,23,42,0.04)]"
@@ -103,7 +105,7 @@ export function RetailHero() {
                   ))}
                 </span>
                 {reduceMotion ? (
-                  <span className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400">
+                  <span className={HERO_NICHE_TITLE_GRADIENT_CLASS}>
                     {RETAIL_HERO.titleGradient}
                   </span>
                 ) : (
@@ -112,7 +114,7 @@ export function RetailHero() {
                       Even when you&apos;re
                     </span>
                     <span
-                      className="relative mx-auto mt-1 block h-[1.15em] w-full max-w-xl overflow-hidden sm:mt-2"
+                      className="relative mt-1 block h-[1.15em] w-full overflow-hidden sm:mt-2"
                       aria-live="polite"
                     >
                       <AnimatePresence mode="wait" initial={false}>

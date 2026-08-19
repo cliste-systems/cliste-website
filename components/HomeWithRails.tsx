@@ -5,7 +5,6 @@ import { CustomSolutionsSection } from "@/components/CustomSolutionsSection";
 import { PartnersMarquee } from "@/components/PartnersMarquee";
 import { PlatformOverview } from "@/components/PlatformOverview";
 import { SectionReveal } from "@/components/SectionReveal";
-import { SiteFrameRails } from "@/components/SiteFrameRails";
 import { SITE_FRAME_CLASS, STUDIO_HAIRLINE_INSET } from "@/lib/site-layout";
 
 /**
@@ -49,8 +48,6 @@ export function HomeWithRails() {
           <CustomSolutionsSection />
         </>
       </SectionReveal>
-
-      <SiteFrameRails />
     </div>
   );
 }

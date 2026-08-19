@@ -10,7 +10,7 @@ export const RETAIL_DEMO_PHONE_HREF = "tel:+353000000000" as const;
 
 export const RETAIL_HERO = {
   eyebrow: "Built for retail",
-  titleDark: "Every retail call answered.",
+  titleDark: "Every call answered.",
   titleGradient: "Even when you're on the floor.",
   rotatingWords: [
     "on the floor",
@@ -20,11 +20,10 @@ export const RETAIL_HERO = {
     "at the till",
   ] as const,
   intro: "Your shop phone still rings. If nobody gets it, Cara answers.",
-  titleMobileLines: ["Every retail", "call answered."] as const,
+  titleMobileLines: ["Every call", "answered."] as const,
   introMobileLines: [
     "Your shop phone still rings.",
-    "If nobody gets it,",
-    "Cara answers.",
+    "If nobody gets it, Cara answers.",
   ] as const,
 } as const;
 

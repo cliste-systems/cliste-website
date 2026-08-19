@@ -20,32 +20,38 @@ export const SITE_FRAME_CLASS =
 export const NICHE_PAGE_FRAME_CLASS =
   `${SITE_FRAME_CLASS} px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8` as const;
 
-/** Full-viewport hero shell (mobile + desktop niche pages) */
+/** Full-viewport hero shell — grey pad around card; no forced height on mobile */
 export const HERO_VIEWPORT_SHELL_CLASS =
-  "bg-[#F8F9FB] flex min-h-[100svh] flex-col lg:min-h-[100svh]" as const;
+  "bg-[#F8F9FB] flex flex-col lg:min-h-[100svh]" as const;
 
 /** Inner frame under the viewport shell — card grows on mobile */
 export const HERO_PAGE_FRAME_INNER_CLASS =
-  `${NICHE_PAGE_FRAME_CLASS} flex min-h-0 flex-1 flex-col pb-0` as const;
+  `${NICHE_PAGE_FRAME_CLASS} relative flex min-h-0 flex-1 flex-col pb-0` as const;
 
-/** Rounded hero card — retail-style inset card filling mobile viewport */
+/** Rounded hero card — inset on mobile; grows with content up to viewport cap */
 export const HERO_NICHE_CARD_CLASS =
-  "hero-bg-reveal relative flex w-full h-[calc(100svh-2rem)] max-h-[calc(100svh-2rem)] flex-col overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:h-[calc(100svh-3rem)] sm:max-h-[calc(100svh-3rem)] sm:rounded-[2rem] lg:h-auto lg:max-h-none lg:min-h-0 lg:flex-1 lg:rounded-[2.5rem]" as const;
+  "hero-bg-reveal relative flex w-full max-h-[calc(100svh-2rem)] flex-col overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:max-h-[calc(100svh-3rem)] sm:rounded-[2rem] lg:min-h-0 lg:max-h-none lg:flex-1 lg:rounded-[2.5rem]" as const;
 
 export const HERO_NICHE_CARD_INNER_CLASS =
-  "relative z-10 flex flex-1 flex-col px-6 py-8 sm:px-10 sm:py-12 lg:min-h-0 lg:flex-1 lg:px-20 lg:py-14" as const;
+  "relative z-10 flex flex-col px-6 py-6 sm:px-10 sm:py-8 lg:min-h-0 lg:flex-1 lg:px-20 lg:py-14" as const;
 
 export const HERO_NICHE_CONTENT_CLASS =
-  "z-10 mt-24 flex max-w-5xl flex-1 flex-col sm:mt-28 lg:mx-auto lg:mt-0 lg:flex lg:max-w-3xl lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:text-center" as const;
+  "z-10 mt-16 flex max-w-5xl flex-col sm:mt-20 lg:mx-auto lg:mt-0 lg:flex lg:max-w-3xl lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:text-center" as const;
+
+export const HERO_NICHE_EYEBROW_CLASS =
+  "hero-fade hero-fade-d2 mb-5 flex flex-wrap items-center gap-2 sm:justify-start lg:justify-center" as const;
 
 export const HERO_NICHE_HEADING_CLASS =
   "hero-fade hero-fade-d3 font-display text-[2.35rem] font-semibold leading-[1.12] tracking-tight text-balance text-slate-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]" as const;
+
+export const HERO_NICHE_TITLE_GRADIENT_CLASS =
+  "mt-2 block bg-clip-text font-semibold text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400" as const;
 
 export const HERO_NICHE_INTRO_CLASS =
   "hero-fade hero-fade-d4 mt-6 max-w-3xl text-base leading-relaxed text-slate-600 lg:mt-8 lg:text-lg" as const;
 
 export const HERO_NICHE_CTA_ROW_CLASS =
-  "hero-fade hero-fade-d5 mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:w-auto sm:flex-row lg:justify-center" as const;
+  "hero-fade hero-fade-d5 mt-6 flex w-full flex-col gap-2.5 sm:mt-12 sm:gap-4 sm:w-auto sm:flex-row lg:mt-8 lg:justify-center" as const;
 
 export const HERO_NICHE_DIVIDER_CLASS =
   "mt-6 -mx-4 sm:mt-8 sm:-mx-6 lg:mt-10 lg:-mx-8" as const;
