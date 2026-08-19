@@ -1,3 +1,15 @@
+import {
+  CARA_ANSWER_CLOSED,
+  CARA_ANSWER_CLOSED_SHOP,
+  CARA_ANSWER_DISCLOSURE,
+  CARA_ANSWER_DOESNT_KNOW,
+  CARA_ANSWER_NUMBER,
+  CARA_ANSWER_NUMBER_SHOP,
+  CARA_ANSWER_SEVERAL_CALLERS,
+  CARA_ANSWER_TRANSFER,
+  CARA_ANSWER_WHO_SEES,
+} from "@/lib/cara-shared-answers";
+
 export type RetailFaqItem = {
   question: string;
   answer: string;
@@ -16,34 +28,33 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
       "We visit your shop, learn how it runs, then set Cara up within about a week. Nothing for your team to install.",
   },
   {
-    question: "Do I have to change my number or install anything?",
+    question: "Does my team still pick up when they're free?",
     answer:
-      "No. Keep your shop number and the phones you already have. Nothing to install on the till, no extra hardware to buy. We configure Cara and connect your line.",
+      "Yes. Your shop phone still rings. If someone gets it, nothing changes. Cara answers the ones they miss.",
+  },
+  {
+    question: "Do I have to change my number or install anything?",
+    answer: `No. ${CARA_ANSWER_NUMBER_SHOP}`,
   },
   {
     question: "Can Cara handle multiple calls at once?",
-    answer:
-      "Yes. Multiple callers at the same time. No engaged tone, nobody put on hold.",
+    answer: CARA_ANSWER_SEVERAL_CALLERS,
   },
   {
     question: "Can Cara transfer to a department or colleague?",
-    answer:
-      "Yes. We set Cara up with how your shop runs. Cara can put the caller through to the right person, or take the enquiry if nobody picks up.",
+    answer: CARA_ANSWER_TRANSFER,
   },
   {
     question: "Can Cara tell callers if something is in stock?",
-    answer:
-      "From your price lists and what you've told us. If your stock system is connected, Cara can check live on the call. If Cara isn't sure, Cara opens a ticket and your team confirms before the next caller hears it.",
+    answer: `From your price lists and what you've told us. If your stock system is connected, Cara can check live on the call. ${CARA_ANSWER_DOESNT_KNOW}`,
   },
   {
     question: "What if Cara doesn't know the answer?",
-    answer:
-      "Cara won't guess. Cara takes the details on the call and your team confirms in the dashboard before the next caller hears it.",
+    answer: CARA_ANSWER_DOESNT_KNOW,
   },
   {
     question: "Where do calls and messages go?",
-    answer:
-      "Your dashboard. Every call leaves a record there, plus anything Cara took for your team to follow up.",
+    answer: CARA_ANSWER_WHO_SEES,
   },
   {
     question: "How do I turn it off, and am I locked in?",
@@ -52,13 +63,7 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
   },
   {
     question: "What happens when we're closed?",
-    answer:
-      "Cara still answers. Cara can give your opening hours, take a collection or callback request, or leave a message for the next morning.",
-  },
-  {
-    question: "Does Cara work 24/7?",
-    answer:
-      "Yes. Evenings, Sundays, bank holidays, and whenever nobody's on the shop floor. Most missed shop calls happen outside your usual hours.",
+    answer: CARA_ANSWER_CLOSED_SHOP,
   },
   {
     question: "Does this work for click and collect?",
@@ -67,8 +72,7 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
   },
   {
     question: "Will callers know they're speaking to AI?",
-    answer:
-      "Every call opens with a clear AI and recording disclosure. Cara sounds natural, with an Irish accent.",
+    answer: CARA_ANSWER_DISCLOSURE,
   },
 ];
 
@@ -76,30 +80,26 @@ export const RETAIL_FAQS: readonly RetailFaqItem[] = [
 export const RETAIL_FAQS_HOMEPAGE: readonly RetailFaqItem[] = [
   {
     question: "Can Cara handle multiple calls at once?",
-    answer:
-      "Yes. Multiple callers at the same time. No engaged tone, nobody put on hold.",
+    answer: CARA_ANSWER_SEVERAL_CALLERS,
   },
   {
     question: "Do I have to change my number or install anything?",
-    answer:
-      "No. Same number, same phone, nothing to install, nothing for your team to learn.",
+    answer: `No. ${CARA_ANSWER_NUMBER}`,
   },
   {
     question: "What happens when we're closed?",
-    answer: "If nobody gets it, Cara answers.",
+    answer: CARA_ANSWER_CLOSED,
   },
   {
     question: "Will callers know they're speaking to AI?",
-    answer:
-      "Every call opens with a clear AI and recording disclosure.",
+    answer: CARA_ANSWER_DISCLOSURE,
   },
   {
     question: "What if Cara doesn't know the answer?",
-    answer:
-      "Cara won't guess. Cara takes a message and passes it to you.",
+    answer: CARA_ANSWER_DOESNT_KNOW,
   },
   {
-    question: "Who hears the calls?",
-    answer: "You. They're recorded. Hosted in the EU.",
+    question: "Who sees the calls?",
+    answer: CARA_ANSWER_WHO_SEES,
   },
 ];

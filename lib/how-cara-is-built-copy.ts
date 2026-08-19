@@ -1,3 +1,9 @@
+import {
+  CARA_ANSWER_DISCLOSURE,
+  CARA_ANSWER_DOESNT_KNOW,
+  CARA_ANSWER_WHO_SEES_RETENTION,
+} from "@/lib/cara-shared-answers";
+
 export const HOW_CARA_IS_BUILT_META = {
   title: "How Cara is built",
   description:
@@ -47,7 +53,7 @@ export const BUILT_LINE = {
 export const BUILT_TICKETS = {
   headingDark: "Cara doesn't guess.",
   headingGradient: "Cara asks you.",
-  body: "Cara only answers from your setup. If a caller asks something Cara isn't sure of, Cara doesn't make it up. Cara opens a ticket in your dashboard, your team adds the answer, and the next caller gets the right line.",
+  body: `Cara only answers from your setup. If a caller asks something Cara isn't sure of, ${CARA_ANSWER_DOESNT_KNOW}`,
   image: {
     src: "/how-cara-is-built/tickets.png",
     alt: "If Cara doesn't know, Cara opens a ticket. Your team teaches Cara the answer.",
@@ -57,7 +63,7 @@ export const BUILT_TICKETS = {
 export const BUILT_DASHBOARD = {
   headingDark: "Every call, in one place.",
   headingGradient: "Kept in the EU.",
-  body: "Calls, orders, and messages land in your dashboard, and every call leaves a record. Your data stays in the EU, it's never sold, and we only text you when something genuinely needs you.",
+  body: "Calls, orders, and messages land in your dashboard. Every call leaves a transcript and summary you can review. Your data stays in the EU, it's never sold, and we only text you when something genuinely needs you.",
   image: {
     src: "/how-cara-is-built/dashboard.png",
     alt: "Calls, tickets, and messages in your Cara dashboard.",
@@ -72,12 +78,29 @@ export const HOW_CARA_IS_BUILT_FAQS = [
   {
     question: "Can another business's Cara see ours?",
     answer:
-      "No. Your Cara is built against your business only. There's no shared pot of answers, and nobody else's Cara can reach your prices, your callers, or your recordings.",
+      "No. Your Cara is built against your business only. There's no shared pot of answers, and nobody else's Cara can reach your prices, your callers, or your transcripts.",
   },
   {
-    question: "Where do our calls and recordings end up?",
+    question: "Where do our calls end up?",
+    answer: CARA_ANSWER_WHO_SEES_RETENTION,
+  },
+  {
+    question: "Who decides what Cara says?",
     answer:
-      "In your dashboard, and in the EU. Calls are recorded, transcripts are kept for 30 days and summaries for 13 months, then they're deleted. We don't sell your data.",
+      "You. A new answer doesn't go live until you approve it, and you can take it back any time. Change your hours in the morning and Cara has it on the next call.",
+  },
+  {
+    question: "What if Cara doesn't know the answer?",
+    answer: CARA_ANSWER_DOESNT_KNOW,
+  },
+  {
+    question: "Do I set Cara up myself, or do you?",
+    answer:
+      "Either. Set Cara up in the dashboard yourself, or we'll do it with you.",
+  },
+  {
+    question: "Will people know it's not a real person?",
+    answer: CARA_ANSWER_DISCLOSURE,
   },
   {
     question: "What if Cara goes down?",
@@ -85,29 +108,9 @@ export const HOW_CARA_IS_BUILT_FAQS = [
       "Ring us. We'll tell you exactly what's happening on your line and get it sorted.",
   },
   {
-    question: "Will people know it's not a real person?",
-    answer:
-      "Every call opens with a clear AI disclosure. Cara sounds natural, with an Irish accent. Cara won't pretend to be human.",
-  },
-  {
-    question: "How many hours a week does Cara work?",
-    answer:
-      "All 168. Evenings, Sundays, bank holidays, Christmas. Most of the calls you're losing now happen when there's nobody in the building.",
-  },
-  {
-    question: "What if a few people ring at once?",
-    answer:
-      "Cara takes them all. Nobody's put on hold, nobody gets an engaged tone.",
-  },
-  {
-    question: "Can Cara put a caller through to someone?",
-    answer:
-      "If you use a new Cara number, yes. If you keep your own number and forward it, no — Cara takes the message instead.",
-  },
-  {
     question: "Who actually builds and runs this?",
     answer:
-      "A small team in Donegal. Ring us and you'll speak to one of us — not a call centre.",
+      "A small team in Donegal. Ring us and you'll speak to one of us, not a call centre.",
   },
 ] as const;
 

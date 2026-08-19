@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import {
@@ -159,6 +160,11 @@ export function SiteHeader({
   className = "",
 }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -235,154 +241,161 @@ export function SiteHeader({
         </button>
       </header>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-white lg:hidden"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{
-                duration: 0.5,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.04,
-              }}
-              className="flex w-full items-center justify-between px-10 py-12 sm:px-16"
-            >
-              <Link
-                href="/"
-                className="flex cursor-pointer items-center"
-                aria-label="HelloCara home"
-                onClick={() => setMenuOpen(false)}
-              >
-                <ClisteLogo />
-              </Link>
-              <button
-                type="button"
-                className="-mr-2 cursor-pointer p-2 text-neutral-950"
-                aria-label="Close menu"
-                onClick={() => setMenuOpen(false)}
-              >
-                <X className="h-6 w-6" strokeWidth={1.5} aria-hidden />
-              </button>
-            </motion.div>
-
-            <div className="flex w-full flex-col gap-8 px-10 pb-12 sm:px-16">
-              <nav className="flex flex-col gap-6 text-2xl font-medium tracking-tight text-neutral-900">
-                <motion.div
-                  initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{
-                    duration: 0.55,
-                    ease: [0.22, 1, 0.36, 1],
-                    delay: 0.08,
-                  }}
-                  className="flex flex-col gap-4"
-                >
-                  <p className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">
-                    {CARA_NAV.trigger}
-                  </p>
-                  {CARA_NAV.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="cursor-pointer transition-colors hover:text-neutral-600"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                  <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">
-                    {PRODUCTS_NAV.trigger}
-                  </p>
-                  {PRODUCTS_NAV.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="cursor-pointer transition-colors hover:text-neutral-600"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{
-                    duration: 0.55,
-                    ease: [0.22, 1, 0.36, 1],
-                    delay: 0.1,
-                  }}
-                >
-                  <LoginLink
-                    className="cursor-pointer transition-colors hover:text-neutral-600"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Log in
-                  </LoginLink>
-                </motion.div>
-              </nav>
-
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {menuOpen && (
               <motion.div
+                key="mobile-menu"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: 0.38 }}
-                className="my-2 h-px w-full bg-neutral-100"
-              />
-
-              <motion.div
-                initial={{ opacity: 0, y: 14, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{
-                  duration: 0.55,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: 0.42,
-                }}
-                className="flex flex-col gap-4"
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                className="fixed inset-0 z-[100] flex min-h-0 flex-col overflow-y-auto bg-white lg:hidden"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu"
               >
-                <Link
-                  href="/book"
-                  className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-4 text-base font-normal text-white transition-colors hover:bg-slate-500"
-                  onClick={() => setMenuOpen(false)}
+                <motion.div
+                  initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: 0.04,
+                  }}
+                  className="flex w-full shrink-0 items-center justify-between px-6 py-6 sm:px-10 sm:py-10"
                 >
-                  Contact us
-                </Link>
-                {homeScroll ? (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      scrollToSectionAfterMenuClose("cara", () =>
-                        setMenuOpen(false),
-                      )
-                    }
-                    className={hearItWorkClassName}
-                  >
-                    Hear it work
-                  </button>
-                ) : (
                   <Link
-                    href="/#cara"
-                    className={hearItWorkClassName}
+                    href="/"
+                    className="flex cursor-pointer items-center"
+                    aria-label="HelloCara home"
                     onClick={() => setMenuOpen(false)}
                   >
-                    Hear it work
+                    <ClisteLogo />
                   </Link>
-                )}
+                  <button
+                    type="button"
+                    className="-mr-2 cursor-pointer p-2 text-neutral-950"
+                    aria-label="Close menu"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <X className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+                  </button>
+                </motion.div>
+
+                <div
+                  className="flex w-full flex-col gap-6 px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:gap-8 sm:px-10 sm:pb-12"
+                >
+                  <nav className="flex flex-col gap-5 text-xl font-medium tracking-tight text-neutral-900 sm:gap-6 sm:text-2xl">
+                    <motion.div
+                      initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      transition={{
+                        duration: 0.55,
+                        ease: [0.22, 1, 0.36, 1],
+                        delay: 0.08,
+                      }}
+                      className="flex flex-col gap-4"
+                    >
+                      <p className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">
+                        {CARA_NAV.trigger}
+                      </p>
+                      {CARA_NAV.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="cursor-pointer transition-colors hover:text-neutral-600"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                      <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">
+                        {PRODUCTS_NAV.trigger}
+                      </p>
+                      {PRODUCTS_NAV.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="cursor-pointer transition-colors hover:text-neutral-600"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      transition={{
+                        duration: 0.55,
+                        ease: [0.22, 1, 0.36, 1],
+                        delay: 0.1,
+                      }}
+                    >
+                      <LoginLink
+                        className="cursor-pointer transition-colors hover:text-neutral-600"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Log in
+                      </LoginLink>
+                    </motion.div>
+                  </nav>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4, ease: "easeOut", delay: 0.38 }}
+                    className="my-2 h-px w-full bg-neutral-100"
+                  />
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 14, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{
+                      duration: 0.55,
+                      ease: [0.22, 1, 0.36, 1],
+                      delay: 0.42,
+                    }}
+                    className="flex flex-col gap-4"
+                  >
+                    <Link
+                      href="/book"
+                      className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-4 text-base font-normal text-white transition-colors hover:bg-slate-500"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Contact us
+                    </Link>
+                    {homeScroll ? (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          scrollToSectionAfterMenuClose("cara", () =>
+                            setMenuOpen(false),
+                          )
+                        }
+                        className={hearItWorkClassName}
+                      >
+                        Hear it work
+                      </button>
+                    ) : (
+                      <Link
+                        href="/#cara"
+                        className={hearItWorkClassName}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Hear it work
+                      </Link>
+                    )}
+                  </motion.div>
+                </div>
               </motion.div>
-            </div>
-          </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
         )}
-      </AnimatePresence>
     </>
   );
 }

@@ -1,3 +1,13 @@
+import {
+  CARA_ANSWER_CLOSED,
+  CARA_ANSWER_DISCLOSURE,
+  CARA_ANSWER_DOESNT_KNOW,
+  CARA_ANSWER_NUMBER,
+  CARA_ANSWER_SEVERAL_CALLERS,
+  CARA_ANSWER_TRANSFER,
+  CARA_ANSWER_WHO_SEES,
+} from "@/lib/cara-shared-answers";
+
 export const HOW_CARA_WORKS_META = {
   title: "How Cara works",
   description:
@@ -28,7 +38,7 @@ export const IF_SHE_DOESNT_KNOW = {
   headingDark: "Cara never makes it up.",
   headingGradient: "Cara asks you.",
   body:
-    "You teach Cara how your business runs: your hours, what you do, prices, and how you want calls handled. Cara only answers from that. If someone asks something Cara doesn't know, Cara won't guess. Cara asks you. You give the answer. Next time, Cara knows.",
+    `You teach Cara how your business runs: your hours, what you do, prices, and how you want calls handled. Cara only answers from that. If someone asks something Cara doesn't know, ${CARA_ANSWER_DOESNT_KNOW}`,
   image: {
     src: "/how-cara-works/if-she-doesnt-know.png",
     alt: "You teach Cara how your business runs. If Cara doesn't know, Cara asks you. Cara never guesses.",
@@ -53,43 +63,39 @@ export const HOW_CARA_WORKS_FAQ_INTRO = {
 export const HOW_CARA_WORKS_FAQS = [
   {
     question: "How does Cara know about my business?",
-    answer:
-      "You tell Cara. Hours, what you do, what you don't. That's all Cara has. Cara doesn't look it up.",
+    answer: `You tell Cara. Hours, what you do, what you don't. That's all Cara has. Cara doesn't look it up. ${CARA_ANSWER_DOESNT_KNOW}`,
   },
   {
     question: "Will people know it isn't a person?",
-    answer:
-      "Yes. Every call opens with a clear AI disclosure. The call may be recorded.",
+    answer: CARA_ANSWER_DISCLOSURE,
   },
   {
     question: "Can I keep my number?",
-    answer: "Yes. Forward to Cara, or use a new one.",
+    answer: `Yes. ${CARA_ANSWER_NUMBER}`,
   },
   {
     question: "What if I only want Cara when we're busy?",
     answer: "Your phone rings first. Cara takes the ones you miss.",
   },
   {
-    question: "What if Cara gets it wrong?",
-    answer:
-      "Cara doesn't guess. A new answer doesn't go live unless you say so. You can take it back.",
-  },
-  {
     question: "Do I need a computer, or new phones?",
-    answer: "No. The line you have.",
+    answer: "No. Same phone. Nothing to install.",
   },
   {
     question: "What happens when we're closed?",
-    answer: "If nobody gets it, Cara answers.",
+    answer: CARA_ANSWER_CLOSED,
   },
   {
     question: "Can Cara put the caller through?",
-    answer:
-      "If you use a new Cara number, yes. If you keep yours and forward it, no.",
+    answer: CARA_ANSWER_TRANSFER,
   },
   {
-    question: "Who hears the calls?",
-    answer: "You. They're recorded. Hosted in the EU.",
+    question: "Can Cara take more than one call at once?",
+    answer: CARA_ANSWER_SEVERAL_CALLERS,
+  },
+  {
+    question: "Who sees the calls?",
+    answer: CARA_ANSWER_WHO_SEES,
   },
 ] as const;
 

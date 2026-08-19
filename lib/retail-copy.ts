@@ -1,7 +1,9 @@
+import { CARA_ANSWER_DOESNT_KNOW } from "@/lib/cara-shared-answers";
+
 export const RETAIL_META = {
   title: "Cara for Retail",
   description:
-    "Cara on your shop phone line when your team is busy. Multiple calls, department transfers, priced per store.",
+    "Cara on your shop phone line when your team is busy. Multiple calls, priced per store.",
 } as const;
 
 /** Placeholder until live demo line is configured */
@@ -40,7 +42,7 @@ export const RETAIL_BACKUP = {
 export const RETAIL_SHOP = {
   headingDark: "Whatever they ring about.",
   headingGradient: "Cara routes or takes it.",
-  body: "Send them to the right person or counter, or take the details if nobody picks up. Stock, prices, opening hours, orders to hold or collect. From what you've told us, or live when connected. If Cara isn't sure, your team confirms.",
+  body: `If Cara answers on a new Cara number, Cara can put them through to the right person or counter. If you keep your shop number and forward, Cara takes the details instead. Stock, prices, opening hours, orders to hold or collect. From what you've told us, or live when connected. ${CARA_ANSWER_DOESNT_KNOW}`,
   image: {
     src: "/how-cara-works/retail-on-the-call.png",
     alt: "Cara routes callers to the right person or takes shop enquiries.",
@@ -50,7 +52,7 @@ export const RETAIL_SHOP = {
 export const RETAIL_CUSTOM = {
   headingDark: "Completely custom.",
   headingGradient: "Cara does what you want.",
-  body: "Not a script off the shelf. Your shop, your rules. Take orders, route callers, check stock, leave a message for the morning. Tell us what you want on the line and we build Cara around it.",
+  body: "Not a script off the shelf. Your shop, your rules. Take orders, check stock, leave a message for the morning. Tell us what you want on the line and we build Cara around it.",
   image: {
     src: "/how-cara-works/retail-custom.png",
     alt: "Cara configured for your shop only, built around what you want on the line.",
