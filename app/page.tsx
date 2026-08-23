@@ -8,8 +8,10 @@ export default function Home() {
     <main id="main-content" className="overflow-x-clip">
       <div className="relative w-full min-w-0">
         <Hero />
-        <HomeWithRails />
-        <SiteFrameRails />
+        <div className="relative w-full min-w-0">
+          <HomeWithRails />
+          <SiteFrameRails />
+        </div>
       </div>
       <Footer />
     </main>
