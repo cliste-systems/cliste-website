@@ -6,7 +6,6 @@ import {
   HERO_CARD_GRADIENT,
   HERO_NICHE_CARD_CLASS,
   HERO_NICHE_CARD_INNER_CLASS,
-  HERO_NICHE_CTA_ROW_CLASS,
   HERO_NICHE_DIVIDER_CLASS,
   HERO_PAGE_FRAME_INNER_CLASS,
   HERO_VIEWPORT_SHELL_CLASS,
@@ -279,7 +278,7 @@ export function Hero() {
                   Cara answers your business phone when you can&apos;t. Cara sounds
                   like a real person, and never misses a call.
                 </p>
-                <div className={HERO_NICHE_CTA_ROW_CLASS}>
+                <div className="hero-fade hero-fade-d5 mt-6 flex w-full flex-col gap-2.5 sm:mt-12 sm:w-auto sm:flex-row sm:justify-start sm:gap-4 lg:mt-8">
                   <Link
                     href="/book"
                     className="flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-600 px-7 py-3 text-base font-normal text-white transition-colors hover:bg-slate-500 sm:w-auto"

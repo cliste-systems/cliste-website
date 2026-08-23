@@ -1,10 +1,14 @@
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
+import { cn } from "@/lib/utils";
 
 /** Vertical side rails aligned to `SITE_FRAME_CLASS` — one continuous pair per page shell */
-export function SiteFrameRails() {
+export function SiteFrameRails({ className }: { className?: string } = {}) {
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-[35] min-h-full"
+      className={cn(
+        "pointer-events-none absolute inset-0 z-[35] min-h-full",
+        className,
+      )}
       aria-hidden
     >
       <div className={`relative mx-auto h-full min-h-full ${SITE_FRAME_CLASS}`}>
