@@ -17,12 +17,14 @@ export function YourDashboardFaq() {
       className="relative w-full scroll-mt-24 bg-[#F8F9FB] text-slate-900"
     >
       <div className={`relative min-w-0 ${RETAIL_SECTION_FRAME}`}>
-        <h2
-          id="your-dashboard-faq-heading"
-          className={`${RETAIL_SECTION_INTRO_TITLE} px-2 sm:px-4 lg:px-6`}
-        >
-          {YOUR_DASHBOARD_FAQ_INTRO.heading}
-        </h2>
+        <div className="px-2 sm:px-4 lg:px-6">
+          <h2
+            id="your-dashboard-faq-heading"
+            className={RETAIL_SECTION_INTRO_TITLE}
+          >
+            {YOUR_DASHBOARD_FAQ_INTRO.heading}
+          </h2>
+        </div>
 
         <div className={`${SECTION_CONTENT_INSET} mt-8`}>
           <RetailFaqAccordion faqs={YOUR_DASHBOARD_FAQS} />

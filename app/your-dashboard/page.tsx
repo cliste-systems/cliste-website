@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { SiteFrameRails } from "@/components/SiteFrameRails";
-import { YourDashboardContent } from "@/components/how-it-works/YourDashboardContent";
-import { YourDashboardHero } from "@/components/how-it-works/YourDashboardHero";
+import { YourDashboardContent } from "@/components/your-dashboard/YourDashboardContent";
+import { YourDashboardHero } from "@/components/your-dashboard/YourDashboardHero";
 import { YOUR_DASHBOARD_META, YOUR_DASHBOARD_FAQS } from "@/lib/your-dashboard-copy";
 import { pageMetadata } from "@/lib/seo";
 import { HERO_VIEWPORT_SHELL_CLASS } from "@/lib/site-layout";
