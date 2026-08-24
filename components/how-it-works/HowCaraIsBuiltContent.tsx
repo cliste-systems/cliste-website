@@ -3,6 +3,7 @@ import { RetailCta } from "@/components/retail/RetailCta";
 import {
   BUILT_CUSTOM,
   BUILT_DASHBOARD,
+  BUILT_DASHBOARD_CONTINUE,
   BUILT_FROM,
   BUILT_LINE,
   BUILT_TICKETS,
@@ -77,6 +78,7 @@ export function HowCaraIsBuiltContent() {
           imageAlt={BUILT_DASHBOARD.image.alt}
           imageOn="right"
           tone="white"
+          continueLink={BUILT_DASHBOARD_CONTINUE}
         />
       </SectionReveal>
       <SectionReveal className="w-full min-w-0">

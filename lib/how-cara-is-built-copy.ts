@@ -70,6 +70,11 @@ export const BUILT_DASHBOARD = {
   },
 } as const;
 
+export const BUILT_DASHBOARD_CONTINUE = {
+  label: "Your dashboard",
+  href: "/your-dashboard",
+} as const;
+
 export const HOW_CARA_IS_BUILT_FAQ_INTRO = {
   heading: "Questions.",
 } as const;

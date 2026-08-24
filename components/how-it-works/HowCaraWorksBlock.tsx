@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HowCaraWorksSectionImage } from "./HowCaraWorksSectionImage";
 import { RETAIL_SECTION_FRAME, RETAIL_SECTION_INTRO_TITLE } from "@/lib/site-layout";
 import { cn } from "@/lib/utils";
@@ -5,6 +6,7 @@ import { cn } from "@/lib/utils";
 type HowCaraWorksBlockProps = {
   id: string;
   headingId: string;
+  eyebrow?: string;
   headingDark: string;
   headingGradient: string;
   body: string;
@@ -13,11 +15,13 @@ type HowCaraWorksBlockProps = {
   imageOn?: "left" | "right";
   tone?: "white" | "grey";
   imageAspectClass?: string;
+  continueLink?: { label: string; href: string };
 };
 
 export function HowCaraWorksBlock({
   id,
   headingId,
+  eyebrow,
   headingDark,
   headingGradient,
   body,
@@ -26,6 +30,7 @@ export function HowCaraWorksBlock({
   imageOn = "right",
   tone = "white",
   imageAspectClass,
+  continueLink,
 }: HowCaraWorksBlockProps) {
   const imageFirstOnDesktop = imageOn === "left";
 
@@ -61,6 +66,11 @@ export function HowCaraWorksBlock({
             )}
           >
             <div className="max-w-md">
+              {eyebrow ? (
+                <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
+                  {eyebrow}
+                </p>
+              ) : null}
               <h2 id={headingId} className={RETAIL_SECTION_INTRO_TITLE}>
                 <span className="block text-slate-900">{headingDark}</span>
                 <span className="mt-1 block bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-400">
@@ -70,6 +80,16 @@ export function HowCaraWorksBlock({
               <p className="mt-5 text-base leading-relaxed text-slate-600 sm:mt-6 sm:text-[17px]">
                 {body}
               </p>
+              {continueLink ? (
+                <p className="mt-5">
+                  <Link
+                    href={continueLink.href}
+                    className="text-base font-medium text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-slate-500"
+                  >
+                    {continueLink.label}
+                  </Link>
+                </p>
+              ) : null}
             </div>
           </div>
         </div>

@@ -17,6 +17,7 @@ const FOOTER_LINKS = {
     { label: "Hear Cara", href: "/#cara" },
     { label: "How Cara works", href: "/how-cara-works" },
     { label: "How Cara is built", href: "/how-cara-is-built" },
+    { label: "Your dashboard", href: "/your-dashboard" },
     { label: "Cara for retail", href: "/#cara-retail-heading" },
     { label: "FAQ", href: "/#cara-retail-faq-heading" },
   ],
@@ -84,7 +85,8 @@ export function Footer() {
     pathname !== "/" &&
     pathname !== "/retail" &&
     pathname !== "/how-cara-works" &&
-    pathname !== "/how-cara-is-built";
+    pathname !== "/how-cara-is-built" &&
+    pathname !== "/your-dashboard";
 
   return (
     <footer id="contact" className="w-full border-t border-slate-200 bg-[#F8F9FB]">

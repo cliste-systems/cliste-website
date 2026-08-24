@@ -79,7 +79,8 @@ export const HOW_CARA_WORKS_FAQS = [
   },
   {
     question: "Do I need a computer, or new phones?",
-    answer: "No. Same phone. Nothing to install.",
+    answer:
+      "No. Cara works off the phone line you already have — same phone, nothing to install. Reading the calls back is done on a computer.",
   },
   {
     question: "What happens when we're closed?",

@@ -87,6 +87,8 @@ export const HOW_CARA_WORKS_HREF = "/how-cara-works" as const;
 
 export const HOW_CARA_IS_BUILT_HREF = "/how-cara-is-built" as const;
 
+export const YOUR_DASHBOARD_HREF = "/your-dashboard" as const;
+
 export const HOW_CARA_WORKS_LINK = {
   label: "How Cara works",
   href: HOW_CARA_WORKS_HREF,
@@ -95,6 +97,11 @@ export const HOW_CARA_WORKS_LINK = {
 export const HOW_CARA_IS_BUILT_LINK = {
   label: "How Cara is built",
   href: HOW_CARA_IS_BUILT_HREF,
+} as const;
+
+export const YOUR_DASHBOARD_LINK = {
+  label: "Your dashboard",
+  href: YOUR_DASHBOARD_HREF,
 } as const;
 
 export type HeaderNavItem = {
@@ -113,6 +120,7 @@ export const CARA_NAV: HeaderNavMenu = {
   items: [
     { label: HOW_CARA_WORKS_LINK.label, href: HOW_CARA_WORKS_LINK.href },
     { label: HOW_CARA_IS_BUILT_LINK.label, href: HOW_CARA_IS_BUILT_LINK.href },
+    { label: YOUR_DASHBOARD_LINK.label, href: YOUR_DASHBOARD_LINK.href },
   ],
 };
 

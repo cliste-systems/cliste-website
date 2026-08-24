@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/retail/salon",
   title: "AI Voice Agents for Salons",
   description:
     "Irish AI voice agents for salon phone lines. Answer every call, handle enquiries, and leave clear follow-ups. Donegal-engineered.",
-};
+});
 
 export default function RetailSalonPage() {
   return (

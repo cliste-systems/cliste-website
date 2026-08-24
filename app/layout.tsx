@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import { CLISTE_COMPANY } from "@/lib/company-details";
 import { CLISTE_META_DESCRIPTION } from "@/lib/site-copy";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site-url";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -69,19 +70,13 @@ export const metadata: Metadata = {
     siteName: CLISTE_COMPANY.productName,
     title: "HelloCara | AI Voice Receptionist",
     description: CLISTE_META_DESCRIPTION,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "HelloCara - AI Voice Receptionist",
-      },
-    ],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "HelloCara | AI Voice Receptionist",
     description: CLISTE_META_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -132,6 +127,25 @@ function JsonLd() {
     publisher: { "@id": `${siteUrl}#organization` },
   };
 
+  const softwareApplication = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: CLISTE_COMPANY.productName,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: siteUrl,
+    description: CLISTE_META_DESCRIPTION,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Ireland",
+    },
+  };
+
   return (
     <>
       <script
@@ -142,6 +156,10 @@ function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplication) }}
+      />
     </>
   );
 }
@@ -150,7 +168,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en-IE" className={cn("font-sans", geist.variable)}>
       <head>
         <script
           dangerouslySetInnerHTML={{

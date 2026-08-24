@@ -1,29 +1,29 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { SiteFrameRails } from "@/components/SiteFrameRails";
-import { HowCaraIsBuiltContent } from "@/components/how-it-works/HowCaraIsBuiltContent";
-import { HowCaraIsBuiltHero } from "@/components/how-it-works/HowCaraIsBuiltHero";
-import { HOW_CARA_IS_BUILT_META, HOW_CARA_IS_BUILT_FAQS } from "@/lib/how-cara-is-built-copy";
+import { YourDashboardContent } from "@/components/how-it-works/YourDashboardContent";
+import { YourDashboardHero } from "@/components/how-it-works/YourDashboardHero";
+import { YOUR_DASHBOARD_META, YOUR_DASHBOARD_FAQS } from "@/lib/your-dashboard-copy";
 import { pageMetadata } from "@/lib/seo";
 import { HERO_VIEWPORT_SHELL_CLASS } from "@/lib/site-layout";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 
 export const metadata: Metadata = pageMetadata({
-  path: "/how-cara-is-built",
-  title: HOW_CARA_IS_BUILT_META.title,
-  description: HOW_CARA_IS_BUILT_META.description,
+  path: "/your-dashboard",
+  title: YOUR_DASHBOARD_META.title,
+  description: YOUR_DASHBOARD_META.description,
 });
 
-export default function HowCaraIsBuiltPage() {
+export default function YourDashboardPage() {
   return (
     <>
-      <FaqJsonLd faqs={HOW_CARA_IS_BUILT_FAQS} />
+      <FaqJsonLd faqs={YOUR_DASHBOARD_FAQS} />
     <main className="relative min-h-screen overflow-x-clip bg-white text-neutral-900 antialiased">
       <div className="relative w-full min-w-0">
         <div className={HERO_VIEWPORT_SHELL_CLASS}>
-          <HowCaraIsBuiltHero />
+          <YourDashboardHero />
         </div>
-        <HowCaraIsBuiltContent />
+        <YourDashboardContent />
         <SiteFrameRails />
       </div>
       <Footer />

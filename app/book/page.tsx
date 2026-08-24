@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { Nav } from "@/components/Nav";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/book",
   title: "Book a Free Demo",
   description:
     "Schedule a 30-minute call with HelloCara. See how our Irish voice agents can automate your phone line.",
-};
+});
 
 export default function BookPage() {
   return (

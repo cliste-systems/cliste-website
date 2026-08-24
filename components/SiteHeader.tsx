@@ -9,6 +9,7 @@ import {
   CARA_NAV,
   HOW_CARA_IS_BUILT_LINK,
   HOW_CARA_WORKS_LINK,
+  YOUR_DASHBOARD_LINK,
   PRODUCTS_NAV,
   type HeaderNavMenu,
 } from "@/lib/industries";
@@ -225,6 +226,9 @@ export function SiteHeader({
           </Link>
           <Link href={HOW_CARA_IS_BUILT_LINK.href} className={navLinkClassName}>
             {HOW_CARA_IS_BUILT_LINK.label}
+          </Link>
+          <Link href={YOUR_DASHBOARD_LINK.href} className={navLinkClassName}>
+            {YOUR_DASHBOARD_LINK.label}
           </Link>
           <HeaderDropdown menu={PRODUCTS_NAV} surface={surface} />
           <LoginLink className={loginClassName}>Log in</LoginLink>
