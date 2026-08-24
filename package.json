@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "capture:your-dashboard": "node scripts/capture-your-dashboard-images.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -36,6 +37,7 @@
     "@types/three": "^0.185.3",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.12",
+    "playwright": "^1.62.1",
     "shadcn": "^4.16.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"

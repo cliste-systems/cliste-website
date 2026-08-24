@@ -301,7 +301,7 @@ export function Hero() {
           <div className="h-px min-h-px bg-slate-200" />
         </div>
 
-        {/* Partner strip — desktop only so mobile hero fills the viewport */}
+        {/* Partner strip: desktop only so mobile hero fills the viewport */}
         <div className="mt-4 hidden px-6 pb-3 sm:px-10 sm:pb-10 lg:block lg:mt-12 lg:px-20 lg:pb-8">
           <PartnerLogos />
         </div>

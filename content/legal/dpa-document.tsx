@@ -37,17 +37,17 @@ export function DpaDocument() {
         </p>
         <LegalList>
           <li>
-            <strong>GDPR</strong> — Regulation (EU) 2016/679.
+            <strong>GDPR</strong>: Regulation (EU) 2016/679.
           </li>
           <li>
             <strong>Personal data</strong>, <strong>processing</strong>,{" "}
             <strong>controller</strong>, <strong>processor</strong>,{" "}
             <strong>data subject</strong>,{" "}
-            <strong>special categories of personal data</strong> — as defined in
+            <strong>special categories of personal data</strong>: as defined in
             Article 4 GDPR.
           </li>
           <li>
-            <strong>Sub-processor</strong> — any third party engaged by{" "}
+            <strong>Sub-processor</strong>: any third party engaged by{" "}
             {CLISTE_COMPANY.legalName} that processes Personal Data on the Controller&apos;s behalf.
           </li>
         </LegalList>
@@ -55,9 +55,9 @@ export function DpaDocument() {
 
       <LegalSection title="2. Subject matter and duration">
         <p>
-          {CLISTE_COMPANY.legalName} processes Personal Data to provide {product} — AI voice
+          {CLISTE_COMPANY.legalName} processes Personal Data to provide {product}: AI voice
           receptionist, Action Inbox, optional appointments, SMS / email
-          notifications, and the operator dashboard — for the duration of the
+          notifications, and the operator dashboard: for the duration of the
           customer&apos;s subscription, plus the retention periods set out in our{" "}
           <LegalInlineLink href="/legal/privacy#retention">
             privacy notice
@@ -99,7 +99,7 @@ export function DpaDocument() {
         <LegalList>
           <li>
             It has a lawful basis under Article 6 GDPR for every category of
-            Personal Data shared with {CLISTE_COMPANY.legalName} — typically performance of a
+            Personal Data shared with {CLISTE_COMPANY.legalName}: typically performance of a
             contract (Art 6(1)(b)) for booking, and legitimate interests
             (Art 6(1)(f)) for repeat-customer recognition.
           </li>
@@ -128,7 +128,7 @@ export function DpaDocument() {
           </li>
           <li>
             Implement appropriate <strong>technical and organisational measures</strong>{" "}
-            (Article 32) — see Annex II.
+            (Article 32): see Annex II.
           </li>
           <li>
             Engage <strong>sub-processors</strong> only with the Controller&apos;s
@@ -246,7 +246,7 @@ export function DpaDocument() {
         </p>
       </LegalSection>
 
-      <LegalSection title="Annex I — Processing details">
+      <LegalSection title="Annex I: Processing details">
         <LegalTable
           headers={["Field", "Value"]}
           rows={[
@@ -264,36 +264,36 @@ export function DpaDocument() {
             ["Frequency", "Continuous, for the duration of the subscription"],
             [
               "Storage location",
-              "EEA — Supabase AWS eu-west-1 (Ireland); Vercel dub1 (Dublin); Railway EU West; see Annex III",
+              "EEA: Supabase AWS eu-west-1 (Ireland); Vercel dub1 (Dublin); Railway EU West; see Annex III",
             ],
           ]}
         />
       </LegalSection>
 
-      <LegalSection title="Annex II — Technical & organisational measures">
+      <LegalSection title="Annex II: Technical & organisational measures">
         <LegalList>
           <li>
-            <strong>Encryption</strong> — TLS 1.2+ in transit, AES-256 at rest
+            <strong>Encryption</strong>: TLS 1.2+ in transit, AES-256 at rest
             (Postgres, object storage).
           </li>
           <li>
-            <strong>Access control</strong> — Row-level security on every tenant
+            <strong>Access control</strong>: Row-level security on every tenant
             table; service role keys held only on the server.
           </li>
           <li>
-            <strong>Logging</strong> — Security audit log for privileged actions
+            <strong>Logging</strong>: Security audit log for privileged actions
             (admin actions, GDPR exports / erasures).
           </li>
           <li>
-            <strong>Network</strong> — Production behind Cloudflare WAF +
+            <strong>Network</strong>: Production behind Cloudflare WAF +
             Turnstile bot protection.
           </li>
           <li>
-            <strong>Backup</strong> — Supabase managed point-in-time recovery,
+            <strong>Backup</strong>: Supabase managed point-in-time recovery,
             35-day window.
           </li>
           <li>
-            <strong>Retention</strong> — Daily cron at{" "}
+            <strong>Retention</strong>: Daily cron at{" "}
             <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
               /api/cron/data-retention
             </code>
@@ -302,7 +302,7 @@ export function DpaDocument() {
         </LegalList>
       </LegalSection>
 
-      <LegalSection title="Annex III — Sub-processors and locations">
+      <LegalSection title="Annex III: Sub-processors and locations">
         <p>
           The living named list (vendor, country, transfer mechanism, and purpose) is
           maintained in the customer dashboard (

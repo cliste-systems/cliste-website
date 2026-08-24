@@ -87,7 +87,7 @@ export const HOW_CARA_WORKS_HREF = "/how-cara-works" as const;
 
 export const HOW_CARA_IS_BUILT_HREF = "/how-cara-is-built" as const;
 
-export const YOUR_DASHBOARD_HREF = "/your-dashboard" as const;
+export const YOUR_DASHBOARD_HREF = "/dashboard" as const;
 
 export const HOW_CARA_WORKS_LINK = {
   label: "How Cara works",
@@ -100,7 +100,7 @@ export const HOW_CARA_IS_BUILT_LINK = {
 } as const;
 
 export const YOUR_DASHBOARD_LINK = {
-  label: "Your dashboard",
+  label: "Dashboard",
   href: YOUR_DASHBOARD_HREF,
 } as const;
 

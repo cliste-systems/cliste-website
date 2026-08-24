@@ -72,7 +72,7 @@ export function CookiesDocument() {
     <>
       <LegalPageHeader
         title="Cookies"
-        description={`What cookies and similar technologies we use on the ${product} dashboard, login, and marketing site — and how to manage them.`}
+        description={`What cookies and similar technologies we use on the ${product} dashboard, login, and marketing site: and how to manage them.`}
       />
 
       <p className="text-[15px] leading-relaxed text-slate-700">
@@ -84,15 +84,15 @@ export function CookiesDocument() {
       <LegalSection title="Categories">
         <ul className="space-y-2 text-[15px] leading-relaxed text-slate-700">
           <li>
-            <strong className="text-slate-900">Strictly necessary</strong> —{" "}
+            <strong className="text-slate-900">Strictly necessary</strong>:{" "}
             {CATEGORY_DESCRIPTION["strictly-necessary"]}
           </li>
           <li>
-            <strong className="text-slate-900">Security</strong> —{" "}
+            <strong className="text-slate-900">Security</strong>:{" "}
             {CATEGORY_DESCRIPTION.security}
           </li>
           <li>
-            <strong className="text-slate-900">Functional</strong> —{" "}
+            <strong className="text-slate-900">Functional</strong>:{" "}
             {CATEGORY_DESCRIPTION.functional}
           </li>
         </ul>

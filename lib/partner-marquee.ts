@@ -1,7 +1,7 @@
 import type { MarqueeLogo } from "@/components/ui/marquee-logo-scroller";
 
 /**
- * Infrastructure partners — aligned with cliste-code-base-1 sub-processors
+ * Infrastructure partners: aligned with cliste-code-base-1 sub-processors
  * (EEA hosting, telephony, real-time voice, edge security).
  */
 export const PARTNER_MARQUEE_LOGOS: MarqueeLogo[] = [

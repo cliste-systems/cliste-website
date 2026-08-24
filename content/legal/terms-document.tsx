@@ -74,7 +74,7 @@ export function TermsDocument() {
       <LegalSection title="5. Customer and caller data">
         <p>
           You are the data controller for your callers&rsquo; and contacts&rsquo;
-          data. {CLISTE_COMPANY.legalName} processes that data as processor — see our{" "}
+          data. {CLISTE_COMPANY.legalName} processes that data as processor: see our{" "}
           <LegalInlineLink href="/legal/privacy">privacy notice</LegalInlineLink>{" "}
           and <LegalInlineLink href="/legal/dpa">DPA</LegalInlineLink>.
         </p>

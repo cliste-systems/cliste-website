@@ -1,7 +1,7 @@
 import { SITE_FRAME_CLASS } from "@/lib/site-layout";
 import { cn } from "@/lib/utils";
 
-/** Vertical side rails aligned to `SITE_FRAME_CLASS` — one continuous pair per page shell */
+/** Vertical side rails aligned to `SITE_FRAME_CLASS`: one continuous pair per page shell */
 export function SiteFrameRails({ className }: { className?: string } = {}) {
   return (
     <div

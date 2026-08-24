@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   path: "/legal/sub-processors",
   title: "Sub-processors",
-  description: `How ${CLISTE_COMPANY.productName} uses third parties to run the platform — categories and transfer safeguards.`,
+  description: `How ${CLISTE_COMPANY.productName} uses third parties to run the platform: categories and transfer safeguards.`,
 });
 
 export default function SubProcessorsPage() {

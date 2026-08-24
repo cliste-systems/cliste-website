@@ -31,7 +31,7 @@ export const CARA_ANSWER_WHO_SEES_RETENTION =
   "In your dashboard, and in the EU. You can review the transcript and summary. Audio is not kept after the call. Transcripts are kept for 30 days and summaries for 13 months, then they are deleted. We do not sell your data.";
 
 export const CARA_ANSWER_DASHBOARD_ACCESS =
-  "It's a website, not an app. You open it on a computer and log in with your email. Nothing to download, nothing to update. It's built for a full screen, so there's no phone version.";
+  "A web app in the browser on the computer, not on the phone. Log in with your account. Nothing to download, nothing to install. Built for a full screen.";
 
 export const CARA_ANSWER_DASHBOARD_TEAM =
-  "Whoever you invite. Your staff see the same calls you do. You choose who gets in and who gets the texts.";
+  "Whoever you invite. Your staff see the same calls you do. You pick who gets in and who gets the texts.";

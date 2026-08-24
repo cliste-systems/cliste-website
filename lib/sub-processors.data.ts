@@ -1,7 +1,7 @@
-/** Sub-processor list version — bump when SUB_PROCESSORS changes; triggers customer email notice. */
+/** Sub-processor list version: bump when SUB_PROCESSORS changes; triggers customer email notice. */
 export const SUB_PROCESSOR_LIST_VERSION = "2026-06-12";
 
-/** Sub-processor registry — update here; legal pages import this source. */
+/** Sub-processor registry: update here; legal pages import this source. */
 
 export type SubProcessorGroup = "eea-hosting" | "us-voice" | "global-services";
 
@@ -15,13 +15,13 @@ export type SubProcessor = {
   group: SubProcessorGroup;
 };
 
-/** Named vendors (required in DPA / customer annex — Art 28 GDPR, SCC Module 3). */
+/** Named vendors (required in DPA / customer annex: Art 28 GDPR, SCC Module 3). */
 export const SUB_PROCESSORS: SubProcessor[] = [
   {
     name: "Supabase (Supabase, Inc.)",
     purpose: "Database, authentication, server-side operations.",
     data: "Business and caller data (encrypted at rest).",
-    location: "EEA — AWS eu-west-1 (Ireland). Primary data store.",
+    location: "EEA: AWS eu-west-1 (Ireland). Primary data store.",
     transferMechanism: "No third-country transfer for primary database.",
     url: "https://supabase.com/privacy",
     group: "eea-hosting",
@@ -30,7 +30,7 @@ export const SUB_PROCESSORS: SubProcessor[] = [
     name: "Vercel (Vercel Inc.)",
     purpose: "Application hosting (Next.js dashboard and APIs).",
     data: "Server logs, request metadata.",
-    location: "EEA — production functions in dub1 (Dublin, Ireland).",
+    location: "EEA: production functions in dub1 (Dublin, Ireland).",
     transferMechanism:
       "Primary compute in EU; global CDN / DDoS edge may see request metadata (SCCs).",
     url: "https://vercel.com/legal/privacy-policy",
@@ -40,7 +40,7 @@ export const SUB_PROCESSORS: SubProcessor[] = [
     name: "Railway (Railway Corp.)",
     purpose: "Hosting for the AI voice agent worker.",
     data: "Server logs, call-handling metadata (not stored transcripts).",
-    location: "EEA — Railway EU West.",
+    location: "EEA: Railway EU West.",
     transferMechanism: "EU hosting; SCCs available if configuration changes.",
     url: "https://railway.app/legal/privacy",
     group: "eea-hosting",
@@ -120,7 +120,7 @@ export const SUB_PROCESSORS: SubProcessor[] = [
     group: "us-voice",
   },
   {
-    name: "Google (Google Ireland Ltd) — optional",
+    name: "Google (Google Ireland Ltd): optional",
     purpose: "Geocoding Irish service-area addresses when a Maps API key is set.",
     data: "Address / Eircode text sent for geocoding.",
     location: "EU entity; processing may occur globally.",
@@ -131,7 +131,7 @@ export const SUB_PROCESSORS: SubProcessor[] = [
   {
     name: "Sentry (Functional Software, Inc.)",
     purpose: "Error monitoring and performance traces for the dashboard and APIs.",
-    data: "Stack traces, request metadata — no intentional caller audio or transcripts.",
+    data: "Stack traces, request metadata: no intentional caller audio or transcripts.",
     location:
       "United States (default). EU data residency available on Business plans.",
     transferMechanism:
@@ -141,7 +141,7 @@ export const SUB_PROCESSORS: SubProcessor[] = [
   },
 ];
 
-/** Category summary for public privacy pages (Art 13/14 — categories of recipients). */
+/** Category summary for public privacy pages (Art 13/14: categories of recipients). */
 export const SUB_PROCESSOR_CATEGORIES_PUBLIC = [
   {
     category: "Cloud database & authentication",
@@ -177,7 +177,7 @@ export const SUB_PROCESSOR_CATEGORIES_PUBLIC = [
 ] as const;
 
 export const SUB_PROCESSOR_GROUP_LABELS: Record<SubProcessorGroup, string> = {
-  "eea-hosting": "EEA hosting — primary data & compute",
-  "us-voice": "Voice AI — transient processing (US today; EU options noted)",
+  "eea-hosting": "EEA hosting: primary data & compute",
+  "us-voice": "Voice AI: transient processing (US today; EU options noted)",
   "global-services": "Payments, messaging & security",
 };

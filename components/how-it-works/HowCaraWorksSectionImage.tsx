@@ -8,7 +8,7 @@ type HowCaraWorksSectionImageProps = {
   src: string;
   alt: string;
   className?: string;
-  /** Tailwind aspect class — default 3:2; use 2:1 for wide diagrams */
+  /** Tailwind aspect class: default 3:2; use 2:1 for wide diagrams */
   aspectClass?: string;
 };
 
@@ -35,7 +35,7 @@ export function HowCaraWorksSectionImage({
           aria-hidden
         />
       ) : (
-        // Optional slot — file can be added later at the public path.
+        // Optional slot: file can be added later at the public path.
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={src}

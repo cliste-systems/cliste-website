@@ -38,7 +38,7 @@ export function PrivacyNoticeDocument() {
           </li>
           <li>
             <strong>{CLISTE_COMPANY.legalName}</strong> is your <em>data processor</em> for that
-            data — we act only on your documented instructions (this notice and
+            data: we act only on your documented instructions (this notice and
             the{" "}
             <LegalInlineLink href="/legal/dpa">
               Data Processing Agreement
@@ -114,7 +114,7 @@ export function PrivacyNoticeDocument() {
             individuals, audit logging.
           </li>
           <li>
-            <strong>Consent</strong> (Art 6(1)(a)): only where required — e.g.
+            <strong>Consent</strong> (Art 6(1)(a)): only where required: e.g.
             non-essential cookies. You may withdraw consent without affecting
             processing already carried out.
           </li>
@@ -139,9 +139,9 @@ export function PrivacyNoticeDocument() {
           <strong>Dublin (dub1)</strong>, and the voice worker in{" "}
           <strong>Railway EU West</strong>. Live calls use{" "}
           <strong>LiveKit Cloud</strong> (EU SIP for inbound calls). Some processing
-          — mainly{" "}
+         : mainly{" "}
           <strong>text-to-speech and LLM routing</strong> (ElevenLabs, OpenRouter)
-          and transactional email — may still use US-based sub-processors under the
+          and transactional email: may still use US-based sub-processors under the
           EU&ndash;US Data Privacy Framework and/or Standard Contractual Clauses.
           Audio is not retained at rest; see{" "}
           <LegalInlineLink href="/legal/sub-processors">sub-processors</LegalInlineLink>.
@@ -156,7 +156,7 @@ export function PrivacyNoticeDocument() {
         </p>
         <LegalList>
           <li>Access, rectification, erasure, restriction, portability</li>
-          <li>Object to processing (including direct marketing — we do not market to your lists)</li>
+          <li>Object to processing (including direct marketing: we do not market to your lists)</li>
           <li>
             Complain to the Irish{" "}
             <LegalInlineLink href="https://www.dataprotection.ie" external>
@@ -170,7 +170,7 @@ export function PrivacyNoticeDocument() {
         <p>
           The AI voice agent handles routine calls and may create action items or
           optional appointments. It does not make legal or similarly significant
-          decisions about callers without human oversight — your team reviews
+          decisions about callers without human oversight: your team reviews
           outcomes in the dashboard.
         </p>
       </LegalSection>
@@ -243,7 +243,7 @@ export function PrivacyNoticeDocument() {
 
       <LegalSection title="12. Contact">
         <p>
-          <strong>{CLISTE_COMPANY.privacyEmail}</strong> — we aim to acknowledge within
+          <strong>{CLISTE_COMPANY.privacyEmail}</strong>: we aim to acknowledge within
           5 working days and respond within 30 days (extendable for complex
           requests, with notice).
         </p>

@@ -36,7 +36,7 @@ export function SubProcessorsDocument({
         description={
           isCustomer
             ? `Named third parties we use to deliver ${product}. This annex forms part of our DPA with your business.`
-            : `How ${product} uses third parties to run the platform. This page lists categories only — not a full vendor directory.`
+            : `How ${product} uses third parties to run the platform. This page lists categories only: not a full vendor directory.`
         }
       />
 
@@ -46,7 +46,7 @@ export function SubProcessorsDocument({
             <p>
               <strong>Primary business and caller data</strong> (database records,
               transcripts, contacts, action-inbox items) is stored in the{" "}
-              <strong>EEA</strong> — Supabase on AWS <strong>eu-west-1 (Ireland)</strong>.
+              <strong>EEA</strong>: Supabase on AWS <strong>eu-west-1 (Ireland)</strong>.
               The dashboard APIs run on Vercel in <strong>dub1 (Dublin)</strong> and the
               voice worker on <strong>Railway EU West</strong>.
             </p>
@@ -91,7 +91,7 @@ export function SubProcessorsDocument({
         <p>
           Under GDPR Article 28, <strong>business customers</strong> (data
           controllers) must receive the <strong>names</strong> of our
-          sub-processors — not just categories. That named annex is in your{" "}
+          sub-processors: not just categories. That named annex is in your{" "}
           <LegalInlineLink href="/dashboard/legal/sub-processors">
             dashboard Legal &amp; privacy
           </LegalInlineLink>{" "}
@@ -111,12 +111,12 @@ export function SubProcessorsDocument({
         </p>
         <p>
           For <strong>callers</strong>, your privacy notice should describe{" "}
-          <em>categories</em> of recipients (hosting, AI speech services, SMS) —
+          <em>categories</em> of recipients (hosting, AI speech services, SMS):
           you do not need to list vendor product names on your shop window.
         </p>
         <p>
           We do <strong>not</strong> publish proprietary architecture, integration
-          details, or model routing — those are trade secrets.
+          details, or model routing: those are trade secrets.
         </p>
       </LegalSection>
 
@@ -155,7 +155,7 @@ export function SubProcessorsDocument({
           <p className="text-[13px] leading-relaxed text-slate-700">
             We give business customers at least 30 days&rsquo; notice of material
             changes (new vendor or region) by email where required. You may object
-            on legitimate data-protection grounds — see the{" "}
+            on legitimate data-protection grounds: see the{" "}
             <LegalInlineLink href="/legal/privacy">privacy notice</LegalInlineLink>.
           </p>
 
@@ -195,7 +195,7 @@ export function SubProcessorsDocument({
         <p>
           Our DPA with you is at{" "}
           <LegalInlineLink href="/legal/dpa">/legal/dpa</LegalInlineLink>.
-          Enterprise customers may request a countersigned copy — email{" "}
+          Enterprise customers may request a countersigned copy: email{" "}
           <strong>{CLISTE_COMPANY.privacyEmail}</strong>.
         </p>
       </LegalSection>

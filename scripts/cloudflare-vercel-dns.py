@@ -134,7 +134,7 @@ def main() -> None:
     if not zone:
         print(
             f"Set CF_ZONE_ID for {SITE_DOMAIN} "
-            "(Cloudflare zone id — not in DEFAULT_ZONE_IDS)."
+            "(Cloudflare zone id: not in DEFAULT_ZONE_IDS)."
         )
         sys.exit(1)
 

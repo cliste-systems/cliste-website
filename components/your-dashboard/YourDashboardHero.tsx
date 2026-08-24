@@ -96,7 +96,7 @@ export function YourDashboardHero() {
                   {YOUR_DASHBOARD_HERO.primaryCta}
                 </Link>
                 <Link
-                  href="#step-1"
+                  href="#not-an-app"
                   className="group flex w-full cursor-pointer items-center justify-center rounded-full bg-slate-500/10 px-7 py-2.5 text-base font-normal text-slate-900 transition-all duration-300 hover:bg-slate-500/15 sm:w-auto sm:py-1.5 sm:pl-5 sm:pr-1.5"
                 >
                   {YOUR_DASHBOARD_HERO.secondaryCta}

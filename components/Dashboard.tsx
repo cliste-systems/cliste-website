@@ -4,7 +4,7 @@ const FEATURES = [
   {
     icon: Layers,
     title: "Everything in one place",
-    body: "Calls, inbox, and agent setup — no tool-switching.",
+    body: "Calls, inbox, and agent setup. No tool-switching.",
   },
   {
     icon: RefreshCw,
@@ -49,7 +49,7 @@ export function Dashboard() {
               One dashboard for your voice agent.
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Calls, Action Inbox, contacts, and Cara setup — all in one place.
+              Calls, Action Inbox, contacts, and Cara setup, all in one place.
             </p>
 
             <ul className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">

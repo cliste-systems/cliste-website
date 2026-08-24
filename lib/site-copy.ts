@@ -4,4 +4,4 @@ export const CLISTE_TAGLINE =
 
 /** Default meta / Open Graph description */
 export const CLISTE_META_DESCRIPTION =
-  "HelloCara is Ireland's AI voice receptionist — engineered in Donegal for Irish salons, barbers, and local businesses." as const;
+  "HelloCara is Ireland's AI voice receptionist, engineered in Donegal for Irish salons, barbers, and local businesses." as const;

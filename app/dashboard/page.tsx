@@ -9,12 +9,12 @@ import { HERO_VIEWPORT_SHELL_CLASS } from "@/lib/site-layout";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 
 export const metadata: Metadata = pageMetadata({
-  path: "/your-dashboard",
+  path: "/dashboard",
   title: YOUR_DASHBOARD_META.title,
   description: YOUR_DASHBOARD_META.description,
 });
 
-export default function YourDashboardPage() {
+export default function DashboardPage() {
   return (
     <>
       <FaqJsonLd faqs={YOUR_DASHBOARD_FAQS} />

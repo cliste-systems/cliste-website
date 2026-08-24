@@ -11,7 +11,7 @@ export type BgGradientProps = {
   gradientStop?: string;
 };
 
-/** reuno-ui / 21st.dev — radial hero gradient background */
+/** reuno-ui / 21st.dev: radial hero gradient background */
 export function BgGradient({
   className,
   gradientFrom = "#fff",

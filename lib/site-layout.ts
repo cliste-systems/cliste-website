@@ -20,15 +20,15 @@ export const SITE_FRAME_CLASS =
 export const NICHE_PAGE_FRAME_CLASS =
   `${SITE_FRAME_CLASS} px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8` as const;
 
-/** Full-viewport hero shell — grey pad around card; no forced height on mobile */
+/** Full-viewport hero shell: grey pad around card; no forced height on mobile */
 export const HERO_VIEWPORT_SHELL_CLASS =
   "bg-[#F8F9FB] flex flex-col lg:min-h-[100svh]" as const;
 
-/** Inner frame under the viewport shell — card grows on mobile */
+/** Inner frame under the viewport shell: card grows on mobile */
 export const HERO_PAGE_FRAME_INNER_CLASS =
   `${NICHE_PAGE_FRAME_CLASS} relative flex min-h-0 flex-1 flex-col pb-0` as const;
 
-/** Rounded hero card — inset on mobile; grows with content up to viewport cap */
+/** Rounded hero card: inset on mobile; grows with content up to viewport cap */
 export const HERO_NICHE_CARD_CLASS =
   "hero-bg-reveal relative flex w-full max-h-[calc(100svh-2rem)] flex-col overflow-hidden rounded-[1.5rem] shadow-[0_1px_0_rgba(15,23,42,0.04)] ring-1 ring-slate-200/80 sm:max-h-[calc(100svh-3rem)] sm:rounded-[2rem] lg:min-h-0 lg:max-h-none lg:flex-1 lg:rounded-[2.5rem]" as const;
 
@@ -66,7 +66,7 @@ export const STUDIO_HAIRLINE_INSET = "py-4 sm:py-5" as const;
 export const STUDIO_BOTTOM_HAIRLINE_INSET =
   "pt-24 pb-4 sm:pt-28 sm:pb-5" as const;
 
-/** Shared section intro — Features9, Partners, Cara, retail, FAQ */
+/** Shared section intro: Features9, Partners, Cara, retail, FAQ */
 export const SECTION_SHELL_PAD =
   "px-4 pt-16 pb-14 sm:px-6 sm:pt-20 sm:pb-20 lg:px-8 lg:pt-24 lg:pb-24" as const;
 
