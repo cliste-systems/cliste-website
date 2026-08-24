@@ -86,6 +86,9 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+  verification: {
+    google: "1baABpti8ciDHVePvGroLzg9ZXLJYyfq_4QOxFv-0LM",
+  },
   alternates: { canonical: siteUrl },
   category: "technology",
 };
