@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   path: "/legal/dpa",
   title: "Data Processing Agreement",
-  description: `GDPR Article 28 data processing agreement between ${CLISTE_COMPANY.legalName} (processor) and your business (controller).`,
+  description: `Data processing agreement for ${CLISTE_COMPANY.productName} business customers.`,
 });
 
 export default function DpaPage() {

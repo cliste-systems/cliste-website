@@ -1,9 +1,23 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { HomeWithRails } from "@/components/HomeWithRails";
 import { Footer } from "@/components/Footer";
 import { SiteFrameRails } from "@/components/SiteFrameRails";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { RETAIL_FAQS_HOMEPAGE } from "@/lib/retail-faq";
+import { pageMetadata } from "@/lib/seo";
+import { CLISTE_META_DESCRIPTION } from "@/lib/site-copy";
+
+const HOME_TITLE = "HelloCara | AI voice receptionist for Irish businesses";
+
+export const metadata: Metadata = {
+  ...pageMetadata({
+    path: "/",
+    title: HOME_TITLE,
+    description: CLISTE_META_DESCRIPTION,
+  }),
+  title: { absolute: HOME_TITLE },
+};
 
 export default function Home() {
   return (

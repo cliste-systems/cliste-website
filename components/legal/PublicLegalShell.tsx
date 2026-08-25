@@ -47,6 +47,14 @@ export function PublicLegalShell({ children }: PublicLegalShellProps) {
 
         <footer className="space-y-2 border-t border-slate-200 py-8 text-center text-xs leading-relaxed text-slate-500 sm:py-10">
           <p>
+            <Link
+              href="/"
+              className="font-medium text-slate-700 underline-offset-2 hover:underline"
+            >
+              HelloCara
+            </Link>
+          </p>
+          <p>
             {companyRegistrationLine()} ·{" "}
             <a
             href={`mailto:${CLISTE_COMPANY.helloEmail}`}

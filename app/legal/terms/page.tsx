@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   path: "/legal/terms",
   title: "Terms of service",
-  description: `Terms governing use of ${CLISTE_COMPANY.productName} operated by ${CLISTE_COMPANY.legalName}.`,
+  description: `Terms of service for ${CLISTE_COMPANY.productName}.`,
 });
 
 export default function TermsPage() {

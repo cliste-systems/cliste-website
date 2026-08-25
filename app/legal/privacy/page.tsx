@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   path: "/legal/privacy",
   title: "Privacy notice",
-  description: `How ${CLISTE_COMPANY.legalName} processes business and caller personal data for the ${CLISTE_COMPANY.productName} AI voice inbox platform.`,
+  description: `Privacy notice for ${CLISTE_COMPANY.productName} business customers and callers.`,
 });
 
 export default function PrivacyPage() {

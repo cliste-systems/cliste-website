@@ -7,6 +7,18 @@ const LEGACY_MARKETING_HOSTS = new Set([
 
 const CANONICAL_MARKETING_ORIGIN = "https://hellocara.ie";
 
+const CANONICAL_MARKETING_HOST = "hellocara.ie";
+
+function wwwCanonicalRedirect(request: NextRequest): NextResponse | null {
+  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
+  if (host !== `www.${CANONICAL_MARKETING_HOST}`) return null;
+  const destination = new URL(
+    `${request.nextUrl.pathname}${request.nextUrl.search}`,
+    `https://${CANONICAL_MARKETING_HOST}`,
+  );
+  return NextResponse.redirect(destination, 308);
+}
+
 function legacyMarketingHostRedirect(
   request: NextRequest,
 ): NextResponse | null {
@@ -20,7 +32,11 @@ function legacyMarketingHostRedirect(
 }
 
 export function middleware(request: NextRequest) {
-  return legacyMarketingHostRedirect(request) ?? NextResponse.next();
+  return (
+    wwwCanonicalRedirect(request) ??
+    legacyMarketingHostRedirect(request) ??
+    NextResponse.next()
+  );
 }
 
 export const config = {

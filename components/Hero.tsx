@@ -275,8 +275,8 @@ export function Hero() {
                   Your phone, always answered.
                 </h1>
                 <p className="hero-fade hero-fade-d4 mt-6 max-w-3xl text-base leading-relaxed text-neutral-800 lg:mt-8 lg:text-3xl lg:font-normal lg:leading-snug lg:tracking-tight">
-                  Cara answers your business phone when you can&apos;t. Cara sounds
-                  like a real person, and never misses a call.
+                  HelloCara answers your business phone when you can&apos;t. Cara
+                  sounds like a real person, and never misses a call.
                 </p>
                 <div className="hero-fade hero-fade-d5 mt-6 flex w-full flex-col gap-2.5 sm:mt-12 sm:w-auto sm:flex-row sm:justify-start sm:gap-4 lg:mt-8">
                   <Link

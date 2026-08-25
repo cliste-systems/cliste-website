@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   path: "/legal/cookies",
   title: "Cookies",
-  description: `What cookies and similar technologies ${CLISTE_COMPANY.productName} uses on the dashboard, login, and marketing site.`,
+  description: `Cookie notice for the ${CLISTE_COMPANY.productName} website and dashboard.`,
 });
 
 export default function CookiesPage() {
