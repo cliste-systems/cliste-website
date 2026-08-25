@@ -59,3 +59,60 @@ export function faqJsonLd(faqs: readonly FaqItem[]) {
     })),
   };
 }
+
+/** Per-post metadata with article Open Graph fields. */
+export function blogPostMetadata(opts: {
+  path: string;
+  title: string;
+  description: string;
+  publishedTime: string;
+  modifiedTime?: string;
+}): Metadata {
+  const canonical = canonicalPath(opts.path);
+  const modifiedTime = opts.modifiedTime ?? opts.publishedTime;
+
+  return {
+    title: opts.title,
+    description: opts.description,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      title: opts.title,
+      description: opts.description,
+      publishedTime: opts.publishedTime,
+      modifiedTime,
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      images: [DEFAULT_OG_IMAGE.url],
+    },
+  };
+}
+
+export function articleJsonLd(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    author: {
+      "@type": "Organization",
+      name: "HelloCara",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Cliste Systems Limited",
+      url: getSiteUrl(),
+    },
+  };
+}

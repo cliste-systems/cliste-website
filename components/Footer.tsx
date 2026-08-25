@@ -22,6 +22,7 @@ const FOOTER_LINKS = {
     { label: "FAQ", href: "/#cara-retail-faq-heading" },
   ],
   company: [
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/book" },
     { label: "Log in", href: APP_AUTHENTICATE_URL, external: true },
   ],
